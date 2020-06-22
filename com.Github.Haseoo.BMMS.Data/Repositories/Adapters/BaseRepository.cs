@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 
@@ -14,14 +16,14 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
             _storage = storage;
         }
 
-        public IEnumerable<T> GetAll()
+        public IList<T> GetAll()
         {
-            return _storage.Values;
+            return _storage.Values.ToList();
         }
 
         public T GetById(Guid id)
         {
-            return _storage[id];
+            return _storage.ContainsKey(id) ? _storage[id] : null;
         }
 
         public void Add(in T entity)
