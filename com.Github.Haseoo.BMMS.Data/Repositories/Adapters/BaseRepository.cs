@@ -29,21 +29,11 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
             _storage.Add(entity.Id, entity);
         }
 
-        public void Edit(in Guid id, in T newEntity)
-        {
-            var oldEntity = GetById(id);
-            if (oldEntity == null)
-            {
-                throw new KeyNotFoundException($"Entity with {id} not found");
-            }
-            
-        }
-
         public void Remove(in Guid id)
         {
             _storage.Remove(id);
         }
 
-        protected abstract Entity copyEntity(Entity newEntity, Entity oldEntity);
+        protected abstract T copyEntity(T newEntity, T oldEntity);
     }
 }

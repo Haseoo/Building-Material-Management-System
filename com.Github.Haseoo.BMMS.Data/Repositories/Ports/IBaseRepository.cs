@@ -9,7 +9,6 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Ports
         IEnumerable<T> GetAll();
         T GetById( Guid id);
         void Add(in T entity);
-        void Edit(in Guid id, in T newEntity);
         void Remove(in Guid id);
     }
 }
