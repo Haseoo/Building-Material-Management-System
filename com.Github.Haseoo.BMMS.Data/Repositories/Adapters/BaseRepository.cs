@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using com.Github.Haseoo.BMMS.Data.Entities;
@@ -7,7 +6,7 @@ using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 
 namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
 {
-    public abstract class BaseRepository<T> : IBaseRepository<T> where T:Entity
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : Entity
     {
         private readonly Dictionary<Guid, T> _storage;
 
