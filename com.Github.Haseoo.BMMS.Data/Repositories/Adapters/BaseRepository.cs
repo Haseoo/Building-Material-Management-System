@@ -33,7 +33,5 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
         {
             _storage.Remove(id);
         }
-
-        protected abstract T copyEntity(T newEntity, T oldEntity);
     }
 }

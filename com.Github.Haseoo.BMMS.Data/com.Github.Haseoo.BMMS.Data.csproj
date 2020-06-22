@@ -38,10 +38,13 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Entities\Company.cs" />
         <Compile Include="Entities\Entity.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Repositories\Adapters\BaseRepository.cs" />
+        <Compile Include="Repositories\Adapters\CompanyRepository.cs" />
         <Compile Include="Repositories\Ports\IBaseRepository.cs" />
+        <Compile Include="Repositories\Ports\ICompanyRepository.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,8 @@
-﻿namespace com.Github.Haseoo.BMMS.Data.Repositories.Ports
+﻿using com.Github.Haseoo.BMMS.Data.Entities;
+
+namespace com.Github.Haseoo.BMMS.Data.Repositories.Ports
 {
-    public class ICompanyRepository
+    public interface ICompanyRepository : IBaseRepository<Company>
     {
         
     }
