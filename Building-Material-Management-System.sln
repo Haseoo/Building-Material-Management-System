@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Data", "com.Github.Haseoo.BMMS.Data\com.Github.Haseoo.BMMS.Data.csproj", "{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
