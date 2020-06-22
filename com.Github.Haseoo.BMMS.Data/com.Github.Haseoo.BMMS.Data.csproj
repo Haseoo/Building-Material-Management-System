@@ -52,6 +52,7 @@
         <Compile Include="Repositories\Ports\ICompanyRepository.cs" />
         <Compile Include="Repositories\Ports\IMaterialRepository.cs" />
         <Compile Include="Repositories\Ports\IOfferRepository.cs" />
+        <Compile Include="Repositories\RepositoryContext.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
