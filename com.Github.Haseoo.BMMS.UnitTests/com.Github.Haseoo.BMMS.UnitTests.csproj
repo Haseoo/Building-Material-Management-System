@@ -42,7 +42,9 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Data\Repositories\CompanyRepositoryTest.cs" />
         <Compile Include="Data\Repositories\MaterialRepositoryTest.cs" />
+        <Compile Include="Data\Repositories\OfferRepositoryTest.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

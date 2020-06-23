@@ -2,23 +2,34 @@
 using System.Collections.Generic;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Adapters;
+using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 using NUnit.Framework;
 
-namespace com.Github.Haseoo.BMMS.Data.UnitTests.Repositories
+namespace com.Github.Haseoo.BMMS.Data.UnitTests.Data.Repositories
 {
     [TestFixture]
     public class MaterialRepositoryTest
     {
-        private MaterialRepository _sut;
-        private Dictionary<Guid, Material> _testStorage;
-
         [SetUp]
         public void Init()
         {
             _testStorage = new Dictionary<Guid, Material>();
             _sut = new MaterialRepository(_testStorage);
         }
-        
+
+        private IMaterialRepository _sut;
+        private Dictionary<Guid, Material> _testStorage;
+
+        public static Material GetTestMaterial()
+        {
+            return new Material
+            {
+                Id = Guid.NewGuid(),
+                Name = "TestName",
+                Specification = "TestSpec"
+            };
+        }
+
         [Test]
         public void should_add_material()
         {
@@ -53,6 +64,7 @@ namespace com.Github.Haseoo.BMMS.Data.UnitTests.Repositories
             //given
             var material = GetTestMaterial();
             _testStorage.Add(material.Id, material);
+            material = GetTestMaterial();
             material.Id = Guid.NewGuid();
             _testStorage.Add(material.Id, material);
             //when
@@ -60,9 +72,10 @@ namespace com.Github.Haseoo.BMMS.Data.UnitTests.Repositories
             //then
             Assert.AreEqual(2, outList.Count);
         }
-        
+
         [Test]
-        public void should_return_material_with_given_id() {
+        public void should_return_material_with_given_id()
+        {
             //given
             var material = GetTestMaterial();
             _testStorage.Add(material.Id, material);
@@ -78,13 +91,6 @@ namespace com.Github.Haseoo.BMMS.Data.UnitTests.Repositories
         {
             //given & when & then
             Assert.IsNull(_sut.GetById(Guid.NewGuid()));
-        }
-
-        private static Material GetTestMaterial()
-        {
-            return new Material() {Id = Guid.NewGuid(),
-                Name = "TestName",
-                Specification = "TestSpec"};
         }
     }
 }
