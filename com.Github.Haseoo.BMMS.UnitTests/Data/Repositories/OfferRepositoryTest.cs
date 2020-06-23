@@ -25,10 +25,10 @@ namespace com.Github.Haseoo.BMMS.Data.UnitTests.Data.Repositories
             return new Offer
             {
                 Comments = "Tets",
-                Company = CompanyRepositoryTest.GetTestCompany(),
+                CompanyId = CompanyRepositoryTest.GetTestCompany().Id,
                 Id = Guid.NewGuid(),
                 LastModification = DateTime.Now,
-                Material = MaterialRepositoryTest.GetTestMaterial(),
+                MaterialId = MaterialRepositoryTest.GetTestMaterial().Id,
                 Unit = "Ts",
                 UnitPrice = 31.21M
             };
@@ -47,8 +47,8 @@ namespace com.Github.Haseoo.BMMS.Data.UnitTests.Data.Repositories
             Assert.AreEqual(1, _testStorage.Keys.Count);
             Assert.AreEqual(offer.Id, outVal.Id);
             Assert.AreEqual(offer.Comments, outVal.Comments);
-            Assert.AreEqual(offer.Company.Id, outVal.Company.Id);
-            Assert.AreEqual(offer.Material.Id, outVal.Material.Id);
+            Assert.AreEqual(offer.CompanyId, outVal.CompanyId);
+            Assert.AreEqual(offer.MaterialId, outVal.MaterialId);
             Assert.AreEqual(offer.Unit, outVal.Unit);
             Assert.AreEqual(offer.LastModification, outVal.LastModification);
             Assert.AreEqual(offer.UnitPrice, outVal.UnitPrice);
