@@ -8,10 +8,22 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
         {
             Table("COMPANY_CONTACT_DATA");
             Id(x => x.Id).GeneratedBy.Assigned();
-            Map(x => x.Description);
-            Map(x => x.Representative);
-            Map(x => x.EmailAddress);
-            Map(x => x.PhoneNumber);
+            Map(x => x.Description,
+                    "DESCRIPTION")
+                .CustomSqlType("text")
+                .Not.Nullable();
+            Map(x => x.RepresentativeNameAndSurname, 
+                    "REPRESENTATIVE_NAME_AND_SURNAME")
+                .CustomSqlType("text")
+                .Not.Nullable();
+            Map(x => x.EmailAddress,
+                    "EMAIL_ADDRESS")
+                .CustomSqlType("text")
+                .Not.Nullable();
+            Map(x => x.PhoneNumber,
+                    "PHONE_NUMBER")
+                .CustomSqlType("text")
+                .Not.Nullable();
         }
     }
 }

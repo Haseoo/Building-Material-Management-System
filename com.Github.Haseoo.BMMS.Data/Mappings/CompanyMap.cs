@@ -9,10 +9,16 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
         public CompanyMap()
         {
             Table("COMPANIES");
-            Map(x => x.Name);
-            Map(x => x.Address);
+            Map(x => x.Name,
+                    "NAME")
+                .CustomSqlType("text")
+                .Not.Nullable();
+            Map(x => x.Address,
+                    "ADDRESS")
+                .CustomSqlType("text")
+                .Not.Nullable();
             HasMany(x => x.ContactData)
-                .KeyColumn("companyId")
+                .KeyColumn("COMPANY_ID")
                 .Not.KeyNullable()
                 .Not.KeyUpdate()
                 .Not.Inverse()
