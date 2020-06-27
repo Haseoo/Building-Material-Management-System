@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Data", "com.Github.Haseoo.BMMS.Data\com.Github.Haseoo.BMMS.Data.csproj", "{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Persistence", "com.Github.Haseoo.BMMS.Persistence\com.Github.Haseoo.BMMS.Persistence.csproj", "{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.UnitTests", "com.Github.Haseoo.BMMS.UnitTests\com.Github.Haseoo.BMMS.UnitTests.csproj", "{0683C6CE-484B-4BB1-B48B-EFBBB4AA9D38}"
 EndProject

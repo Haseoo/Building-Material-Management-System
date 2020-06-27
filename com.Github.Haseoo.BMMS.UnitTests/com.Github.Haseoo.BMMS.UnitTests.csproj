@@ -45,13 +45,13 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\com.Github.Haseoo.BMMS.Data\com.Github.Haseoo.BMMS.Data.csproj">
-        <Project>{88dd9e0a-81cb-48ae-8a56-fe7fbd0b94b4}</Project>
-        <Name>com.Github.Haseoo.BMMS.Data</Name>
-      </ProjectReference>
+      <Folder Include="Data\Repositories" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Data\Repositories" />
+      <ProjectReference Include="..\com.Github.Haseoo.BMMS.Persistence\com.Github.Haseoo.BMMS.Persistence.csproj">
+        <Project>{88dd9e0a-81cb-48ae-8a56-fe7fbd0b94b4}</Project>
+        <Name>com.Github.Haseoo.BMMS.Persistence</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
