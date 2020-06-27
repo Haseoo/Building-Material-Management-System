@@ -3,36 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
+using NHibernate;
 
 namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : Entity
     {
-        private readonly Dictionary<Guid, T> _storage;
+        private readonly ISession _session;
 
-        protected BaseRepository(Dictionary<Guid, T> storage)
+        protected BaseRepository(ISession session)
         {
-            _storage = storage;
+            _session = session;
         }
 
         public IList<T> GetAll()
         {
-            return _storage.Values.ToList();
+            return _session.CreateCriteria<T>().List<T>();
         }
 
         public T GetById(Guid id)
         {
-            return _storage.ContainsKey(id) ? _storage[id] : null;
+            return _session.Get<T>(id);
         }
 
-        public void Add(in T entity)
+        public T Add(in T entity)
         {
-            _storage.Add(entity.Id, entity);
+            var id = _session.Save(entity);
+            return _session.Get<T>(id);
         }
 
-        public void Remove(in Guid id)
+        public T Update(in T entity)
         {
-            _storage.Remove(id);
+            _session.Update(entity);
+            return entity;
+        }
+
+        public void Remove(in Entity entity)
+        {
+            _session.Delete(entity);
         }
     }
 }

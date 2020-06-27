@@ -8,7 +8,8 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Ports
     {
         IList<T> GetAll();
         T GetById(Guid id);
-        void Add(in T entity);
-        void Remove(in Guid id);
+        T Add(in T entity);
+        T Update(in T entity);
+        void Remove(in Entity entity);
     }
 }

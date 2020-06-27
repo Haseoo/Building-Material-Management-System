@@ -14,6 +14,6 @@ namespace com.Github.Haseoo.BMMS.Data.Entities
             Id = Guid.NewGuid();
         }
 
-        public Guid Id { get; set; }
+        virtual public Guid Id { get; set; }
     }
 }
