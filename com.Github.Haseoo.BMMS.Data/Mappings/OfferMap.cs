@@ -7,13 +7,27 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
         public OfferMap()
         {
             Table("OFFERS");
-            Map(x => x.Unit);
-            Map(x => x.UnitPrice);
-            Map(x => x.Comments);
-            Map(x => x.LastModification);
+            Map(x => x.Unit,
+                    "UNIT")
+                .CustomSqlType("text")
+                .Not.Nullable();
+            Map(x => x.UnitPrice,
+                    "UNIT_PRICE")
+                .Precision(10)
+                .Scale(2)
+                .Not.Nullable();
+            Map(x => x.Comments,
+                    "COMMENTS")
+                .CustomSqlType("text");
+            Map(x => x.LastModification,
+                "LAST_MODIFICATION_DATE");
 
-            References(x => x.Company).Column("companyId");
-            References(x => x.Material).Column("materialId");
+            References(x => x.Company)
+                .Column("COMPANY_ID")
+                .Not.Nullable();
+            References(x => x.Material)
+                .Column("MATERIAL_ID")
+                .Not.Nullable();
         }
     }
 }

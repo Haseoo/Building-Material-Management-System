@@ -8,8 +8,12 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
         public MaterialMap()
         {
             Table("MATERIALS");
-            Map(x => x.Name);
-            Map(x => x.Specification);
+            Map(x => x.Name,
+                    "NAME")
+                .Not.Nullable();
+            Map(x => x.Specification,
+                    "SPECIFICATION")
+                .Not.Nullable();
         }
     }
 }

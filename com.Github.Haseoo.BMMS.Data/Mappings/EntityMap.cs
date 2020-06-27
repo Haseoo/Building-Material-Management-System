@@ -7,7 +7,7 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
     {
         public EntityMap()
         {
-            Id(x => x.Id).GeneratedBy.Guid();
+            Id(x => x.Id, "ID").GeneratedBy.Guid();
         }
     }
 }

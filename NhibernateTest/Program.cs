@@ -17,7 +17,7 @@ namespace NhibernateTest
             var cd = new CompanyContactData
             {
                 Description = "desc",
-                Representative = "Anna Kopytko",
+                RepresentativeNameAndSurname = "Anna Kopytko",
                 EmailAddress = "uhu",
                 PhoneNumber = "1234676"
             };
@@ -25,7 +25,7 @@ namespace NhibernateTest
             var cd2 = new CompanyContactData
             {
                 Description = "desic",
-                Representative = "Maciej Kopytko",
+                RepresentativeNameAndSurname = "Maciej Kopytko",
                 EmailAddress = "uheu",
                 PhoneNumber = "123467623"
             };
