@@ -2,7 +2,7 @@
 {
     public class Material : Entity
     {
-        public string Name { get; set; }
-        public string Specification { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Specification { get; set; }
     }
 }

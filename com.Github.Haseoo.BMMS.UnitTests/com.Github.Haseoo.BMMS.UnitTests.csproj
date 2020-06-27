@@ -42,9 +42,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Data\Repositories\CompanyRepositoryTest.cs" />
-        <Compile Include="Data\Repositories\MaterialRepositoryTest.cs" />
-        <Compile Include="Data\Repositories\OfferRepositoryTest.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -52,6 +49,9 @@
         <Project>{88dd9e0a-81cb-48ae-8a56-fe7fbd0b94b4}</Project>
         <Name>com.Github.Haseoo.BMMS.Data</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Data\Repositories" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

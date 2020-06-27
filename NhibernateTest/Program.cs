@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using com.Github.Haseoo.BMMS.Data;
+using com.Github.Haseoo.BMMS.Data.Entities;
+using com.Github.Haseoo.BMMS.Data.Repositories;
+using NHibernate.Mapping;
+
+namespace NhibernateTest
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            var sessionFactory =
+                SessionFactoryBuilder.BuildSessionFactory(true, true);
+            
+            var cd = new CompanyContactData
+            {
+                Description = "desc",
+                Representative = "Anna Kopytko",
+                EmailAddress = "uhu",
+                PhoneNumber = "1234676"
+            };
+                
+            var cd2 = new CompanyContactData
+            {
+                Description = "desic",
+                Representative = "Maciej Kopytko",
+                EmailAddress = "uheu",
+                PhoneNumber = "123467623"
+            };
+
+            var comp = new Company
+            {
+                Address = "adr",
+                Name = "xd",
+                ContactData = new List<CompanyContactData> {cd, cd2}
+            };
+                
+            using (var session = sessionFactory.OpenSession())
+            {
+                var repositories = new RepositoryContext(session);
+                using (var transaction = session.BeginTransaction()) {
+                    repositories.CompanyRepository.Add(comp);
+                    transaction.Commit();
+                }
+                
+                using (var transaction = session.BeginTransaction()) {
+                    comp = repositories.CompanyRepository.GetById(comp.Id);
+                    comp.ContactData[0].EmailAddress = "adupatam";
+                    repositories.CompanyRepository.Add(comp);
+                    transaction.Commit();
+                }
+                /*Console.WriteLine(repositories
+                    .MaterialRepository
+                    .GetById(Guid.Parse("fa57670f-27c6-41ca-8e37-a8f82a65e470")));*/
+
+                foreach (var material in repositories.MaterialRepository.GetAll())
+                { 
+                    Console.WriteLine(material.Id);
+                }
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
