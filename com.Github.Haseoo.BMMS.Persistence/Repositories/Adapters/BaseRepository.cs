@@ -4,6 +4,7 @@ using System.Linq;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 using NHibernate;
+using NHibernate.Linq;
 
 namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
 {
@@ -18,7 +19,7 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
 
         public IList<T> GetAll()
         {
-            return _session.CreateCriteria<T>().List<T>();
+            return _session.Query<T>().ToList();
         }
 
         public T GetById(Guid id)
