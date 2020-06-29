@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using AutoMapper;
+using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories;
@@ -12,7 +14,11 @@ namespace NhibernateTest
         public static void Main(string[] args)
         {
             var sessionFactory =
-                SessionFactoryBuilder.BuildSessionFactory(true, true);
+                SessionFactoryBuilder.BuildSessionFactory(false, true);
+            var mapper = new MapperConfiguration(c =>
+                {
+                    c.CreateMap<Material, MaterialDTO>().ConstructUsing(s => MaterialDTO.from(s));
+                }).CreateMapper();
             
             var cd = new CompanyContactData
             {
@@ -57,7 +63,7 @@ namespace NhibernateTest
 
                 foreach (var material in repositories.MaterialRepository.GetAll())
                 { 
-                    Console.WriteLine(material.Id);
+                    Console.WriteLine(mapper.Map<Material, MaterialDTO>(material));
                 }
             }
 

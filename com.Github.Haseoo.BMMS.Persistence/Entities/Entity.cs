@@ -2,9 +2,9 @@
 
 namespace com.Github.Haseoo.BMMS.Data.Entities
 {
-    public class Entity
+    public abstract class Entity
     {
-        public Entity(Guid id)
+        protected Entity(Guid id)
         {
             Id = id;
         }
