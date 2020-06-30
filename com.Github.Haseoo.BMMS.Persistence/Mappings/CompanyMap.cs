@@ -1,6 +1,4 @@
 ﻿using com.Github.Haseoo.BMMS.Data.Entities;
-using FluentNHibernate.MappingModel.Collections;
-using NHibernate.Mapping;
 
 namespace com.Github.Haseoo.BMMS.Data.Mappings
 {

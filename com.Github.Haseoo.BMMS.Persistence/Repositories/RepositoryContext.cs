@@ -14,10 +14,9 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories
             MaterialRepository = new MaterialRepository(session);
         }
 
-        private ISession Session { get; set; }
-        public ICompanyRepository CompanyRepository { get;}
-        public IOfferRepository OfferRepository { get;}
-        public IMaterialRepository MaterialRepository { get;}
-        
+        private ISession Session { get; }
+        public ICompanyRepository CompanyRepository { get; }
+        public IOfferRepository OfferRepository { get; }
+        public IMaterialRepository MaterialRepository { get; }
     }
 }

@@ -4,11 +4,11 @@ namespace com.Github.Haseoo.BMMS.Data.Entities
 {
     public class Offer : Entity
     {
-        virtual public Company Company { get; set; }
-        virtual public Material Material { get; set; }
-        virtual public decimal UnitPrice { get; set; }
-        virtual public string Unit { get; set; }
-        virtual public string Comments { get; set; }
-        virtual public DateTime LastModification { get; set; }
+        public virtual Company Company { get; set; }
+        public virtual Material Material { get; set; }
+        public virtual decimal UnitPrice { get; set; }
+        public virtual string Unit { get; set; }
+        public virtual string Comments { get; set; }
+        public virtual DateTime LastModification { get; set; }
     }
 }
