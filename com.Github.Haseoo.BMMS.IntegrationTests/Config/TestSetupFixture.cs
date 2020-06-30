@@ -1,7 +1,32 @@
-﻿namespace com.Github.Haseoo.BMMS.IntegrationTests.Config
+﻿using com.Github.Haseoo.BMMS.Data.Entities;
+using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
+using NHibernate;
+using NUnit.Framework;
+
+namespace com.Github.Haseoo.BMMS.IntegrationTests.Config
 {
-    public class TestSetupFixture
+    [SetUpFixture]
+    public abstract class TestSetupFixture
     {
-        
+        protected ISession _session;
+        protected ITransaction _transaction;
+        [SetUp]
+        public virtual void Setup()
+        {
+            InMemorySessionFactoryProvider.Instance.Initialize();
+            _session = InMemorySessionFactoryProvider.Instance.OpenSession();
+            _transaction = _session.BeginTransaction();
+        }
+
+        [TearDown]
+        public virtual void TestTeardown()
+        {
+            InMemorySessionFactoryProvider.Instance.Dispose();
+            if (_transaction.IsActive)
+            {
+                _transaction.Rollback();
+            }
+            _session.Close();
+        }
     }
 }
