@@ -9,7 +9,7 @@ namespace com.Github.Haseoo.BMMS.Data.Entities
             Id = id;
         }
 
-        public Entity()
+        protected Entity()
         {
             Id = Guid.NewGuid();
         }

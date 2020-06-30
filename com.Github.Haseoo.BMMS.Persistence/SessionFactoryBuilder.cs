@@ -8,7 +8,7 @@ using NHibernate.Tool.hbm2ddl;
 
 namespace com.Github.Haseoo.BMMS.Data
 {
-    public class SessionFactoryBuilder
+    public static class SessionFactoryBuilder
     {
         public static ISessionFactory BuildSessionFactory(bool create = false, bool update = false)
         {

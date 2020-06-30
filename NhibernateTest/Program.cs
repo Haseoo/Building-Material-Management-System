@@ -16,7 +16,7 @@ namespace NhibernateTest
                 SessionFactoryBuilder.BuildSessionFactory(false, true);
             var mapper = new MapperConfiguration(c =>
             {
-                c.CreateMap<Material, MaterialDTO>().ConstructUsing(s => MaterialDTO.from(s));
+                c.CreateMap<Material, MaterialDto>().ConstructUsing(s => MaterialDto.from(s));
             }).CreateMapper();
 
             var cd = new CompanyContactData
@@ -63,7 +63,7 @@ namespace NhibernateTest
                     .GetById(Guid.Parse("fa57670f-27c6-41ca-8e37-a8f82a65e470")));*/
 
                 foreach (var material in repositories.MaterialRepository.GetAll())
-                    Console.WriteLine(mapper.Map<Material, MaterialDTO>(material));
+                    Console.WriteLine(mapper.Map<Material, MaterialDto>(material));
             }
 
             Console.ReadKey();
