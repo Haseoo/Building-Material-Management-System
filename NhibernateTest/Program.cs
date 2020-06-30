@@ -13,11 +13,17 @@ namespace NhibernateTest
         public static void Main(string[] args)
         {
             var sessionFactory =
-                SessionFactoryBuilder.BuildSessionFactory(false, true);
+                SessionFactoryBuilder.BuildSessionFactory(true, true);
             var mapper = new MapperConfiguration(c =>
             {
                 c.CreateMap<Material, MaterialDto>().ConstructUsing(s => MaterialDto.from(s));
             }).CreateMapper();
+
+            var mat = new Material
+            {
+                Name = "xDDDD",
+                Specification = "Spec"
+            };
 
             var cd = new CompanyContactData
             {
@@ -39,7 +45,9 @@ namespace NhibernateTest
             {
                 Address = "adr",
                 Name = "xd",
-                ContactData = new List<CompanyContactData> {cd, cd2}
+                ContactData = new List<CompanyContactData> {cd, cd2},
+                Voivodeship = "xd",
+                City = "xP"
             };
 
             using (var session = sessionFactory.OpenSession())
@@ -56,14 +64,38 @@ namespace NhibernateTest
                     comp = repositories.CompanyRepository.GetById(comp.Id);
                     comp.ContactData[0].EmailAddress = "adupatam";
                     repositories.CompanyRepository.Add(comp);
+                    repositories.MaterialRepository.Add(mat);
                     transaction.Commit();
                 }
+
                 /*Console.WriteLine(repositories
                     .MaterialRepository
                     .GetById(Guid.Parse("fa57670f-27c6-41ca-8e37-a8f82a65e470")));*/
+            }
+            Offer off;
 
-                foreach (var material in repositories.MaterialRepository.GetAll())
-                    Console.WriteLine(mapper.Map<Material, MaterialDto>(material));
+
+            using (var session = sessionFactory.OpenSession())
+            {
+                var repositories = new RepositoryContext(session);
+                using (var transaction = session.BeginTransaction())
+                {
+                    off = new Offer
+                    {
+                        Comments = "xD",
+                        Company = comp,
+                        LastModification = DateTime.Now,
+                        Material = mat,
+                        Unit = "ovo",
+                        UnitPrice = 12M
+                    };
+
+                    repositories.OfferRepository.Add(off);
+                    
+                    transaction.Commit();
+                }
+                foreach (var material in repositories.OfferRepository.GetAll())
+                    Console.WriteLine(material);
             }
 
             Console.ReadKey();

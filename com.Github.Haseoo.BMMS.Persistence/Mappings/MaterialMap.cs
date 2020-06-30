@@ -13,6 +13,10 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
             Map(x => x.Specification,
                     "SPECIFICATION")
                 .Not.Nullable();
+            HasMany(x => x.Offers)
+                .Cascade.AllDeleteOrphan()
+                .Fetch.Join()
+                .Inverse().KeyColumn("MATERIAL_ID");
         }
     }
 }
