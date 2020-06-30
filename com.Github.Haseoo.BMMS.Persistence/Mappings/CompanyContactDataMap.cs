@@ -12,7 +12,7 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
                     "DESCRIPTION")
                 .CustomSqlType("text")
                 .Not.Nullable();
-            Map(x => x.RepresentativeNameAndSurname, 
+            Map(x => x.RepresentativeNameAndSurname,
                     "REPRESENTATIVE_NAME_AND_SURNAME")
                 .CustomSqlType("text")
                 .Not.Nullable();

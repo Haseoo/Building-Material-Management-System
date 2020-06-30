@@ -11,7 +11,7 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
             Specification = specification;
         }
 
-        public string Name { get;}
+        public string Name { get; }
         public string Specification { get; }
 
         public override string ToString()
@@ -22,7 +22,7 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
 
         public static MaterialDTO from(Material material)
         {
-            return  new MaterialDTO(material.Id, material.Name, material.Specification);
+            return new MaterialDTO(material.Id, material.Name, material.Specification);
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using com.Github.Haseoo.BMMS.Data.Entities;
-using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
-using NHibernate;
+﻿using NHibernate;
 using NUnit.Framework;
 
 namespace com.Github.Haseoo.BMMS.IntegrationTests.Config
@@ -10,6 +8,7 @@ namespace com.Github.Haseoo.BMMS.IntegrationTests.Config
     {
         protected ISession _session;
         protected ITransaction _transaction;
+
         [SetUp]
         public virtual void Setup()
         {
@@ -22,10 +21,7 @@ namespace com.Github.Haseoo.BMMS.IntegrationTests.Config
         public virtual void TestTeardown()
         {
             InMemorySessionFactoryProvider.Instance.Dispose();
-            if (_transaction.IsActive)
-            {
-                _transaction.Rollback();
-            }
+            if (_transaction.IsActive) _transaction.Rollback();
             _session.Close();
         }
     }
