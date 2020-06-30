@@ -1,6 +1,6 @@
 ﻿using com.Github.Haseoo.BMMS.Data.Entities;
 
-namespace com.Github.Haseoo.BMMS.IntegrationTests.Config
+namespace com.Github.Haseoo.BMMS.PersistenceTest.Config
 {
     public static class TestDataGenerator
     {
