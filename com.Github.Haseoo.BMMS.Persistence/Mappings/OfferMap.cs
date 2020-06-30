@@ -24,9 +24,12 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
 
             References(x => x.Company)
                 .Column("COMPANY_ID")
+                .ForeignKey("OFFER_COMPANY_FK")
                 .Not.Nullable();
+
             References(x => x.Material)
                 .Column("MATERIAL_ID")
+                .ForeignKey("OFFER_MATERIAL_FK")
                 .Not.Nullable();
         }
     }
