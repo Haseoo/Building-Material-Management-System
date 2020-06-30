@@ -36,3 +36,5 @@ Desktop.ini
 .DS_Store
 
 .sonarqube
+TestResult.xml
+opencover.xml
