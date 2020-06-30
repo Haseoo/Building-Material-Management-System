@@ -3,9 +3,9 @@ using com.Github.Haseoo.BMMS.Data.Entities;
 
 namespace com.Github.Haseoo.BMMS.Business.DTOs
 {
-    public sealed class MaterialDTO : EntityDTO
+    public sealed class MaterialDto : EntityDto
     {
-        private MaterialDTO(Guid id, string name, string specification) : base(id)
+        private MaterialDto(Guid id, string name, string specification) : base(id)
         {
             Name = name;
             Specification = specification;
@@ -20,9 +20,9 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
         }
 
 
-        public static MaterialDTO from(Material material)
+        public static MaterialDto from(Material material)
         {
-            return new MaterialDTO(material.Id, material.Name, material.Specification);
+            return new MaterialDto(material.Id, material.Name, material.Specification);
         }
     }
 }

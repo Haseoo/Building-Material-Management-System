@@ -19,7 +19,7 @@ namespace com.Github.Haseoo.BMMS.PersistenceTest.Persistence.Repositories
             _sut = new MaterialRepository(_session);
         }
 
-        private IMaterialRepository _sut;
+        private MaterialRepository _sut;
 
         [Test]
         public void should_add_material()

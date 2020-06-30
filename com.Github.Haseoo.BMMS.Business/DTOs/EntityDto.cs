@@ -2,9 +2,9 @@
 
 namespace com.Github.Haseoo.BMMS.Business.DTOs
 {
-    public abstract class EntityDTO
+    public abstract class EntityDto
     {
-        protected EntityDTO(Guid id)
+        protected EntityDto(Guid id)
         {
             Id = id;
         }
