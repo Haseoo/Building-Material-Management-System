@@ -5,7 +5,7 @@ using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 
-namespace com.Github.Haseoo.BMMS.PersistenceTest.Config
+namespace com.Github.Haseoo.BMMS.Tests.Config
 {
     public class InMemorySessionFactoryProvider
     {

@@ -3,11 +3,11 @@ using System.Linq;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Adapters;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
-using com.Github.Haseoo.BMMS.PersistenceTest.Config;
+using com.Github.Haseoo.BMMS.Tests.Config;
 using NHibernate.Linq;
 using NUnit.Framework;
 
-namespace com.Github.Haseoo.BMMS.PersistenceTest.Persistence.Repositories
+namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
 {
     [TestFixture]
     public class MaterialRepositoryTest : TestSetupFixture

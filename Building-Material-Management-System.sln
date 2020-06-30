@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateTest", "Nhibernat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Business", "com.Github.Haseoo.BMMS.Business\com.Github.Haseoo.BMMS.Business.csproj", "{8CF6EDD2-B534-4E2E-9141-CF06618D816E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.PersistenceTest", "com.Github.Haseoo.BMMS.PersistenceTest\com.Github.Haseoo.BMMS.PersistenceTest.csproj", "{2B19747F-BA06-49E0-9B1A-A4AB2BA62708}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Tests", "com.Github.Haseoo.BMMS.Tests\com.Github.Haseoo.BMMS.Tests.csproj", "{2B19747F-BA06-49E0-9B1A-A4AB2BA62708}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
