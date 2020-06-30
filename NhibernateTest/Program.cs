@@ -5,7 +5,6 @@ using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories;
-using NHibernate.Mapping;
 
 namespace NhibernateTest
 {
@@ -16,10 +15,10 @@ namespace NhibernateTest
             var sessionFactory =
                 SessionFactoryBuilder.BuildSessionFactory(false, true);
             var mapper = new MapperConfiguration(c =>
-                {
-                    c.CreateMap<Material, MaterialDTO>().ConstructUsing(s => MaterialDTO.from(s));
-                }).CreateMapper();
-            
+            {
+                c.CreateMap<Material, MaterialDTO>().ConstructUsing(s => MaterialDTO.from(s));
+            }).CreateMapper();
+
             var cd = new CompanyContactData
             {
                 Description = "desc",
@@ -27,7 +26,7 @@ namespace NhibernateTest
                 EmailAddress = "uhu",
                 PhoneNumber = "1234676"
             };
-                
+
             var cd2 = new CompanyContactData
             {
                 Description = "desic",
@@ -42,16 +41,18 @@ namespace NhibernateTest
                 Name = "xd",
                 ContactData = new List<CompanyContactData> {cd, cd2}
             };
-                
+
             using (var session = sessionFactory.OpenSession())
             {
                 var repositories = new RepositoryContext(session);
-                using (var transaction = session.BeginTransaction()) {
+                using (var transaction = session.BeginTransaction())
+                {
                     repositories.CompanyRepository.Add(comp);
                     transaction.Commit();
                 }
-                
-                using (var transaction = session.BeginTransaction()) {
+
+                using (var transaction = session.BeginTransaction())
+                {
                     comp = repositories.CompanyRepository.GetById(comp.Id);
                     comp.ContactData[0].EmailAddress = "adupatam";
                     repositories.CompanyRepository.Add(comp);
@@ -62,9 +63,7 @@ namespace NhibernateTest
                     .GetById(Guid.Parse("fa57670f-27c6-41ca-8e37-a8f82a65e470")));*/
 
                 foreach (var material in repositories.MaterialRepository.GetAll())
-                { 
                     Console.WriteLine(mapper.Map<Material, MaterialDTO>(material));
-                }
             }
 
             Console.ReadKey();

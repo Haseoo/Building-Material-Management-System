@@ -4,7 +4,6 @@ using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Adapters;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 using com.Github.Haseoo.BMMS.IntegrationTests.Config;
-using NHibernate;
 using NHibernate.Linq;
 using NUnit.Framework;
 
@@ -13,14 +12,14 @@ namespace com.Github.Haseoo.BMMS.IntegrationTests.Persistence.Repositories
     [TestFixture]
     public class MaterialRepositoryTest : TestSetupFixture
     {
-        private IMaterialRepository _sut;
-
         [SetUp]
         public override void Setup()
         {
             base.Setup();
             _sut = new MaterialRepository(_session);
         }
+
+        private IMaterialRepository _sut;
 
         [Test]
         public void should_add_material()
@@ -33,30 +32,20 @@ namespace com.Github.Haseoo.BMMS.IntegrationTests.Persistence.Repositories
 
             //then
             Assert.NotNull(inVal.Id);
-            Assert.Contains(inVal,_session.Query<Material>().ToList());
+            Assert.Contains(inVal, _session.Query<Material>().ToList());
             Assert.AreEqual(outVal.Name, inVal.Name);
             Assert.AreEqual(outVal.Specification, inVal.Specification);
         }
 
         [Test]
-        public void should_return_list_with_two_elements()
+        public void should_delete_material()
         {
             //given
-            _session.Save(TestDataGenerator.GetMaterial());
-            _session.Save(TestDataGenerator.GetMaterial());
-            //when & then
-            Assert.AreEqual(_sut.GetAll().Count, 2);
-        }
-
-        [Test]
-        public void should_return_material_by_id()
-        {
-            //given
-            var id = _session.Save(TestDataGenerator.GetMaterial()).As<Guid>();
+            var material = _session.Get<Material>(_session.Save(TestDataGenerator.GetMaterial()));
             //when
-            var outVal = _sut.GetById(id);
+            _sut.Remove(material);
             //then
-            Assert.AreEqual(outVal.Id, id);
+            CollectionAssert.DoesNotContain(_session.Query<Material>().ToList(), material);
         }
 
         [Test]
@@ -78,14 +67,24 @@ namespace com.Github.Haseoo.BMMS.IntegrationTests.Persistence.Repositories
         }
 
         [Test]
-        public void should_delete_material()
+        public void should_return_list_with_two_elements()
         {
             //given
-            var material = _session.Get<Material>(_session.Save(TestDataGenerator.GetMaterial()));
+            _session.Save(TestDataGenerator.GetMaterial());
+            _session.Save(TestDataGenerator.GetMaterial());
+            //when & then
+            Assert.AreEqual(_sut.GetAll().Count, 2);
+        }
+
+        [Test]
+        public void should_return_material_by_id()
+        {
+            //given
+            var id = _session.Save(TestDataGenerator.GetMaterial()).As<Guid>();
             //when
-            _sut.Remove(material);
+            var outVal = _sut.GetById(id);
             //then
-            CollectionAssert.DoesNotContain(_session.Query<Material>().ToList(), material);
+            Assert.AreEqual(outVal.Id, id);
         }
     }
 }
