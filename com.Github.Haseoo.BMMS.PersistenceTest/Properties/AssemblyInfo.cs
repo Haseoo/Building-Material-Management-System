@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("com.Github.Haseoo.BMMS.IntegrationTests")]
+[assembly: AssemblyTitle("com.Github.Haseoo.BMMS.PersistenceTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("com.Github.Haseoo.BMMS.IntegrationTests")]
+[assembly: AssemblyProduct("com.Github.Haseoo.BMMS.PersistenceTest")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

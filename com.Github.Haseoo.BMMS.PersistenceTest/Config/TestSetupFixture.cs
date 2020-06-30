@@ -1,7 +1,7 @@
 ﻿using NHibernate;
 using NUnit.Framework;
 
-namespace com.Github.Haseoo.BMMS.IntegrationTests.Config
+namespace com.Github.Haseoo.BMMS.PersistenceTest.Config
 {
     [SetUpFixture]
     public abstract class TestSetupFixture

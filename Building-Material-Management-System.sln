@@ -2,13 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Persistence", "com.Github.Haseoo.BMMS.Persistence\com.Github.Haseoo.BMMS.Persistence.csproj", "{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.UnitTests", "com.Github.Haseoo.BMMS.UnitTests\com.Github.Haseoo.BMMS.UnitTests.csproj", "{0683C6CE-484B-4BB1-B48B-EFBBB4AA9D38}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateTest", "NhibernateTest\NhibernateTest.csproj", "{6ED34847-5010-47AF-8B45-EFD9D00D57C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Business", "com.Github.Haseoo.BMMS.Business\com.Github.Haseoo.BMMS.Business.csproj", "{8CF6EDD2-B534-4E2E-9141-CF06618D816E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.IntegrationTests", "com.Github.Haseoo.BMMS.IntegrationTests\com.Github.Haseoo.BMMS.IntegrationTests.csproj", "{2B19747F-BA06-49E0-9B1A-A4AB2BA62708}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.PersistenceTest", "com.Github.Haseoo.BMMS.PersistenceTest\com.Github.Haseoo.BMMS.PersistenceTest.csproj", "{2B19747F-BA06-49E0-9B1A-A4AB2BA62708}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +18,6 @@ Global
 		{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0683C6CE-484B-4BB1-B48B-EFBBB4AA9D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0683C6CE-484B-4BB1-B48B-EFBBB4AA9D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0683C6CE-484B-4BB1-B48B-EFBBB4AA9D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0683C6CE-484B-4BB1-B48B-EFBBB4AA9D38}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6ED34847-5010-47AF-8B45-EFD9D00D57C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6ED34847-5010-47AF-8B45-EFD9D00D57C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED34847-5010-47AF-8B45-EFD9D00D57C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
