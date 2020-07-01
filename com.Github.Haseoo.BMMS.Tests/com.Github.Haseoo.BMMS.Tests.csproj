@@ -84,9 +84,10 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Config\TestDataGenerator.cs" />
-        <Compile Include="Persistence.Repositories\MaterialRepositoryTest.cs" />
+        <Compile Include="Persistence.Repositories\CompanyRepositoryTest.cs" />
+        <Compile Include="Persistence.Repositories\MaterialRepositoryRepositoryTest.cs" />
         <Compile Include="Config\InMemorySessionFactoryProvider.cs" />
-        <Compile Include="Config\TestSetupFixture.cs" />
+        <Compile Include="Config\RepositoryTestSetupFixture.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

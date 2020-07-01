@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace com.Github.Haseoo.BMMS.Tests.Config
 {
     [SetUpFixture]
-    public abstract class TestSetupFixture
+    public abstract class RepositoryTestSetupFixture
     {
         protected ISession _session;
         protected ITransaction _transaction;
