@@ -45,6 +45,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Config
 
         public void Dispose()
         {
+            _sessionFactory?.Close();
             _sessionFactory?.Dispose();
             _sessionFactory = null;
             _configuration = null;
