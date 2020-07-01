@@ -10,7 +10,7 @@ using NUnit.Framework;
 namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
 {
     [TestFixture]
-    public class MaterialRepositoryTest : TestSetupFixture
+    public class MaterialRepositoryRepositoryTest : RepositoryTestSetupFixture
     {
         [SetUp]
         public override void Setup()
@@ -85,6 +85,13 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
             var outVal = _sut.GetById(id);
             //then
             Assert.AreEqual(outVal.Id, id);
+        }
+
+        [Test]
+        public void should_return_null_when_material_does_not_exist()
+        {
+            //given & when & then
+            Assert.IsNull(_sut.GetById(Guid.Empty));
         }
     }
 }
