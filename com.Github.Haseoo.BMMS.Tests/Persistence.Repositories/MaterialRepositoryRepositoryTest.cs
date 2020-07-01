@@ -69,7 +69,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
             //then
             Assert.AreEqual(id, material.Id);
             Assert.AreEqual(newName, material.Name);
-            Assert.AreEqual(newSpec,material.Specification);
+            Assert.AreEqual(newSpec, material.Specification);
         }
 
         [Test]
