@@ -19,6 +19,12 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
             _sut = new MaterialRepository(new SessionWrapper(_session));
         }
 
+        [TearDown]
+        public override void TestTeardown()
+        {
+            base.TestTeardown();
+        }
+
         private MaterialRepository _sut;
 
         [Test]
@@ -33,8 +39,8 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
             //then
             Assert.NotNull(inVal.Id);
             Assert.Contains(inVal, _session.Query<Material>().ToList());
-            Assert.AreEqual(outVal.Name, inVal.Name);
-            Assert.AreEqual(outVal.Specification, inVal.Specification);
+            Assert.AreEqual(inVal.Name, outVal.Name);
+            Assert.AreEqual(inVal.Specification, outVal.Specification);
         }
 
         [Test]
@@ -61,9 +67,9 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
             material.Specification = newSpec;
             _sut.Update(material);
             //then
-            Assert.AreEqual(material.Id, id);
-            Assert.AreEqual(material.Name, newName);
-            Assert.AreEqual(material.Specification, newSpec);
+            Assert.AreEqual(id, material.Id);
+            Assert.AreEqual(newName, material.Name);
+            Assert.AreEqual(newSpec,material.Specification);
         }
 
         [Test]
@@ -73,7 +79,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
             _session.Save(TestDataGenerator.GetMaterial());
             _session.Save(TestDataGenerator.GetMaterial());
             //when & then
-            Assert.AreEqual(_sut.GetAll().Count, 2);
+            Assert.AreEqual(2, _sut.GetAll().Count);
         }
 
         [Test]
@@ -84,7 +90,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
             //when
             var outVal = _sut.GetById(id);
             //then
-            Assert.AreEqual(outVal.Id, id);
+            Assert.AreEqual(id, outVal.Id);
         }
 
         [Test]
