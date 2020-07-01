@@ -1,6 +1,4 @@
-﻿using System;
-using NHibernate;
-using NUnit.Framework;
+﻿using NHibernate;
 
 namespace com.Github.Haseoo.BMMS.Tests.Config
 {
