@@ -31,6 +31,8 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
                 .Column("MATERIAL_ID")
                 .ForeignKey("OFFER_MATERIAL_FK")
                 .Not.Nullable();
+            
+            CheckConstraint("UNIT_PRICE >= 0");
         }
     }
 }
