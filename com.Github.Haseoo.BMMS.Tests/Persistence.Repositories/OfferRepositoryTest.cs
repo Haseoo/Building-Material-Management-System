@@ -12,7 +12,6 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
     [TestFixture]
     public class OfferRepositoryTest : RepositoryTestSetupFixture
     {
-        private OfferRepository _sut;
         [SetUp]
         public override void Setup()
         {
@@ -25,6 +24,8 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         {
             base.TestTeardown();
         }
+
+        private OfferRepository _sut;
 
         [Test]
         public void should_add_offer()
@@ -73,24 +74,16 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         }
 
         [Test]
-        public void should_return_offer_by_id()
+        public void should_remove_offer()
         {
             //given
             var material = _session.Get<Material>(_session.Save(TestDataGenerator.GetMaterial()));
             var company = _session.Get<Company>(_session.Save(TestDataGenerator.getCompany()));
-            var id = _session.Save(TestDataGenerator.getOffer(company, material)).As<Guid>();
+            var offer = _session.Get<Offer>(_session.Save(TestDataGenerator.getOffer(company, material)));
             //when
-            var outVal = _sut.GetById(id);
+            _sut.Remove(offer);
             //then
-            Assert.NotNull(outVal);
-            Assert.AreEqual(id, outVal.Id);
-        }
-
-        [Test]
-        public void should_return_null_when_offer_does_not_exist()
-        {
-            //given & when & then
-            Assert.IsNull(_sut.GetById(Guid.Empty));
+            CollectionAssert.IsEmpty(_session.Query<Offer>().ToList());
         }
 
         [Test]
@@ -106,16 +99,24 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         }
 
         [Test]
-        public void should_remove_offer()
+        public void should_return_null_when_offer_does_not_exist()
+        {
+            //given & when & then
+            Assert.IsNull(_sut.GetById(Guid.Empty));
+        }
+
+        [Test]
+        public void should_return_offer_by_id()
         {
             //given
             var material = _session.Get<Material>(_session.Save(TestDataGenerator.GetMaterial()));
             var company = _session.Get<Company>(_session.Save(TestDataGenerator.getCompany()));
-            var offer = _session.Get<Offer>(_session.Save(TestDataGenerator.getOffer(company, material)));
+            var id = _session.Save(TestDataGenerator.getOffer(company, material)).As<Guid>();
             //when
-            _sut.Remove(offer);
+            var outVal = _sut.GetById(id);
             //then
-            CollectionAssert.IsEmpty(_session.Query<Offer>().ToList());
+            Assert.NotNull(outVal);
+            Assert.AreEqual(id, outVal.Id);
         }
     }
 }
