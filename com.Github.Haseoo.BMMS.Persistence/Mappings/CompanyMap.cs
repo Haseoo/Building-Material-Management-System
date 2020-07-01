@@ -27,7 +27,7 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
                 .Cascade.AllDeleteOrphan()
                 .Fetch.Join()
                 .Inverse().KeyColumn("COMPANY_ID");
-            
+
             HasMany(x => x.ContactData)
                 .KeyColumn("COMPANY_ID")
                 .Not.KeyNullable()
