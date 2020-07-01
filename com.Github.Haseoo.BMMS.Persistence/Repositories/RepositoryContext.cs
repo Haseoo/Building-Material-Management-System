@@ -6,6 +6,8 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories
 {
     public class RepositoryContext
     {
+        private readonly SessionWrapper _sessionWrapper;
+
         public RepositoryContext(SessionWrapper sessionWrapper)
         {
             _sessionWrapper = sessionWrapper;
@@ -14,12 +16,11 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories
             MaterialRepository = new MaterialRepository(sessionWrapper);
         }
 
-        private readonly SessionWrapper _sessionWrapper;
-
         public ISession Session
         {
             set => _sessionWrapper.Session = value;
         }
+
         public ICompanyRepository CompanyRepository { get; }
         public IOfferRepository OfferRepository { get; }
         public IMaterialRepository MaterialRepository { get; }
