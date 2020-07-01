@@ -83,6 +83,7 @@
         <Compile Include="Repositories\Ports\IOfferRepository.cs" />
         <Compile Include="Repositories\RepositoryContext.cs" />
         <Compile Include="SessionFactoryBuilder.cs" />
+        <Compile Include="SessionWrapper.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

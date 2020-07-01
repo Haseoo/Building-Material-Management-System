@@ -6,7 +6,7 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
 {
     public class CompanyRepository : BaseRepository<Company>, ICompanyRepository
     {
-        public CompanyRepository(ISession session) : base(session)
+        public CompanyRepository(SessionWrapper sessionWrapper) : base(sessionWrapper)
         {
         }
     }
