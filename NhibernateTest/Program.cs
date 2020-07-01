@@ -31,7 +31,7 @@ namespace NhibernateTest
             {
                 Description = "desc",
                 RepresentativeNameAndSurname = "Anna Kopytko",
-                EmailAddress = "uhu",
+                EmailAddress = "uhu@o2.pl",
                 PhoneNumber = "1234676"
             };
 
@@ -39,7 +39,7 @@ namespace NhibernateTest
             {
                 Description = "desic",
                 RepresentativeNameAndSurname = "Maciej Kopytko",
-                EmailAddress = "uheu",
+                EmailAddress = "uheu@wp.pl",
                 PhoneNumber = "123467623"
             };
 
@@ -64,7 +64,7 @@ namespace NhibernateTest
                 using (var transaction = session.BeginTransaction())
                 {
                     comp = repositories.CompanyRepository.GetById(comp.Id);
-                    comp.ContactData[0].EmailAddress = "adupatam";
+                    comp.ContactData[0].EmailAddress = "owo@ou.pl";
                     repositories.CompanyRepository.Add(comp);
                     repositories.MaterialRepository.Add(mat);
                     transaction.Commit();

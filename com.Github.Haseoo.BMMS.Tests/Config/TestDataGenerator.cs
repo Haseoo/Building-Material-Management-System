@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using com.Github.Haseoo.BMMS.Data.Entities;
 
 namespace com.Github.Haseoo.BMMS.Tests.Config
@@ -34,6 +35,19 @@ namespace com.Github.Haseoo.BMMS.Tests.Config
                 ContactData = new List<CompanyContactData> {getContactData(), getContactData()},
                 Name = "TestName",
                 Voivodeship = "test"
+            };
+        }
+
+        public static Offer getOffer(Company company, Material material)
+        {
+            return new Offer
+            {
+                Comments = "TestComments",
+                Company = company,
+                LastModification = new DateTime(2005, 4, 2, 21, 37, 0),
+                Material = material,
+                Unit = "tln",
+                UnitPrice = 21M
             };
         }
     }
