@@ -3,7 +3,6 @@ using System.Linq;
 using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Adapters;
-using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 using com.Github.Haseoo.BMMS.Tests.Config;
 using NHibernate.Linq;
 using NUnit.Framework;

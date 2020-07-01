@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
-using NHibernate;
 using NHibernate.Linq;
 
 namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
