@@ -6,7 +6,7 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
 {
     public class OfferRepository : BaseRepository<Offer>, IOfferRepository
     {
-        public OfferRepository(ISession session) : base(session)
+        public OfferRepository(SessionWrapper sessionWrapper) : base(sessionWrapper)
         {
         }
     }
