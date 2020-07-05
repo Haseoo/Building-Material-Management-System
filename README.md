@@ -3,6 +3,8 @@ A simple system that holds information about offers of building materials writte
 # Project status
 ## Building
 [![Build Status](https://dev.azure.com/dawidszymkiewicz/dawid_szymkiewicz/_apis/build/status/Haseoo.Building-Material-Management-System?branchName=master)](https://dev.azure.com/dawidszymkiewicz/dawid_szymkiewicz/_build/latest?definitionId=11&branchName=master)
+
+[<img src="http://dawidhomeserver.ddns.net:9000/api/project_badges/quality_gate?project=bmms-dot-net">](http://dawidhomeserver.ddns.net:9000/dashboard?id=bmms-dot-net) 
 ## Measures
 [<img src="http://dawidhomeserver.ddns.net:9000/api/project_badges/measure?metric=sqale_rating&project=bmms-dot-net">](http://dawidhomeserver.ddns.net:9000/component_measures?id=bmms-dot-net&metric=sqale_rating) [<img src="http://dawidhomeserver.ddns.net:9000/api/project_badges/measure?metric=reliability_rating&project=bmms-dot-net">](http://dawidhomeserver.ddns.net:9000/component_measures?id=bmms-dot-net&metric=reliability_rating)  [<img src="http://dawidhomeserver.ddns.net:9000/api/project_badges/measure?metric=sqale_index&project=bmms-dot-net">](http://dawidhomeserver.ddns.net:9000/component_measures?id=bmms-dot-net&metric=sqale_index)
 
