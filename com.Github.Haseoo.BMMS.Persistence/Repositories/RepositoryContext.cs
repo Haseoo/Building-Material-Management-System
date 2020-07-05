@@ -16,9 +16,9 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories
             MaterialRepository = new MaterialRepository(sessionWrapper);
         }
 
-        public ISession Session
+        public void SetSession(ISession session)
         {
-            set => _sessionWrapper.Session = value;
+            _sessionWrapper.Session = session;
         }
 
         public ICompanyRepository CompanyRepository { get; }
