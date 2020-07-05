@@ -54,7 +54,7 @@ namespace NhibernateTest
             using (var session = sessionFactory.OpenSession())
             {
                 session.FlushMode = FlushMode.Always;
-                repositories.Session = session;
+                repositories.SetSession(session);
                 using (var transaction = session.BeginTransaction())
                 {
                     repositories.CompanyRepository.Add(comp);
@@ -81,7 +81,7 @@ namespace NhibernateTest
             using (var session = sessionFactory.OpenSession())
             {
                 session.FlushMode = FlushMode.Commit;
-                repositories.Session = session;
+                repositories.SetSession(session);
                 var off = new Offer
                 {
                     Comments = "xD",
@@ -100,7 +100,7 @@ namespace NhibernateTest
 
             using (var session = sessionFactory.OpenSession())
             {
-                repositories.Session = session;
+                repositories.SetSession(session);
                 foreach (var material in repositories.MaterialRepository.GetAll())
                     Console.WriteLine(material);
             }
