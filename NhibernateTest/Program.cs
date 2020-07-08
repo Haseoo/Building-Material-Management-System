@@ -17,7 +17,7 @@ namespace NhibernateTest
                 SessionFactoryBuilder.BuildSessionFactory(true, true);
             var mapper = new MapperConfiguration(c =>
             {
-                c.CreateMap<Material, MaterialDto>().ConstructUsing(s => MaterialDto.from(s));
+                c.CreateMap<Material, MaterialDto>().ConstructUsing(s => MaterialDto.From(s));
             }).CreateMapper();
             var repositories = new RepositoryContext(new SessionWrapper(null));
 
