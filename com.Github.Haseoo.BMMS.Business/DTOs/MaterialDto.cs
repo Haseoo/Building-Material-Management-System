@@ -1,5 +1,5 @@
-﻿using System;
-using com.Github.Haseoo.BMMS.Data.Entities;
+﻿using com.Github.Haseoo.BMMS.Data.Entities;
+using System;
 
 namespace com.Github.Haseoo.BMMS.Business.DTOs
 {
@@ -18,7 +18,6 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
         {
             return $"{nameof(Name)}: {Name}, {nameof(Specification)}: {Specification}";
         }
-
 
         public static MaterialDto from(Material material)
         {
