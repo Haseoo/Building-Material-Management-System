@@ -47,11 +47,10 @@
     <Compile Include="DTOs\CompanyDto.cs" />
     <Compile Include="DTOs\EntityDto.cs" />
     <Compile Include="DTOs\MaterialDto.cs" />
+    <Compile Include="DTOs\OperationDTOs\MaterialOperationDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTOs\OperationDTOs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\com.Github.Haseoo.BMMS.Persistence\com.Github.Haseoo.BMMS.Persistence.csproj">
       <Project>{88dd9e0a-81cb-48ae-8a56-fe7fbd0b94b4}</Project>
