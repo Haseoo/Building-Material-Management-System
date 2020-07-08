@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOs\CompanyContactDataDTO.cs" />
+    <Compile Include="DTOs\CompanyContactDataDto.cs" />
+    <Compile Include="DTOs\CompanyDto.cs" />
     <Compile Include="DTOs\EntityDto.cs" />
     <Compile Include="DTOs\MaterialDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

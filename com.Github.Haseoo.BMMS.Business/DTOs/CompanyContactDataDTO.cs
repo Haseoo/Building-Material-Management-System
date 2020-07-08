@@ -3,9 +3,9 @@ using System;
 
 namespace com.Github.Haseoo.BMMS.Business.DTOs
 {
-    public sealed class CompanyContactDataDTO : EntityDto
+    public sealed class CompanyContactDataDto : EntityDto
     {
-        private CompanyContactDataDTO(Guid id,
+        private CompanyContactDataDto(Guid id,
             string description,
             string representativeNameAndSurname,
             string emailAddress,
@@ -22,9 +22,9 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
         public string EmailAddress { get; }
         public string PhoneNumber { get; }
 
-        public static CompanyContactDataDTO From(CompanyContactData companyContactData)
+        public static CompanyContactDataDto From(CompanyContactData companyContactData)
         {
-            return new CompanyContactDataDTO(companyContactData.Id,
+            return new CompanyContactDataDto(companyContactData.Id,
                 companyContactData.Description,
                 companyContactData.RepresentativeNameAndSurname,
                 companyContactData.EmailAddress,
