@@ -1,11 +1,11 @@
-﻿using System;
-using System.Linq;
-using com.Github.Haseoo.BMMS.Data;
+﻿using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Adapters;
 using com.Github.Haseoo.BMMS.Tests.Config;
 using NHibernate.Linq;
 using NUnit.Framework;
+using System;
+using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
 {
@@ -81,7 +81,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         {
             //given
             var id = _session.Save(TestDataGenerator.getCompany()).As<Guid>();
-            //when 
+            //when
             var outVal = _sut.GetById(id);
             //then
             Assert.NotNull(outVal);

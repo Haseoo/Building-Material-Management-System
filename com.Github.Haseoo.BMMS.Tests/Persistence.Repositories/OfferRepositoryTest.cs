@@ -1,11 +1,11 @@
-﻿using System;
-using System.Linq;
-using com.Github.Haseoo.BMMS.Data;
+﻿using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Adapters;
 using com.Github.Haseoo.BMMS.Tests.Config;
 using NHibernate.Linq;
 using NUnit.Framework;
+using System;
+using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
 {
