@@ -1,5 +1,5 @@
-﻿using System;
-using com.Github.Haseoo.BMMS.Data.Entities;
+﻿using com.Github.Haseoo.BMMS.Data.Entities;
+using System;
 
 namespace com.Github.Haseoo.BMMS.Business.DTOs
 {
@@ -14,13 +14,7 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
         public string Name { get; }
         public string Specification { get; }
 
-        public override string ToString()
-        {
-            return $"{nameof(Name)}: {Name}, {nameof(Specification)}: {Specification}";
-        }
-
-
-        public static MaterialDto from(Material material)
+        public static MaterialDto From(Material material)
         {
             return new MaterialDto(material.Id, material.Name, material.Specification);
         }
