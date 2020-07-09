@@ -9,7 +9,7 @@
         public string Name { get; private set; }
         public string Specification { get; private set; }
 
-        public class DtoBulder
+        public class DtoBulder : IDtoBuilder<MaterialOperationDto>
         {
             private string _name;
             private string _specification;
@@ -28,12 +28,11 @@
 
             public MaterialOperationDto Build()
             {
-                var dto = new MaterialOperationDto
+                return new MaterialOperationDto
                 {
                     Name = _name,
                     Specification = _specification
                 };
-                return dto;
             }
         }
 

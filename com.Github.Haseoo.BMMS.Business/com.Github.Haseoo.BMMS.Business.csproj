@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\IDtoBuilder.cs" />
     <Compile Include="DTOs\CompanyContactDataDto.cs" />
     <Compile Include="DTOs\CompanyDto.cs" />
     <Compile Include="DTOs\EntityDto.cs" />
     <Compile Include="DTOs\MaterialDto.cs" />
+    <Compile Include="DTOs\OperationDTOs\CompanyContactDataOperationDto.cs" />
     <Compile Include="DTOs\OperationDTOs\MaterialOperationDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
