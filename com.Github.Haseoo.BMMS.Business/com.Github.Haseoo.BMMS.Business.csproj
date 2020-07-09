@@ -11,6 +11,7 @@
     <AssemblyName>com.Github.Haseoo.BMMS.Business</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <CodeAnalysisRuleSet>..\.sonarlint\bmms-dot-netcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\.sonarlint\bmms-dot-netcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\.sonarlint\bmms-dot-netcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005">
@@ -49,10 +52,15 @@
     <Compile Include="DTOs\EntityDto.cs" />
     <Compile Include="DTOs\MaterialDto.cs" />
     <Compile Include="DTOs\OperationDTOs\CompanyContactDataOperationDto.cs" />
+    <Compile Include="DTOs\OperationDTOs\CompanyOperationDto.cs" />
     <Compile Include="DTOs\OperationDTOs\MaterialOperationDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AdditionalFiles Include="..\.sonarlint\bmms-dot-net\CSharp\SonarLint.xml">
+      <Link>SonarLint.xml</Link>
+    </AdditionalFiles>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\com.Github.Haseoo.BMMS.Persistence\com.Github.Haseoo.BMMS.Persistence.csproj">
       <Project>{88dd9e0a-81cb-48ae-8a56-fe7fbd0b94b4}</Project>
@@ -60,6 +68,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.sonarlint\bmms-dot-netcsharp.ruleset">
+      <Link>bmms-dot-netcsharp.ruleset</Link>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
