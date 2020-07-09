@@ -39,6 +39,9 @@
       <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.9.0.0\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ValidatedEntitiesExtension.cs" />
     <Compile Include="DTOs\IDtoBuilder.cs" />
     <Compile Include="DTOs\CompanyContactDataDto.cs" />
     <Compile Include="DTOs\CompanyDto.cs" />
@@ -54,7 +58,16 @@
     <Compile Include="DTOs\OperationDTOs\CompanyContactDataOperationDto.cs" />
     <Compile Include="DTOs\OperationDTOs\CompanyOperationDto.cs" />
     <Compile Include="DTOs\OperationDTOs\MaterialOperationDto.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\CompanyContactDataValidator.cs" />
+    <Compile Include="Validators\CompanyEditDtoValidator.cs" />
+    <Compile Include="Validators\CompanyAddDtoValidator.cs" />
+    <Compile Include="Validators\ErrorMessages\ErrorMessageGenerator.cs" />
+    <Compile Include="Validators\ErrorMessages\ValidatedEntities.cs" />
+    <Compile Include="Validators\MaterialEditDtoValidator.cs" />
+    <Compile Include="Validators\MaterialAddDtoValidator.cs" />
+    <Compile Include="Validators\ValidatorContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\.sonarlint\bmms-dot-net\CSharp\SonarLint.xml">
@@ -71,8 +84,10 @@
     <None Include="..\.sonarlint\bmms-dot-netcsharp.ruleset">
       <Link>bmms-dot-netcsharp.ruleset</Link>
     </None>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
