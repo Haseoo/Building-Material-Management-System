@@ -23,9 +23,7 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
 
         public string Name { get; }
         public string Address { get; }
-
         public string Voivodeship { get; }
-
         public string City { get; }
         public IList<CompanyContactDataDto> ContactData { get; }
 

@@ -35,6 +35,7 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
+.sonarlint
 .sonarqube
 TestResult.xml
 opencover.xml
