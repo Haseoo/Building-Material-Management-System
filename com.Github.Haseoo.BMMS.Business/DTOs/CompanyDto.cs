@@ -35,7 +35,7 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
                 company.Voivodeship,
                 company.City,
                 company.ContactData
-                .Select(cd => CompanyContactDataDto.From(cd))
+                .Select(CompanyContactDataDto.From)
                 .ToList());
         }
     }

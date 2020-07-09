@@ -9,18 +9,18 @@
         public string Name { get; private set; }
         public string Specification { get; private set; }
 
-        public class DtoBulder : IDtoBuilder<MaterialOperationDto>
+        public class DtoBuilder : IDtoBuilder<MaterialOperationDto>
         {
             private string _name;
             private string _specification;
 
-            public DtoBulder Name(string name)
+            public DtoBuilder Name(string name)
             {
                 _name = name;
                 return this;
             }
 
-            public DtoBulder Specification(string specification)
+            public DtoBuilder Specification(string specification)
             {
                 _specification = specification;
                 return this;
@@ -36,9 +36,9 @@
             }
         }
 
-        public static DtoBulder Builder()
+        public static DtoBuilder Builder()
         {
-            return new DtoBulder();
+            return new DtoBuilder();
         }
     }
 }
