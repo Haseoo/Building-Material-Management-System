@@ -11,6 +11,9 @@ namespace com.Github.Haseoo.BMMS.Business.Validators.ErrorMessages
         Material,
 
         [Description("Company contact")]
-        CompanyContactData
+        CompanyContactData,
+
+        [Description("Offer")]
+        Offer
     }
 }

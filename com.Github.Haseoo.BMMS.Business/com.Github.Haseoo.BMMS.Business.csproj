@@ -69,6 +69,7 @@
     <Compile Include="Validators\ErrorMessages\ValidatedEntities.cs" />
     <Compile Include="Validators\MaterialEditDtoValidator.cs" />
     <Compile Include="Validators\MaterialAddDtoValidator.cs" />
+    <Compile Include="Validators\OfferAddDtoValidator.cs" />
     <Compile Include="Validators\ValidatorContext.cs" />
   </ItemGroup>
   <ItemGroup>
