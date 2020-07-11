@@ -27,7 +27,7 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
         public string City { get; }
         public IList<CompanyContactDataDto> ContactData { get; }
 
-        public static CompanyDto Form(Company company)
+        public static CompanyDto From(Company company)
         {
             return new CompanyDto(company.Id,
                 company.Name,
