@@ -2,7 +2,7 @@
 
 namespace com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs
 {
-    public class OfferOperationDto
+    public sealed class OfferOperationDto
     {
         private OfferOperationDto()
         {
