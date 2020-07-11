@@ -3,7 +3,7 @@ using System;
 
 namespace com.Github.Haseoo.BMMS.Business.DTOs
 {
-    public class OfferDto : EntityDto
+    public sealed class OfferDto : EntityDto
     {
         public CompanyDto Company { get; }
         public MaterialDto Material { get; }
