@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\OfferDto.cs" />
+    <Compile Include="DTOs\OperationDTOs\CompanyOperationDto.cs" />
     <Compile Include="DTOs\OperationDTOs\OfferOperationDto.cs" />
     <Compile Include="Extensions\ValidatedEntitiesExtension.cs" />
     <Compile Include="DTOs\IDtoBuilder.cs" />
