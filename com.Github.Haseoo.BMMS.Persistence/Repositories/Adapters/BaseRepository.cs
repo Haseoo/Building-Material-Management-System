@@ -2,7 +2,6 @@
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 using NHibernate.Linq;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
@@ -16,9 +15,9 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
             _sessionWrapper = sessionWrapper;
         }
 
-        public IList<T> GetAll()
+        public IQueryable<T> GetAll()
         {
-            return _sessionWrapper.Session.Query<T>().ToList();
+            return _sessionWrapper.Session.Query<T>();
         }
 
         public T GetById(Guid id)

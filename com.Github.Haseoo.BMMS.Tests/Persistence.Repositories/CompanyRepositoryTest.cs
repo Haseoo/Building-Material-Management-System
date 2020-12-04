@@ -95,7 +95,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
             _session.Save(TestDataGenerator.getCompany());
             _session.Save(TestDataGenerator.getCompany());
             //when & then
-            Assert.AreEqual(2, _sut.GetAll().Count);
+            Assert.AreEqual(2, _sut.GetAll().Count());
         }
 
         [Test]

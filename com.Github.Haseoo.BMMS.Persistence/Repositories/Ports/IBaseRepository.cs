@@ -1,12 +1,12 @@
 ﻿using com.Github.Haseoo.BMMS.Data.Entities;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Data.Repositories.Ports
 {
     public interface IBaseRepository<T> where T : Entity
     {
-        IList<T> GetAll();
+        IQueryable<T> GetAll();
 
         T GetById(Guid id);
 

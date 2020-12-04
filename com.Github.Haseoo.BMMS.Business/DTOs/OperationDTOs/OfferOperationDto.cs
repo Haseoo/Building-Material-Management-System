@@ -10,7 +10,7 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs
 
         public Guid CompanyId { get; private set; }
         public Guid MaterialId { get; private set; }
-        public decimal? UnitPrice { get; private set; }
+        public decimal UnitPrice { get; private set; }
         public string Unit { get; private set; }
         public string Comments { get; private set; }
 

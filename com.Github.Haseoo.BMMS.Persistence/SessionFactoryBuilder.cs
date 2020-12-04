@@ -13,12 +13,10 @@ namespace com.Github.Haseoo.BMMS.Data
         public static ISessionFactory BuildSessionFactory(bool create = false, bool update = false)
         {
             return Fluently.Configure()
-                .Database(PostgreSQLConfiguration
-                    .Standard
+                .Database(MsSqlConfiguration.MsSql2012
                     .ConnectionString(
-                        "Server=localhost;Port=5432;Database=kremowka;User Id=spring;Password=springsecret;")
-                    .DefaultSchema("public")
-                    .Dialect<PostgreSQL82Dialect>()
+                        "Server=localhost;Database=bmmsdb;User Id=dotnet;Password=dotnetsecret;")
+                    .Dialect<MsSql2012Dialect>()
                     .ShowSql()
                 )
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Entity>())
