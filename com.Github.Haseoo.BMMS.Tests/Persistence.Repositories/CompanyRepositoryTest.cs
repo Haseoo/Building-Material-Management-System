@@ -1,5 +1,4 @@
-﻿using com.Github.Haseoo.BMMS.Data;
-using com.Github.Haseoo.BMMS.Data.Entities;
+﻿using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Adapters;
 using com.Github.Haseoo.BMMS.Tests.Config;
 using NHibernate.Linq;
@@ -16,7 +15,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         public override void Setup()
         {
             base.Setup();
-            _sut = new CompanyRepository(new SessionWrapper(_session));
+            _sut = new CompanyRepository(_session);
         }
 
         [TearDown]

@@ -15,7 +15,6 @@ namespace com.Github.Haseoo.BMMS.Business.Validators
                     .GetEmptyValidationErrorMessage(ValidatedEntities.Offer));
             RuleFor(x => x.UnitPrice)
                 .GreaterThan(0M)
-                .When(x => x.UnitPrice != null)
                 .WithMessage("Price must be greater than zero");
         }
     }

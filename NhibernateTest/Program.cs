@@ -19,7 +19,6 @@ namespace NhibernateTest
             {
                 c.CreateMap<Material, MaterialDto>().ConstructUsing(s => MaterialDto.From(s));
             }).CreateMapper();
-            var repositories = new RepositoryContext(new SessionWrapper(null));
 
             var mat = new Material
             {
@@ -51,17 +50,15 @@ namespace NhibernateTest
                 Voivodeship = "xd",
                 City = "xP"
             };
-            using (var session = sessionFactory.OpenSession())
+            using (var repositories = new RepositoryContext(sessionFactory))
             {
-                session.FlushMode = FlushMode.Always;
-                repositories.SetSession(session);
-                using (var transaction = session.BeginTransaction())
+                using (var transaction = repositories.BeginTransaction())
                 {
                     repositories.CompanyRepository.Add(comp);
                     transaction.Commit();
                 }
 
-                using (var transaction = session.BeginTransaction())
+                using (var transaction = repositories.BeginTransaction())
                 {
                     comp = repositories.CompanyRepository.GetById(comp.Id);
                     comp.ContactData[0].EmailAddress = "owo@ou.pl";
@@ -71,17 +68,11 @@ namespace NhibernateTest
                 }
 
                 Console.WriteLine("XD");
-
-                /*Console.WriteLine(repositories
-                    .MaterialRepository
-                    .GetById(Guid.Parse("fa57670f-27c6-41ca-8e37-a8f82a65e470")));*/
             }
 
 
-            using (var session = sessionFactory.OpenSession())
+            using (var repositories = new RepositoryContext(sessionFactory))
             {
-                session.FlushMode = FlushMode.Commit;
-                repositories.SetSession(session);
                 var off = new Offer
                 {
                     Comments = "xD",
@@ -91,16 +82,15 @@ namespace NhibernateTest
                     Unit = "ovo",
                     UnitPrice = 12M
                 };
-                using (var transaction = session.BeginTransaction())
+                using (var transaction = repositories.BeginTransaction())
                 {
                     repositories.OfferRepository.Add(off);
                     transaction.Commit();
                 }
             }
 
-            using (var session = sessionFactory.OpenSession())
+            using (var repositories = new RepositoryContext(sessionFactory))
             {
-                repositories.SetSession(session);
                 foreach (var material in repositories.MaterialRepository.GetAll())
                     Console.WriteLine(material);
             }
