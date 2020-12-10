@@ -14,7 +14,6 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void OnTabChange(object sender, EventArgs e)
         {
-            MessageBox.Show("Tab changed!");
         }
 
         private void OnQuit(object sender, EventArgs e)

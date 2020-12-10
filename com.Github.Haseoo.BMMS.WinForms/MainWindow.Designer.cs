@@ -91,13 +91,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tabControl1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.menu, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(-5, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(788, 390);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(793, 390);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tabControl1
@@ -111,7 +111,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(788, 362);
+            this.tabControl1.Size = new System.Drawing.Size(793, 362);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.OnTabChange);
             // 
@@ -123,7 +123,7 @@
             this.Comapnies.Location = new System.Drawing.Point(4, 25);
             this.Comapnies.Name = "Comapnies";
             this.Comapnies.Padding = new System.Windows.Forms.Padding(8);
-            this.Comapnies.Size = new System.Drawing.Size(780, 333);
+            this.Comapnies.Size = new System.Drawing.Size(785, 333);
             this.Comapnies.TabIndex = 0;
             this.Comapnies.Text = "Companies";
             this.Comapnies.UseVisualStyleBackColor = true;
@@ -138,12 +138,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.CompanyList, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 7);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 5);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(780, 319);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(785, 315);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -161,7 +161,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(780, 28);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(785, 28);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // searchCompanyBox
@@ -171,7 +171,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchCompanyBox.Location = new System.Drawing.Point(3, 3);
             this.searchCompanyBox.Name = "searchCompanyBox";
-            this.searchCompanyBox.Size = new System.Drawing.Size(605, 22);
+            this.searchCompanyBox.Size = new System.Drawing.Size(610, 22);
             this.searchCompanyBox.TabIndex = 2;
             // 
             // flowLayoutPanel1
@@ -182,7 +182,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(611, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(616, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(3);
@@ -231,7 +231,7 @@
             this.CompanyList.Location = new System.Drawing.Point(3, 31);
             this.CompanyList.Name = "CompanyList";
             this.CompanyList.ShowGroups = false;
-            this.CompanyList.Size = new System.Drawing.Size(774, 285);
+            this.CompanyList.Size = new System.Drawing.Size(779, 281);
             this.CompanyList.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.CompanyList.TabIndex = 1;
             this.CompanyList.UseCompatibleStateImageBehavior = false;
@@ -268,7 +268,7 @@
             this.Materials.Location = new System.Drawing.Point(4, 25);
             this.Materials.Name = "Materials";
             this.Materials.Padding = new System.Windows.Forms.Padding(3);
-            this.Materials.Size = new System.Drawing.Size(780, 333);
+            this.Materials.Size = new System.Drawing.Size(785, 333);
             this.Materials.TabIndex = 1;
             this.Materials.Text = "Materials";
             this.Materials.UseVisualStyleBackColor = true;
@@ -283,12 +283,12 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.MaterialList, 0, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 7);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 5);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(780, 321);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(785, 315);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -306,7 +306,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(780, 28);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(785, 28);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // textBox1
@@ -316,7 +316,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(605, 22);
+            this.textBox1.Size = new System.Drawing.Size(610, 22);
             this.textBox1.TabIndex = 2;
             // 
             // flowLayoutPanel2
@@ -327,7 +327,7 @@
             this.flowLayoutPanel2.Controls.Add(this.button3);
             this.flowLayoutPanel2.Controls.Add(this.button4);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(611, 0);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(616, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(3);
@@ -376,7 +376,7 @@
             this.MaterialList.Location = new System.Drawing.Point(3, 31);
             this.MaterialList.Name = "MaterialList";
             this.MaterialList.ShowGroups = false;
-            this.MaterialList.Size = new System.Drawing.Size(774, 287);
+            this.MaterialList.Size = new System.Drawing.Size(779, 281);
             this.MaterialList.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.MaterialList.TabIndex = 1;
             this.MaterialList.UseCompatibleStateImageBehavior = false;
@@ -417,7 +417,7 @@
             this.helpToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(788, 28);
+            this.menu.Size = new System.Drawing.Size(793, 28);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
