@@ -9,6 +9,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
         {
             this.Text = (materialDto != null) ? $"Edit {materialDto.Name}" : "Add new material";
             InitializeComponent();
+            ShowOffers.Visible = materialDto != null;
         }
 
         private void CancelBtn_Click(object sender, System.EventArgs e)

@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.ShowOffers = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -66,18 +67,19 @@
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.SaveBtn);
             this.flowLayoutPanel1.Controls.Add(this.CancelBtn);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(315, 194);
+            this.flowLayoutPanel1.Controls.Add(this.ShowOffers);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(191, 194);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(199, 53);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(323, 53);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // SaveBtn
             // 
             this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.SaveBtn.AutoSize = true;
-            this.SaveBtn.Location = new System.Drawing.Point(116, 8);
+            this.SaveBtn.Location = new System.Drawing.Point(240, 8);
             this.SaveBtn.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(80, 37);
@@ -89,7 +91,7 @@
             // 
             this.CancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.CancelBtn.AutoSize = true;
-            this.CancelBtn.Location = new System.Drawing.Point(3, 8);
+            this.CancelBtn.Location = new System.Drawing.Point(127, 8);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(80, 37);
             this.CancelBtn.TabIndex = 1;
@@ -157,6 +159,16 @@
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
+            // ShowOffers
+            // 
+            this.ShowOffers.Location = new System.Drawing.Point(3, 8);
+            this.ShowOffers.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.ShowOffers.Name = "ShowOffers";
+            this.ShowOffers.Size = new System.Drawing.Size(91, 37);
+            this.ShowOffers.TabIndex = 2;
+            this.ShowOffers.Text = "Show offers";
+            this.ShowOffers.UseVisualStyleBackColor = true;
+            // 
             // MaterialWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -185,5 +197,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button ShowOffers;
     }
 }

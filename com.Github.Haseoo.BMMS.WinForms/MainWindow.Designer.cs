@@ -50,10 +50,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.MaterialList = new BrightIdeasSoftware.ObjectListView();
-            this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.MaterialName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Specification = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.menu = new System.Windows.Forms.MenuStrip();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -358,19 +356,15 @@
             // 
             // MaterialList
             // 
-            this.MaterialList.AllColumns.Add(this.olvColumn1);
-            this.MaterialList.AllColumns.Add(this.olvColumn2);
-            this.MaterialList.AllColumns.Add(this.olvColumn3);
-            this.MaterialList.AllColumns.Add(this.olvColumn4);
+            this.MaterialList.AllColumns.Add(this.MaterialName);
+            this.MaterialList.AllColumns.Add(this.Specification);
             this.MaterialList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MaterialList.CellEditUseWholeCell = false;
             this.MaterialList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn1,
-            this.olvColumn2,
-            this.olvColumn3,
-            this.olvColumn4});
+            this.MaterialName,
+            this.Specification});
             this.MaterialList.Cursor = System.Windows.Forms.Cursors.Default;
             this.MaterialList.HideSelection = false;
             this.MaterialList.Location = new System.Drawing.Point(3, 31);
@@ -382,30 +376,18 @@
             this.MaterialList.UseCompatibleStateImageBehavior = false;
             this.MaterialList.View = System.Windows.Forms.View.Details;
             // 
-            // olvColumn1
+            // MaterialName
             // 
-            this.olvColumn1.AspectName = "Name";
-            this.olvColumn1.FillsFreeSpace = true;
-            this.olvColumn1.Text = "Company Name";
-            this.olvColumn1.Width = 172;
+            this.MaterialName.AspectName = "Name";
+            this.MaterialName.Text = "Material name";
+            this.MaterialName.Width = 172;
             // 
-            // olvColumn2
+            // Specification
             // 
-            this.olvColumn2.AspectName = "Address";
-            this.olvColumn2.Text = "Address";
-            this.olvColumn2.Width = 194;
-            // 
-            // olvColumn3
-            // 
-            this.olvColumn3.AspectName = "City";
-            this.olvColumn3.Text = "City";
-            this.olvColumn3.Width = 180;
-            // 
-            // olvColumn4
-            // 
-            this.olvColumn4.AspectName = "Voivodeship";
-            this.olvColumn4.Text = "Voivodeship";
-            this.olvColumn4.Width = 190;
+            this.Specification.AspectName = "Specification";
+            this.Specification.FillsFreeSpace = true;
+            this.Specification.Text = "Specification";
+            this.Specification.Width = 194;
             // 
             // menu
             // 
@@ -582,9 +564,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private BrightIdeasSoftware.ObjectListView MaterialList;
-        private BrightIdeasSoftware.OLVColumn olvColumn1;
-        private BrightIdeasSoftware.OLVColumn olvColumn2;
-        private BrightIdeasSoftware.OLVColumn olvColumn3;
-        private BrightIdeasSoftware.OLVColumn olvColumn4;
+        private BrightIdeasSoftware.OLVColumn MaterialName;
+        private BrightIdeasSoftware.OLVColumn Specification;
     }
 }
