@@ -7,3 +7,4 @@ using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Design", "CA1034:Nested types should not be visible", Justification = "<Pending>", Scope = "type", Target = "~T:com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs.CompanyContactDataOperationDto.DtoBuilder")]
 [assembly: SuppressMessage("Design", "CA1034:Nested types should not be visible", Justification = "<Pending>", Scope = "type", Target = "~T:com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs.MaterialOperationDto.DtoBuilder")]
+[assembly: SuppressMessage("Design", "CA1034:Nested types should not be visible", Justification = "<Pending>", Scope = "type", Target = "~T:com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs.OfferOperationDto.DtoBuilder")]

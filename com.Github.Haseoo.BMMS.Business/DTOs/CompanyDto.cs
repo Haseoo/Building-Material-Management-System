@@ -38,5 +38,10 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
                 .Select(CompanyContactDataDto.From)
                 .ToList());
         }
+
+        public static CompanyDto Foo()
+        {
+            return new CompanyDto(Guid.NewGuid(), $"xDDS{Guid.NewGuid()}", "Nono", "bum bum", "xDDD", null);
+        }
     }
 }

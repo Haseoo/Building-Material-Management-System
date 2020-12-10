@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Persistence", "com.Github.Haseoo.BMMS.Persistence\com.Github.Haseoo.BMMS.Persistence.csproj", "{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhibernateTest", "NhibernateTest\NhibernateTest.csproj", "{6ED34847-5010-47AF-8B45-EFD9D00D57C6}"
@@ -7,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Business", "com.Github.Haseoo.BMMS.Business\com.Github.Haseoo.BMMS.Business.csproj", "{8CF6EDD2-B534-4E2E-9141-CF06618D816E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Tests", "com.Github.Haseoo.BMMS.Tests\com.Github.Haseoo.BMMS.Tests.csproj", "{2B19747F-BA06-49E0-9B1A-A4AB2BA62708}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.WinForms", "com.Github.Haseoo.BMMS.WinForms\com.Github.Haseoo.BMMS.WinForms.csproj", "{5F498834-8AD9-4A10-B666-CE2ABFE4CF9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +35,15 @@ Global
 		{2B19747F-BA06-49E0-9B1A-A4AB2BA62708}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B19747F-BA06-49E0-9B1A-A4AB2BA62708}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B19747F-BA06-49E0-9B1A-A4AB2BA62708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F498834-8AD9-4A10-B666-CE2ABFE4CF9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F498834-8AD9-4A10-B666-CE2ABFE4CF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F498834-8AD9-4A10-B666-CE2ABFE4CF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F498834-8AD9-4A10-B666-CE2ABFE4CF9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBA3CD9B-3B24-463D-AEF1-2AD430DC28EE}
 	EndGlobalSection
 EndGlobal
