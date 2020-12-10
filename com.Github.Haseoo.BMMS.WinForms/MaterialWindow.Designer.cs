@@ -32,12 +32,12 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
+            this.ShowOffers = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.ShowOffers = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -99,6 +99,16 @@
             this.CancelBtn.UseVisualStyleBackColor = true;
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
+            // ShowOffers
+            // 
+            this.ShowOffers.Location = new System.Drawing.Point(3, 8);
+            this.ShowOffers.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.ShowOffers.Name = "ShowOffers";
+            this.ShowOffers.Size = new System.Drawing.Size(91, 37);
+            this.ShowOffers.TabIndex = 2;
+            this.ShowOffers.Text = "Show offers";
+            this.ShowOffers.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -158,16 +168,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(359, 151);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
-            // 
-            // ShowOffers
-            // 
-            this.ShowOffers.Location = new System.Drawing.Point(3, 8);
-            this.ShowOffers.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.ShowOffers.Name = "ShowOffers";
-            this.ShowOffers.Size = new System.Drawing.Size(91, 37);
-            this.ShowOffers.TabIndex = 2;
-            this.ShowOffers.Text = "Show offers";
-            this.ShowOffers.UseVisualStyleBackColor = true;
             // 
             // MaterialWindow
             // 

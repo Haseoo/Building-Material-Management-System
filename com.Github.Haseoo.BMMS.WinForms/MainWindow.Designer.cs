@@ -164,9 +164,7 @@
             // 
             // searchCompanyBox
             // 
-            this.searchCompanyBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchCompanyBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.searchCompanyBox.Location = new System.Drawing.Point(3, 3);
             this.searchCompanyBox.Name = "searchCompanyBox";
             this.searchCompanyBox.Size = new System.Drawing.Size(610, 22);
@@ -183,13 +181,14 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(616, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(3);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(169, 28);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(88, 3);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(88, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 25);
@@ -200,7 +199,8 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(10, 3);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(10, 2);
             this.button2.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 25);
@@ -328,13 +328,13 @@
             this.flowLayoutPanel2.Location = new System.Drawing.Point(616, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(3);
+            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.flowLayoutPanel2.Size = new System.Drawing.Size(169, 28);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(88, 3);
+            this.button3.Location = new System.Drawing.Point(88, 2);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 25);
@@ -345,7 +345,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(10, 3);
+            this.button4.Location = new System.Drawing.Point(10, 2);
             this.button4.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 25);

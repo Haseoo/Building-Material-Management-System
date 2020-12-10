@@ -7,7 +7,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
     {
         public MaterialWindow(MaterialDto materialDto=null)
         {
-            this.Text = (materialDto != null) ? $"Edit {materialDto.Name}" : "Add new material";
+            Text = (materialDto != null) ? $"Edit {materialDto.Name}" : "Add new material";
             InitializeComponent();
             ShowOffers.Visible = materialDto != null;
         }

@@ -10,6 +10,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
         public MainWindow()
         {
             InitializeComponent();
+            new ContactDataDialog().ShowDialog();
         }
 
         private void OnTabChange(object sender, EventArgs e)
