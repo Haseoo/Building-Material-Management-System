@@ -10,7 +10,6 @@ namespace com.Github.Haseoo.BMMS.WinForms
         public MainWindow()
         {
             InitializeComponent();
-            new ContactDataDialog().ShowDialog();
         }
 
         private void OnTabChange(object sender, EventArgs e)
@@ -45,6 +44,11 @@ namespace com.Github.Haseoo.BMMS.WinForms
         private void RefreshMaterials(object sender, EventArgs e)
         {
 
+        }
+
+        private void OnAddCompany(object sender, EventArgs e)
+        {
+            new CompanyWindow().Show();
         }
     }
 }

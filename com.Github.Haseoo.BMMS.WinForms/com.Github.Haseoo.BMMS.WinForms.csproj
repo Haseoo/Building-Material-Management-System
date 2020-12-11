@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyWindow.Designer.cs">
+      <DependentUpon>CompanyWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContactDataDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CompanyWindow.resx">
+      <DependentUpon>CompanyWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContactDataDialog.resx">
       <DependentUpon>ContactDataDialog.cs</DependentUpon>
     </EmbeddedResource>
