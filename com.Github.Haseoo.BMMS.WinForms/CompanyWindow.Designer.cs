@@ -34,10 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.CompanyName = new System.Windows.Forms.TextBox();
+            this.Address = new System.Windows.Forms.MaskedTextBox();
+            this.City = new System.Windows.Forms.TextBox();
+            this.Voivodeship = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
@@ -92,10 +92,10 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.maskedTextBox1, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.textBox2, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox3, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.CompanyName, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Address, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.City, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.Voivodeship, 1, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -146,37 +146,37 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Voivodeship";
             // 
-            // textBox1
+            // CompanyName
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(246, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(519, 22);
-            this.textBox1.TabIndex = 4;
+            this.CompanyName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CompanyName.Location = new System.Drawing.Point(246, 3);
+            this.CompanyName.Name = "CompanyName";
+            this.CompanyName.Size = new System.Drawing.Size(519, 22);
+            this.CompanyName.TabIndex = 4;
             // 
-            // maskedTextBox1
+            // Address
             // 
-            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(246, 32);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(519, 22);
-            this.maskedTextBox1.TabIndex = 5;
+            this.Address.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Address.Location = new System.Drawing.Point(246, 32);
+            this.Address.Name = "Address";
+            this.Address.Size = new System.Drawing.Size(519, 22);
+            this.Address.TabIndex = 5;
             // 
-            // textBox2
+            // City
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(246, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(519, 22);
-            this.textBox2.TabIndex = 6;
+            this.City.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.City.Location = new System.Drawing.Point(246, 61);
+            this.City.Name = "City";
+            this.City.Size = new System.Drawing.Size(519, 22);
+            this.City.TabIndex = 6;
             // 
-            // textBox3
+            // Voivodeship
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(246, 92);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(519, 22);
-            this.textBox3.TabIndex = 7;
+            this.Voivodeship.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Voivodeship.Location = new System.Drawing.Point(246, 92);
+            this.Voivodeship.Name = "Voivodeship";
+            this.Voivodeship.Size = new System.Drawing.Size(519, 22);
+            this.Voivodeship.TabIndex = 7;
             // 
             // flowLayoutPanel1
             // 
@@ -360,10 +360,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox CompanyName;
+        private System.Windows.Forms.MaskedTextBox Address;
+        private System.Windows.Forms.TextBox City;
+        private System.Windows.Forms.TextBox Voivodeship;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.Button CancelBtn;
