@@ -76,8 +76,26 @@
     <Compile Include="MaterialWindow.Designer.cs">
       <DependentUpon>MaterialWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="OfferWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfferWindow.Designer.cs">
+      <DependentUpon>OfferWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectCompanyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectCompanyDialog.Designer.cs">
+      <DependentUpon>SelectCompanyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectMaterialDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectMaterialDialog.Designer.cs">
+      <DependentUpon>SelectMaterialDialog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CompanyWindow.resx">
       <DependentUpon>CompanyWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +108,9 @@
     <EmbeddedResource Include="MaterialWindow.resx">
       <DependentUpon>MaterialWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OfferWindow.resx">
+      <DependentUpon>OfferWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -99,6 +120,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SelectCompanyDialog.resx">
+      <DependentUpon>SelectCompanyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectMaterialDialog.resx">
+      <DependentUpon>SelectMaterialDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.sonarlint\bmms-dot-netcsharp.ruleset">
       <Link>bmms-dot-netcsharp.ruleset</Link>
     </None>

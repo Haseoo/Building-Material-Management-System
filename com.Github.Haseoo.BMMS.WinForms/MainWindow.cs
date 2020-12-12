@@ -1,6 +1,4 @@
-﻿using com.Github.Haseoo.BMMS.Business.DTOs;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Windows.Forms;
 
 namespace com.Github.Haseoo.BMMS.WinForms
@@ -49,6 +47,11 @@ namespace com.Github.Haseoo.BMMS.WinForms
         private void OnAddCompany(object sender, EventArgs e)
         {
             new CompanyWindow().Show();
+        }
+
+        private void OnAddOffer(object sender, EventArgs e)
+        {
+            new OfferWindow().Show();
         }
     }
 }
