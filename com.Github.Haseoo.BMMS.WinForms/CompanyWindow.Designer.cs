@@ -50,8 +50,8 @@
             this.ContactDataList = new BrightIdeasSoftware.ObjectListView();
             this.Description = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.NameAndSurname = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.EmailAddress = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PhoneNumber = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.EmailAddress = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -149,33 +149,33 @@
             // CompanyName
             // 
             this.CompanyName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompanyName.Location = new System.Drawing.Point(246, 3);
+            this.CompanyName.Location = new System.Drawing.Point(115, 3);
             this.CompanyName.Name = "CompanyName";
-            this.CompanyName.Size = new System.Drawing.Size(519, 22);
+            this.CompanyName.Size = new System.Drawing.Size(650, 22);
             this.CompanyName.TabIndex = 4;
             // 
             // Address
             // 
             this.Address.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Address.Location = new System.Drawing.Point(246, 32);
+            this.Address.Location = new System.Drawing.Point(115, 32);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(519, 22);
+            this.Address.Size = new System.Drawing.Size(650, 22);
             this.Address.TabIndex = 5;
             // 
             // City
             // 
             this.City.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.City.Location = new System.Drawing.Point(246, 61);
+            this.City.Location = new System.Drawing.Point(115, 61);
             this.City.Name = "City";
-            this.City.Size = new System.Drawing.Size(519, 22);
+            this.City.Size = new System.Drawing.Size(650, 22);
             this.City.TabIndex = 6;
             // 
             // Voivodeship
             // 
             this.Voivodeship.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Voivodeship.Location = new System.Drawing.Point(246, 92);
+            this.Voivodeship.Location = new System.Drawing.Point(115, 92);
             this.Voivodeship.Name = "Voivodeship";
-            this.Voivodeship.Size = new System.Drawing.Size(519, 22);
+            this.Voivodeship.Size = new System.Drawing.Size(650, 22);
             this.Voivodeship.TabIndex = 7;
             // 
             // flowLayoutPanel1
@@ -314,21 +314,20 @@
             // NameAndSurname
             // 
             this.NameAndSurname.AspectName = "RepresentativeNameAndSurname";
-            this.NameAndSurname.FillsFreeSpace = true;
             this.NameAndSurname.Text = "Name and surname";
             this.NameAndSurname.Width = 229;
-            // 
-            // EmailAddress
-            // 
-            this.EmailAddress.AspectName = "EmailAddress";
-            this.EmailAddress.Text = "Email address";
-            this.EmailAddress.Width = 203;
             // 
             // PhoneNumber
             // 
             this.PhoneNumber.AspectName = "PhoneNumber";
             this.PhoneNumber.Text = "Phone number";
             this.PhoneNumber.Width = 177;
+            // 
+            // EmailAddress
+            // 
+            this.EmailAddress.AspectName = "EmailAddress";
+            this.EmailAddress.Text = "Email address";
+            this.EmailAddress.Width = 203;
             // 
             // CompanyWindow
             // 

@@ -35,7 +35,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.searchCompanyBox = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.CompanyList = new BrightIdeasSoftware.ObjectListView();
             this.CompanyName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -64,6 +63,7 @@
             this.rToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Comapnies.SuspendLayout();
@@ -184,18 +184,6 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(169, 28);
             this.flowLayoutPanel1.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(88, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 25);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.RefreshCompanies);
             // 
             // button2
             // 
@@ -497,6 +485,18 @@
             this.helpToolStripMenuItem1.Size = new System.Drawing.Size(206, 26);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(88, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 25);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.RefreshCompanies);
+            // 
             // MainWindow
             // 
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -559,12 +559,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox searchCompanyBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private BrightIdeasSoftware.ObjectListView CompanyList;
         private new BrightIdeasSoftware.OLVColumn CompanyName;
         private BrightIdeasSoftware.OLVColumn CompanyAddress;
         private BrightIdeasSoftware.OLVColumn CompanyCity;
         private BrightIdeasSoftware.OLVColumn CompanyVoivodeship;
+        private System.Windows.Forms.Button button1;
     }
 }

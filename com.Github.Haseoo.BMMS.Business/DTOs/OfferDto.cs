@@ -7,10 +7,11 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
     {
         public CompanyDto Company { get; }
         public MaterialDto Material { get; }
+        public string MaterialName { get; }
         public decimal UnitPrice { get; }
         public string Unit { get; }
         public string Comments { get; }
-        public DateTime LastModification { get; }
+        public String LastModification { get; }
 
         private OfferDto(Guid id,
             CompanyDto company,
@@ -22,10 +23,11 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
         {
             Company = company;
             Material = material;
+            MaterialName = material.Name;
             UnitPrice = unitPrice;
             Unit = unit;
             Comments = comments;
-            LastModification = lastModification;
+            LastModification = lastModification.ToString("yyyy MMM dd HH:mm:ss");
         }
 
         public static OfferDto From(Offer offer)

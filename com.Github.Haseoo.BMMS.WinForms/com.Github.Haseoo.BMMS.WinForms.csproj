@@ -76,6 +76,12 @@
     <Compile Include="MaterialWindow.Designer.cs">
       <DependentUpon>MaterialWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="OfferListWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OfferListWindow.Designer.cs">
+      <DependentUpon>OfferListWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="OfferWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialWindow.resx">
       <DependentUpon>MaterialWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OfferListWindow.resx">
+      <DependentUpon>OfferListWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OfferWindow.resx">
       <DependentUpon>OfferWindow.cs</DependentUpon>
