@@ -8,6 +8,7 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
         public CompanyDto Company { get; }
         public MaterialDto Material { get; }
         public string MaterialName { get; }
+        public string CompanyName { get; }
         public decimal UnitPrice { get; }
         public string Unit { get; }
         public string Comments { get; }
@@ -24,6 +25,7 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
             Company = company;
             Material = material;
             MaterialName = material.Name;
+            CompanyName = company.Name;
             UnitPrice = unitPrice;
             Unit = unit;
             Comments = comments;
