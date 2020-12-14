@@ -29,28 +29,6 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Comapnies = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.searchCompanyBox = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.CompanyList = new BrightIdeasSoftware.ObjectListView();
-            this.CompanyName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.CompanyAddress = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.CompanyCity = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.CompanyVoivodeship = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Materials = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.MaterialList = new BrightIdeasSoftware.ObjectListView();
-            this.MaterialName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.Specification = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.menu = new System.Windows.Forms.MenuStrip();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,20 +41,38 @@
             this.rToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Materials = new System.Windows.Forms.TabPage();
+            this.Comapnies = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.CompanySearchField = new System.Windows.Forms.TextBox();
+            this.CompanyRefreshBtn = new System.Windows.Forms.Button();
+            this.CompanySearchBtn = new System.Windows.Forms.Button();
+            this.CompanyList = new BrightIdeasSoftware.ObjectListView();
+            this.CompanyName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.CompanyAddress = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.CompanyCity = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.CompanyVoivodeship = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.MaterialSearchBtn = new System.Windows.Forms.Button();
+            this.MaterialRefreshBtn = new System.Windows.Forms.Button();
+            this.MaterialSearchField = new System.Windows.Forms.TextBox();
+            this.MaterialList = new BrightIdeasSoftware.ObjectListView();
+            this.MaterialName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.Specification = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.tableLayoutPanel1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.menu.SuspendLayout();
+            this.Materials.SuspendLayout();
             this.Comapnies.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CompanyList)).BeginInit();
-            this.Materials.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaterialList)).BeginInit();
-            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -89,291 +85,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tabControl1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.menu, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-5, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(858, 390);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(850, 490);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.Comapnies);
-            this.tabControl1.Controls.Add(this.Materials);
-            this.tabControl1.Location = new System.Drawing.Point(0, 28);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(858, 362);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.OnTabChange);
-            // 
-            // Comapnies
-            // 
-            this.Comapnies.AccessibleDescription = "";
-            this.Comapnies.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Comapnies.Controls.Add(this.tableLayoutPanel2);
-            this.Comapnies.Location = new System.Drawing.Point(4, 25);
-            this.Comapnies.Name = "Comapnies";
-            this.Comapnies.Padding = new System.Windows.Forms.Padding(8);
-            this.Comapnies.Size = new System.Drawing.Size(850, 333);
-            this.Comapnies.TabIndex = 0;
-            this.Comapnies.Text = "Companies";
-            this.Comapnies.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.CompanyList, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 5);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(850, 315);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.searchCompanyBox, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(850, 28);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // searchCompanyBox
-            // 
-            this.searchCompanyBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchCompanyBox.Location = new System.Drawing.Point(3, 3);
-            this.searchCompanyBox.Name = "searchCompanyBox";
-            this.searchCompanyBox.Size = new System.Drawing.Size(675, 22);
-            this.searchCompanyBox.TabIndex = 2;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(681, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(169, 28);
-            this.flowLayoutPanel1.TabIndex = 3;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(10, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 25);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.OnSearchCompany);
-            // 
-            // CompanyList
-            // 
-            this.CompanyList.AllColumns.Add(this.CompanyName);
-            this.CompanyList.AllColumns.Add(this.CompanyAddress);
-            this.CompanyList.AllColumns.Add(this.CompanyCity);
-            this.CompanyList.AllColumns.Add(this.CompanyVoivodeship);
-            this.CompanyList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CompanyList.CellEditUseWholeCell = false;
-            this.CompanyList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.CompanyName,
-            this.CompanyAddress,
-            this.CompanyCity,
-            this.CompanyVoivodeship});
-            this.CompanyList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CompanyList.HideSelection = false;
-            this.CompanyList.Location = new System.Drawing.Point(3, 31);
-            this.CompanyList.Name = "CompanyList";
-            this.CompanyList.ShowGroups = false;
-            this.CompanyList.Size = new System.Drawing.Size(844, 281);
-            this.CompanyList.Sorting = System.Windows.Forms.SortOrder.Descending;
-            this.CompanyList.TabIndex = 1;
-            this.CompanyList.UseCompatibleStateImageBehavior = false;
-            this.CompanyList.View = System.Windows.Forms.View.Details;
-            // 
-            // CompanyName
-            // 
-            this.CompanyName.AspectName = "Name";
-            this.CompanyName.FillsFreeSpace = true;
-            this.CompanyName.Text = "Company Name";
-            this.CompanyName.Width = 172;
-            // 
-            // CompanyAddress
-            // 
-            this.CompanyAddress.AspectName = "Address";
-            this.CompanyAddress.Text = "Address";
-            this.CompanyAddress.Width = 194;
-            // 
-            // CompanyCity
-            // 
-            this.CompanyCity.AspectName = "City";
-            this.CompanyCity.Text = "City";
-            this.CompanyCity.Width = 180;
-            // 
-            // CompanyVoivodeship
-            // 
-            this.CompanyVoivodeship.AspectName = "Voivodeship";
-            this.CompanyVoivodeship.Text = "Voivodeship";
-            this.CompanyVoivodeship.Width = 190;
-            // 
-            // Materials
-            // 
-            this.Materials.Controls.Add(this.tableLayoutPanel4);
-            this.Materials.Location = new System.Drawing.Point(4, 25);
-            this.Materials.Name = "Materials";
-            this.Materials.Padding = new System.Windows.Forms.Padding(3);
-            this.Materials.Size = new System.Drawing.Size(850, 333);
-            this.Materials.TabIndex = 1;
-            this.Materials.Text = "Materials";
-            this.Materials.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.AutoSize = true;
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.MaterialList, 0, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 5);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(850, 315);
-            this.tableLayoutPanel4.TabIndex = 1;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel2, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(850, 28);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(675, 22);
-            this.textBox1.TabIndex = 2;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel2.Controls.Add(this.button3);
-            this.flowLayoutPanel2.Controls.Add(this.button4);
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(681, 0);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 0);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(169, 28);
-            this.flowLayoutPanel2.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(88, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 25);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Refresh";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.OnSearchMaterial);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(10, 2);
-            this.button4.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 25);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Search";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.OnSearchMaterial);
-            // 
-            // MaterialList
-            // 
-            this.MaterialList.AllColumns.Add(this.MaterialName);
-            this.MaterialList.AllColumns.Add(this.Specification);
-            this.MaterialList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MaterialList.CellEditUseWholeCell = false;
-            this.MaterialList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.MaterialName,
-            this.Specification});
-            this.MaterialList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.MaterialList.HideSelection = false;
-            this.MaterialList.Location = new System.Drawing.Point(3, 31);
-            this.MaterialList.Name = "MaterialList";
-            this.MaterialList.ShowGroups = false;
-            this.MaterialList.Size = new System.Drawing.Size(844, 281);
-            this.MaterialList.Sorting = System.Windows.Forms.SortOrder.Descending;
-            this.MaterialList.TabIndex = 1;
-            this.MaterialList.UseCompatibleStateImageBehavior = false;
-            this.MaterialList.View = System.Windows.Forms.View.Details;
-            // 
-            // MaterialName
-            // 
-            this.MaterialName.AspectName = "Name";
-            this.MaterialName.Text = "Material name";
-            this.MaterialName.Width = 172;
-            // 
-            // Specification
-            // 
-            this.Specification.AspectName = "Specification";
-            this.Specification.FillsFreeSpace = true;
-            this.Specification.Text = "Specification";
-            this.Specification.Width = 194;
             // 
             // menu
             // 
@@ -385,7 +104,7 @@
             this.helpToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(858, 28);
+            this.menu.Size = new System.Drawing.Size(850, 28);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
@@ -485,44 +204,286 @@
             this.helpToolStripMenuItem1.Size = new System.Drawing.Size(206, 26);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
-            // button1
+            // Materials
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(88, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 25);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.RefreshCompanies);
+            this.Materials.Controls.Add(this.tableLayoutPanel4);
+            this.Materials.Location = new System.Drawing.Point(4, 25);
+            this.Materials.Name = "Materials";
+            this.Materials.Padding = new System.Windows.Forms.Padding(3);
+            this.Materials.Size = new System.Drawing.Size(832, 423);
+            this.Materials.TabIndex = 1;
+            this.Materials.Text = "Materials";
+            this.Materials.UseVisualStyleBackColor = true;
+            // 
+            // Comapnies
+            // 
+            this.Comapnies.AccessibleDescription = "";
+            this.Comapnies.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Comapnies.Controls.Add(this.tableLayoutPanel2);
+            this.Comapnies.Location = new System.Drawing.Point(4, 25);
+            this.Comapnies.Margin = new System.Windows.Forms.Padding(0);
+            this.Comapnies.Name = "Comapnies";
+            this.Comapnies.Padding = new System.Windows.Forms.Padding(8);
+            this.Comapnies.Size = new System.Drawing.Size(832, 423);
+            this.Comapnies.TabIndex = 0;
+            this.Comapnies.Text = "Companies";
+            this.Comapnies.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.CompanyList, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(830, 421);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.AutoSize = true;
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.CompanySearchBtn, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.CompanyRefreshBtn, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.CompanySearchField, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 6);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(824, 36);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // CompanySearchField
+            // 
+            this.CompanySearchField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CompanySearchField.Location = new System.Drawing.Point(3, 10);
+            this.CompanySearchField.Name = "CompanySearchField";
+            this.CompanySearchField.Size = new System.Drawing.Size(793, 22);
+            this.CompanySearchField.TabIndex = 2;
+            // 
+            // CompanyRefreshBtn
+            // 
+            this.CompanyRefreshBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CompanyRefreshBtn.Location = new System.Drawing.Point(883, 6);
+            this.CompanyRefreshBtn.Name = "CompanyRefreshBtn";
+            this.CompanyRefreshBtn.Size = new System.Drawing.Size(75, 30);
+            this.CompanyRefreshBtn.TabIndex = 1;
+            this.CompanyRefreshBtn.Text = "Refresh";
+            this.CompanyRefreshBtn.UseVisualStyleBackColor = true;
+            // 
+            // CompanySearchBtn
+            // 
+            this.CompanySearchBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CompanySearchBtn.Location = new System.Drawing.Point(802, 6);
+            this.CompanySearchBtn.Name = "CompanySearchBtn";
+            this.CompanySearchBtn.Size = new System.Drawing.Size(75, 30);
+            this.CompanySearchBtn.TabIndex = 0;
+            this.CompanySearchBtn.Text = "Search";
+            this.CompanySearchBtn.UseVisualStyleBackColor = true;
+            // 
+            // CompanyList
+            // 
+            this.CompanyList.AllColumns.Add(this.CompanyName);
+            this.CompanyList.AllColumns.Add(this.CompanyAddress);
+            this.CompanyList.AllColumns.Add(this.CompanyCity);
+            this.CompanyList.AllColumns.Add(this.CompanyVoivodeship);
+            this.CompanyList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CompanyList.CellEditUseWholeCell = false;
+            this.CompanyList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CompanyName,
+            this.CompanyAddress,
+            this.CompanyCity,
+            this.CompanyVoivodeship});
+            this.CompanyList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CompanyList.HideSelection = false;
+            this.CompanyList.Location = new System.Drawing.Point(0, 50);
+            this.CompanyList.Margin = new System.Windows.Forms.Padding(0);
+            this.CompanyList.Name = "CompanyList";
+            this.CompanyList.ShowGroups = false;
+            this.CompanyList.Size = new System.Drawing.Size(830, 371);
+            this.CompanyList.Sorting = System.Windows.Forms.SortOrder.Descending;
+            this.CompanyList.TabIndex = 3;
+            this.CompanyList.UseCompatibleStateImageBehavior = false;
+            this.CompanyList.View = System.Windows.Forms.View.Details;
+            // 
+            // CompanyName
+            // 
+            this.CompanyName.AspectName = "Name";
+            this.CompanyName.Text = "Company Name";
+            this.CompanyName.Width = 303;
+            // 
+            // CompanyAddress
+            // 
+            this.CompanyAddress.AspectName = "Address";
+            this.CompanyAddress.Text = "Address";
+            this.CompanyAddress.Width = 285;
+            // 
+            // CompanyCity
+            // 
+            this.CompanyCity.AspectName = "City";
+            this.CompanyCity.Text = "City";
+            this.CompanyCity.Width = 180;
+            // 
+            // CompanyVoivodeship
+            // 
+            this.CompanyVoivodeship.AspectName = "Voivodeship";
+            this.CompanyVoivodeship.Text = "Voivodeship";
+            this.CompanyVoivodeship.Width = 190;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.Comapnies);
+            this.tabControl1.Controls.Add(this.Materials);
+            this.tabControl1.Location = new System.Drawing.Point(5, 33);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(5);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(840, 452);
+            this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.OnTabChange);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.MaterialList, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(830, 421);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel5.AutoSize = true;
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.Controls.Add(this.MaterialSearchBtn, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.MaterialRefreshBtn, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.MaterialSearchField, 0, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 6);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(824, 36);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // MaterialSearchBtn
+            // 
+            this.MaterialSearchBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MaterialSearchBtn.Location = new System.Drawing.Point(665, 3);
+            this.MaterialSearchBtn.Name = "MaterialSearchBtn";
+            this.MaterialSearchBtn.Size = new System.Drawing.Size(75, 30);
+            this.MaterialSearchBtn.TabIndex = 0;
+            this.MaterialSearchBtn.Text = "Search";
+            this.MaterialSearchBtn.UseVisualStyleBackColor = true;
+            // 
+            // MaterialRefreshBtn
+            // 
+            this.MaterialRefreshBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.MaterialRefreshBtn.Location = new System.Drawing.Point(746, 3);
+            this.MaterialRefreshBtn.Name = "MaterialRefreshBtn";
+            this.MaterialRefreshBtn.Size = new System.Drawing.Size(75, 30);
+            this.MaterialRefreshBtn.TabIndex = 1;
+            this.MaterialRefreshBtn.Text = "Refresh";
+            this.MaterialRefreshBtn.UseVisualStyleBackColor = true;
+            // 
+            // MaterialSearchField
+            // 
+            this.MaterialSearchField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaterialSearchField.Location = new System.Drawing.Point(3, 7);
+            this.MaterialSearchField.Name = "MaterialSearchField";
+            this.MaterialSearchField.Size = new System.Drawing.Size(656, 22);
+            this.MaterialSearchField.TabIndex = 2;
+            // 
+            // MaterialList
+            // 
+            this.MaterialList.AllColumns.Add(this.MaterialName);
+            this.MaterialList.AllColumns.Add(this.Specification);
+            this.MaterialList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaterialList.CellEditUseWholeCell = false;
+            this.MaterialList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.MaterialName,
+            this.Specification});
+            this.MaterialList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.MaterialList.HideSelection = false;
+            this.MaterialList.Location = new System.Drawing.Point(0, 50);
+            this.MaterialList.Margin = new System.Windows.Forms.Padding(0);
+            this.MaterialList.Name = "MaterialList";
+            this.MaterialList.ShowGroups = false;
+            this.MaterialList.Size = new System.Drawing.Size(830, 371);
+            this.MaterialList.Sorting = System.Windows.Forms.SortOrder.Descending;
+            this.MaterialList.TabIndex = 3;
+            this.MaterialList.UseCompatibleStateImageBehavior = false;
+            this.MaterialList.View = System.Windows.Forms.View.Details;
+            // 
+            // MaterialName
+            // 
+            this.MaterialName.AspectName = "Name";
+            this.MaterialName.Text = "Material name";
+            this.MaterialName.Width = 172;
+            // 
+            // Specification
+            // 
+            this.Specification.AspectName = "Specification";
+            this.Specification.Text = "Specification";
+            this.Specification.Width = 737;
             // 
             // MainWindow
             // 
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(849, 372);
+            this.ClientSize = new System.Drawing.Size(848, 491);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MainWindow";
             this.Text = "Building Material Management System";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.Comapnies.ResumeLayout(false);
-            this.Comapnies.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CompanyList)).EndInit();
-            this.Materials.ResumeLayout(false);
-            this.Materials.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MaterialList)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
+            this.Materials.ResumeLayout(false);
+            this.Comapnies.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CompanyList)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MaterialList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,8 +492,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage Comapnies;
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
@@ -545,26 +504,26 @@
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
-        private System.Windows.Forms.TabPage Materials;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private BrightIdeasSoftware.ObjectListView MaterialList;
-        private BrightIdeasSoftware.OLVColumn MaterialName;
-        private BrightIdeasSoftware.OLVColumn Specification;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage Comapnies;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TextBox searchCompanyBox;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
         private BrightIdeasSoftware.ObjectListView CompanyList;
-        private new BrightIdeasSoftware.OLVColumn CompanyName;
+        private BrightIdeasSoftware.OLVColumn CompanyName;
         private BrightIdeasSoftware.OLVColumn CompanyAddress;
         private BrightIdeasSoftware.OLVColumn CompanyCity;
         private BrightIdeasSoftware.OLVColumn CompanyVoivodeship;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button CompanySearchBtn;
+        private System.Windows.Forms.Button CompanyRefreshBtn;
+        private System.Windows.Forms.TextBox CompanySearchField;
+        private System.Windows.Forms.TabPage Materials;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Button MaterialSearchBtn;
+        private System.Windows.Forms.Button MaterialRefreshBtn;
+        private System.Windows.Forms.TextBox MaterialSearchField;
+        private BrightIdeasSoftware.ObjectListView MaterialList;
+        private BrightIdeasSoftware.OLVColumn MaterialName;
+        private BrightIdeasSoftware.OLVColumn Specification;
     }
 }
