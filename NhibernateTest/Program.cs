@@ -9,7 +9,7 @@ using NHibernate;
 
 namespace NhibernateTest
 {
-    internal class Program
+    internal static class Program
     {
         public static void Main(string[] args)
         {
@@ -46,7 +46,7 @@ namespace NhibernateTest
             {
                 Address = "adr",
                 Name = "xd",
-                ContactData = new List<CompanyContactData> {cd, cd2},
+                ContactData = new List<CompanyContactData> { cd, cd2 },
                 Voivodeship = "xd",
                 City = "xP"
             };
