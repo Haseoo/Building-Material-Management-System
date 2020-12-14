@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using AutoMapper;
-using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories;
@@ -15,10 +13,6 @@ namespace NhibernateTest
         {
             var sessionFactory =
                 SessionFactoryBuilder.BuildSessionFactory(true, true);
-            var mapper = new MapperConfiguration(c =>
-            {
-                c.CreateMap<Material, MaterialDto>().ConstructUsing(s => MaterialDto.From(s));
-            }).CreateMapper();
 
             var mat = new Material
             {
