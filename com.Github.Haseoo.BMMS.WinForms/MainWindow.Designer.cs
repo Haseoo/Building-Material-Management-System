@@ -508,7 +508,7 @@
         private System.Windows.Forms.TabPage Comapnies;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private BrightIdeasSoftware.ObjectListView CompanyList;
-        private BrightIdeasSoftware.OLVColumn CompanyName;
+        private new BrightIdeasSoftware.OLVColumn CompanyName;
         private BrightIdeasSoftware.OLVColumn CompanyAddress;
         private BrightIdeasSoftware.OLVColumn CompanyCity;
         private BrightIdeasSoftware.OLVColumn CompanyVoivodeship;

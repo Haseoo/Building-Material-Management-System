@@ -230,6 +230,6 @@
         private BrightIdeasSoftware.OLVColumn Comments;
         private BrightIdeasSoftware.OLVColumn LastModification;
         private System.Windows.Forms.Button RemoveBtn;
-        private BrightIdeasSoftware.OLVColumn CompanyName;
+        private new BrightIdeasSoftware.OLVColumn CompanyName;
     }
 }
