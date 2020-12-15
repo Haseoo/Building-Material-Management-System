@@ -4,7 +4,9 @@ using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Ports;
 using com.Github.Haseoo.BMMS.Data.Entities;
+using com.Github.Haseoo.BMMS.Data.Repositories;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,30 +15,61 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
     public class MaterialService : IMaterialService
     {
-        public MaterialService(IMaterialRepository materialRepository,
+        public MaterialService(RepositoryContext repositoryContext,
             IMapper mapper)
         {
             _mapper = mapper;
-            _materialRepository = materialRepository;
+            _repositoryContext = repositoryContext;
         }
 
-        private readonly IMaterialRepository _materialRepository;
+        private readonly RepositoryContext _repositoryContext;
         private readonly IMapper _mapper;
 
         public MaterialDto Add(MaterialOperationDto operation)
         {
-            var material = new Material
+            ITransaction transaction = null;
+            try
             {
-                Name = operation.Name,
-                Specification = operation.Specification
-            };
-            return _mapper.Map<Material, MaterialDto>(_materialRepository.Add(material));
+                transaction = _repositoryContext.BeginTransaction();
+                var material = new Material
+                {
+                    Name = operation.Name,
+                    Specification = operation.Specification
+                };
+                material = _repositoryContext.MaterialRepository.Add(material);
+                transaction.Commit();
+                return _mapper.Map<Material, MaterialDto>(material);
+            }
+            catch
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                    transaction.Dispose();
+                }
+                throw;
+            }
         }
 
         public void Delete(Guid id)
         {
-            Material material = GetMaterial(id);
-            _materialRepository.Remove(material);
+            ITransaction transaction = null;
+            try
+            {
+                transaction = _repositoryContext.BeginTransaction();
+                Material material = GetMaterial(id);
+                _repositoryContext.MaterialRepository.Remove(material);
+                transaction.Commit();
+            }
+            catch 
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                    transaction.Dispose();
+                }
+                throw;
+            }
         }
 
         public MaterialDto GetById(Guid id)
@@ -47,21 +80,44 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 
         public List<MaterialDto> GetList()
         {
-            List<Material> materials = _materialRepository.GetAll().ToList();
-            return _mapper.Map<List<Material>, List<MaterialDto>>(materials);
+            return _mapper.Map<List<Material>, List<MaterialDto>>(_repositoryContext.MaterialRepository.GetAll().ToList());
         }
 
         public MaterialDto Update(Guid id, MaterialOperationDto operation)
         {
-            Material material = GetMaterial(id);
-            material.Name = operation.Name;
-            material.Specification = operation.Specification;
-            return _mapper.Map<Material, MaterialDto>(_materialRepository.Update(material));
+            ITransaction transaction = null;
+            try
+            {
+                transaction = _repositoryContext.BeginTransaction();
+                Material material = GetMaterial(id);
+                material.Name = operation.Name;
+                material.Specification = operation.Specification;
+                material = _repositoryContext.MaterialRepository.Update(material);
+                transaction.Commit();
+                return _mapper.Map<Material, MaterialDto>(material);
+            }
+            catch 
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                    transaction.Dispose();
+                }
+                throw;
+            }
+        }
+
+        public List<MaterialDto> SearchByName(string partialName)
+        {
+            return _mapper.Map<List<Material>, List<MaterialDto>>(_repositoryContext.MaterialRepository
+                .GetAll()
+                .Where(material => material.Name.Contains(partialName))
+                .ToList());
         }
 
         private Material GetMaterial(Guid id)
         {
-            return _materialRepository.GetById(id) ?? throw new NotFoundException("Material");
+            return _repositoryContext.MaterialRepository.GetById(id) ?? throw new NotFoundException("Material");
         }
     }
 }

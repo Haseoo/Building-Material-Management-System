@@ -308,6 +308,7 @@
             this.Specification.AspectName = "Specification";
             this.Specification.Text = "Specification";
             this.Specification.Width = 737;
+            this.Specification.WordWrap = true;
             // 
             // tableLayoutPanel5
             // 
@@ -337,6 +338,7 @@
             this.MaterialSearchBtn.TabIndex = 0;
             this.MaterialSearchBtn.Text = "Search";
             this.MaterialSearchBtn.UseVisualStyleBackColor = true;
+            this.MaterialSearchBtn.Click += new System.EventHandler(this.OnMaterialSearchOrRefresh);
             // 
             // MaterialRefreshBtn
             // 
@@ -347,6 +349,7 @@
             this.MaterialRefreshBtn.TabIndex = 1;
             this.MaterialRefreshBtn.Text = "Refresh";
             this.MaterialRefreshBtn.UseVisualStyleBackColor = true;
+            this.MaterialRefreshBtn.Click += new System.EventHandler(this.OnMaterialSearchOrRefresh);
             // 
             // MaterialSearchField
             // 

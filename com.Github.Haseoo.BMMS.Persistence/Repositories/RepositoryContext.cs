@@ -13,6 +13,7 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories
         public RepositoryContext(ISessionFactory sessionFactory)
         {
             _session = sessionFactory.OpenSession();
+            _session.FlushMode = FlushMode.Always;
             CompanyRepository = new CompanyRepository(_session);
             OfferRepository = new OfferRepository(_session);
             MaterialRepository = new MaterialRepository(_session);

@@ -9,6 +9,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Ports
     public interface IMaterialService
     {
         List<MaterialDto> GetList();
+        List<MaterialDto> SearchByName(string partialName);
         MaterialDto GetById(Guid id);
         MaterialDto Add(MaterialOperationDto operation);
         MaterialDto Update(Guid id, MaterialOperationDto operation);

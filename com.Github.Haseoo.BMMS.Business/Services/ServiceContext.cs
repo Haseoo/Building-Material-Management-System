@@ -18,7 +18,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services
             IMapper mapper)
         {
             _repositoryContext = new RepositoryContext(sessionFactory);
-            MaterialService = new MaterialService(_repositoryContext.MaterialRepository, mapper);
+            MaterialService = new MaterialService(_repositoryContext, mapper);
         }
 
         public void Dispose()

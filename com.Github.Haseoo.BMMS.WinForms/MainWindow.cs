@@ -1,4 +1,5 @@
-﻿using com.Github.Haseoo.BMMS.Business.Services;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs;
+using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.WinForms.Configuration;
 using System;
@@ -48,6 +49,8 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void RefreshMaterials(object sender = null, EventArgs e = null)
         {
+            _serviceContext.Dispose();
+            _serviceContext = new ServiceContext(SessionFactoryBuilder.BuildSessionFactory(), MapperConf.Mapper);
             MaterialList.SetObjects(_serviceContext.MaterialService.GetList());
         }
 
@@ -63,6 +66,20 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void OnMaterialActivated(object sender, EventArgs e)
         {
+            MaterialDto selected = (MaterialDto)MaterialList.SelectedObject;
+            new MaterialWindow(selected.Id).Show();
+        }
+
+        private void OnMaterialSearchOrRefresh(object sender, EventArgs e)
+        {
+            string parialName = MaterialSearchField.Text;
+            if (string.IsNullOrWhiteSpace(parialName))
+            {
+                RefreshMaterials();
+            } else
+            {
+                MaterialList.SetObjects(_serviceContext.MaterialService.SearchByName(parialName));
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using FluentNHibernate.Cfg;
+using System;
 using System.Windows.Forms;
 
 namespace com.Github.Haseoo.BMMS.WinForms
@@ -10,7 +12,13 @@ namespace com.Github.Haseoo.BMMS.WinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            try {
+                Application.Run(new MainWindow());
+            }
+            catch (FluentConfigurationException e)
+            {
+                MessageBox.Show(e.GetBaseException().Message, "Database connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

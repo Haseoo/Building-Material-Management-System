@@ -18,6 +18,7 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
 
         public IQueryable<T> GetAll()
         {
+            _session.Flush();
             return _session.Query<T>();
         }
 

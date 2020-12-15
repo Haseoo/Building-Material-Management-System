@@ -13,9 +13,12 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
+            if (disposing) {
+                _serviceContext.Dispose();
+                if (components != null)
+                {
+                    components.Dispose();
+                }
             }
             base.Dispose(disposing);
         }
@@ -36,8 +39,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.NameInput = new System.Windows.Forms.TextBox();
+            this.SpecificationInput = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -57,7 +60,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(517, 250);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(517, 302);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -68,43 +71,45 @@
             this.flowLayoutPanel1.Controls.Add(this.SaveBtn);
             this.flowLayoutPanel1.Controls.Add(this.CancelBtn);
             this.flowLayoutPanel1.Controls.Add(this.ShowOffers);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(191, 194);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(187, 246);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(323, 53);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(327, 53);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // SaveBtn
             // 
             this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.SaveBtn.AutoSize = true;
-            this.SaveBtn.Location = new System.Drawing.Point(240, 8);
+            this.SaveBtn.Location = new System.Drawing.Point(244, 8);
             this.SaveBtn.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(80, 37);
             this.SaveBtn.TabIndex = 0;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.OnSave);
             // 
             // CancelBtn
             // 
             this.CancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.CancelBtn.AutoSize = true;
-            this.CancelBtn.Location = new System.Drawing.Point(127, 8);
+            this.CancelBtn.Location = new System.Drawing.Point(131, 8);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(80, 37);
             this.CancelBtn.TabIndex = 1;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;
-            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            this.CancelBtn.Click += new System.EventHandler(this.OnCancel);
             // 
             // ShowOffers
             // 
+            this.ShowOffers.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShowOffers.Location = new System.Drawing.Point(3, 8);
             this.ShowOffers.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
             this.ShowOffers.Name = "ShowOffers";
-            this.ShowOffers.Size = new System.Drawing.Size(91, 37);
+            this.ShowOffers.Size = new System.Drawing.Size(95, 37);
             this.ShowOffers.TabIndex = 2;
             this.ShowOffers.Text = "Show offers";
             this.ShowOffers.UseVisualStyleBackColor = true;
@@ -120,14 +125,14 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.richTextBox1, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.NameInput, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.SpecificationInput, 1, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(511, 185);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(511, 237);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label1
@@ -148,32 +153,32 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Material specification";
             // 
-            // textBox1
+            // NameInput
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.NameInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(149, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(359, 22);
-            this.textBox1.TabIndex = 2;
+            this.NameInput.Location = new System.Drawing.Point(149, 3);
+            this.NameInput.Name = "NameInput";
+            this.NameInput.Size = new System.Drawing.Size(359, 22);
+            this.NameInput.TabIndex = 2;
             // 
-            // richTextBox1
+            // SpecificationInput
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.SpecificationInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(149, 31);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(359, 151);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.SpecificationInput.Location = new System.Drawing.Point(149, 31);
+            this.SpecificationInput.Name = "SpecificationInput";
+            this.SpecificationInput.Size = new System.Drawing.Size(359, 203);
+            this.SpecificationInput.TabIndex = 3;
+            this.SpecificationInput.Text = "";
             // 
             // MaterialWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 255);
+            this.ClientSize = new System.Drawing.Size(521, 307);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MaterialWindow";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -195,8 +200,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox NameInput;
+        private System.Windows.Forms.RichTextBox SpecificationInput;
         private System.Windows.Forms.Button ShowOffers;
     }
 }
