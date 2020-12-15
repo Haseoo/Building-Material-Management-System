@@ -1,14 +1,21 @@
-﻿using System;
+﻿using com.Github.Haseoo.BMMS.Business.Services;
+using com.Github.Haseoo.BMMS.Data;
+using com.Github.Haseoo.BMMS.WinForms.Configuration;
+using System;
 using System.Windows.Forms;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
     public partial class MainWindow : Form
     {
-        public MainWindow()
+        public MainWindow( )
         {
             InitializeComponent();
+            _serviceContext = new ServiceContext(SessionFactoryBuilder.BuildSessionFactory(), MapperConf.Mapper);
+            RefreshMaterials();
         }
+
+        private ServiceContext _serviceContext;
 
         private void OnTabChange(object sender, EventArgs e)
         {
@@ -39,9 +46,9 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         }
 
-        private void RefreshMaterials(object sender, EventArgs e)
+        private void RefreshMaterials(object sender = null, EventArgs e = null)
         {
-
+            MaterialList.SetObjects(_serviceContext.MaterialService.GetList());
         }
 
         private void OnAddCompany(object sender, EventArgs e)
@@ -52,6 +59,10 @@ namespace com.Github.Haseoo.BMMS.WinForms
         private void OnAddOffer(object sender, EventArgs e)
         {
             new OfferWindow().Show();
+        }
+
+        private void OnMaterialActivated(object sender, EventArgs e)
+        {
         }
     }
 }

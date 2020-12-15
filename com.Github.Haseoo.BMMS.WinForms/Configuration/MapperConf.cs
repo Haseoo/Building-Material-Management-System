@@ -4,11 +4,11 @@ using com.Github.Haseoo.BMMS.Data.Entities;
 
 namespace com.Github.Haseoo.BMMS.WinForms.Configuration
 {
-    public static class AutoMapper
+    public static class MapperConf
     {
         public static IMapper Mapper { get; }
 
-        static AutoMapper () 
+        static MapperConf () 
         {
             Mapper = new MapperConfiguration(c =>
             {

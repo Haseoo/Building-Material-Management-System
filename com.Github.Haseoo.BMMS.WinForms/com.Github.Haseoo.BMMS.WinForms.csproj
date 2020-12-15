@@ -39,6 +39,12 @@
     <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.3.3.1.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
       <HintPath>..\packages\ObjectListView.Official.2.9.1\lib\net20\ObjectListView.dll</HintPath>
     </Reference>
@@ -55,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoMapperConfiguration.cs" />
+    <Compile Include="Configuration\MapperConf.cs" />
     <Compile Include="CompanyWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,10 @@
     <ProjectReference Include="..\com.Github.Haseoo.BMMS.Business\com.Github.Haseoo.BMMS.Business.csproj">
       <Project>{8CF6EDD2-B534-4E2E-9141-CF06618D816E}</Project>
       <Name>com.Github.Haseoo.BMMS.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.Github.Haseoo.BMMS.Persistence\com.Github.Haseoo.BMMS.Persistence.csproj">
+      <Project>{88DD9E0A-81CB-48AE-8A56-FE7FBD0B94B4}</Project>
+      <Name>com.Github.Haseoo.BMMS.Persistence</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
