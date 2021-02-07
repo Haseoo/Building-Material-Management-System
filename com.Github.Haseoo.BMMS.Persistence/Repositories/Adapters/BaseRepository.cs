@@ -9,39 +9,37 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : Entity
     {
-        private readonly ISession _session;
 
-        protected BaseRepository(ISession session)
+        protected BaseRepository()
         {
-            _session = session;
         }
 
         public IQueryable<T> GetAll()
         {
-            _session.Flush();
-            return _session.Query<T>();
+            return SessionManager.Instance.GetSession().Query<T>();
         }
 
         public T GetById(Guid id)
         {
-            return _session.Get<T>(id);
+            return SessionManager.Instance.GetSession().Get<T>(id);
         }
 
         public T Add(in T entity)
         {
-            var id = _session.Save(entity);
-            return _session.Get<T>(id);
+            var id = SessionManager.Instance.GetSession().Save(entity);
+            return SessionManager.Instance.GetSession().Get<T>(id);
         }
 
         public T Update(in T entity)
         {
-            _session.Update(entity);
+            SessionManager.Instance.GetSession().Update(entity);
+            SessionManager.Instance.GetSession().Flush();
             return entity;
         }
 
         public void Remove(in Entity entity)
         {
-            _session.Delete(entity);
+            SessionManager.Instance.GetSession().Delete(entity);
         }
     }
 }

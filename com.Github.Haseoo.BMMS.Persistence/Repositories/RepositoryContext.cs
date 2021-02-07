@@ -5,45 +5,20 @@ using System;
 
 namespace com.Github.Haseoo.BMMS.Data.Repositories
 {
-    public class RepositoryContext : IDisposable
+    public class RepositoryContext
     {
-        private bool _disposed = false;
-        private readonly ISession _session;
 
-        public RepositoryContext(ISessionFactory sessionFactory)
+        public RepositoryContext()
         {
-            _session = sessionFactory.OpenSession();
-            _session.FlushMode = FlushMode.Always;
-            CompanyRepository = new CompanyRepository(_session);
-            OfferRepository = new OfferRepository(_session);
-            MaterialRepository = new MaterialRepository(_session);
+            CompanyRepository = new CompanyRepository();
+            OfferRepository = new OfferRepository();
+            MaterialRepository = new MaterialRepository();
         }
 
         public ICompanyRepository CompanyRepository { get; }
         public IOfferRepository OfferRepository { get; }
         public IMaterialRepository MaterialRepository { get; }
-
-        public ITransaction BeginTransaction()
-        {
-            return _session.BeginTransaction();
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (_disposed) return;
-
-            if (disposing)
-            {
-                _session.Dispose();
-            }
-
-            _disposed = true;
-        }
     }
+
+       
 }

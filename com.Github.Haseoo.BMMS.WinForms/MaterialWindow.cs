@@ -15,7 +15,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         public MaterialWindow(Guid? materialId=null)
         {
-            _serviceContext = new ServiceContext(SessionFactoryBuilder.BuildSessionFactory(), MapperConf.Mapper);
+            _serviceContext = new ServiceContext( MapperConf.Mapper);
             InitializeComponent();
             if (materialId == null) {
                 Text = "Add new material";

@@ -12,7 +12,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
         public MainWindow( )
         {
             InitializeComponent();
-            _serviceContext = new ServiceContext(SessionFactoryBuilder.BuildSessionFactory(), MapperConf.Mapper);
+            _serviceContext = new ServiceContext(MapperConf.Mapper);
             RefreshMaterials();
         }
 
@@ -49,8 +49,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void RefreshMaterials(object sender = null, EventArgs e = null)
         {
-            _serviceContext.Dispose();
-            _serviceContext = new ServiceContext(SessionFactoryBuilder.BuildSessionFactory(), MapperConf.Mapper);
+           // SessionManager.Instance.AquireNewSession();
             MaterialList.SetObjects(_serviceContext.MaterialService.GetList());
         }
 
