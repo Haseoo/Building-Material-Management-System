@@ -4,11 +4,13 @@ using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.WinForms.Configuration;
 using System;
 using System.Windows.Forms;
+using com.Github.Haseoo.BMMS.Business.Exceptions;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
     public partial class MainWindow : Form
     {
+        private bool _isCompany = true;
         public MainWindow( )
         {
             InitializeComponent();
@@ -16,10 +18,11 @@ namespace com.Github.Haseoo.BMMS.WinForms
             RefreshMaterials();
         }
 
-        private ServiceContext _serviceContext;
+        private readonly ServiceContext _serviceContext;
 
         private void OnTabChange(object sender, EventArgs e)
         {
+            _isCompany = !_isCompany;
         }
 
         private void OnQuit(object sender, EventArgs e)
@@ -37,19 +40,8 @@ namespace com.Github.Haseoo.BMMS.WinForms
             
         }
 
-        private void RefreshCompanies(object sender, EventArgs e)
-        {
-
-        }
-
-        private void OnSearchMaterial(object sender, EventArgs e)
-        {
-
-        }
-
         private void RefreshMaterials(object sender = null, EventArgs e = null)
         {
-           // SessionManager.Instance.AquireNewSession();
             MaterialList.SetObjects(_serviceContext.MaterialService.GetList());
         }
 
@@ -65,19 +57,70 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void OnMaterialActivated(object sender, EventArgs e)
         {
-            MaterialDto selected = (MaterialDto)MaterialList.SelectedObject;
-            new MaterialWindow(selected.Id).Show();
+            try
+            {
+                var selected = (MaterialDto)MaterialList.SelectedObject;
+                new MaterialWindow(selected.Id).Show();
+            }
+            catch (BusinessLogicException exception)
+            {
+                Utils.ShowErrorMessage(exception);
+            }
         }
 
         private void OnMaterialSearchOrRefresh(object sender, EventArgs e)
         {
-            string parialName = MaterialSearchField.Text;
-            if (string.IsNullOrWhiteSpace(parialName))
+            string partialName = MaterialSearchField.Text;
+            if (string.IsNullOrWhiteSpace(partialName))
             {
                 RefreshMaterials();
             } else
             {
-                MaterialList.SetObjects(_serviceContext.MaterialService.SearchByName(parialName));
+                MaterialList.SetObjects(_serviceContext.MaterialService.SearchByName(partialName));
+            }
+        }
+
+        private void OnEditToolTip(object sender, EventArgs e)
+        {
+            if (_isCompany)
+            {
+
+            }
+            else
+            {
+                if (MaterialList.SelectedObject != null)
+                {
+                    OnMaterialActivated(sender, e);
+                }
+            }
+        }
+
+        private void OnRefresh(object sender, EventArgs e)
+        {
+            OnMaterialSearchOrRefresh(sender, e);
+        }
+
+        private void OnEntryRemove(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_isCompany)
+                {
+
+                }
+                else
+                {
+                    var selected = (MaterialDto)MaterialList.SelectedObject;
+                    if (selected != null)
+                    {
+                        _serviceContext.MaterialService.Delete(selected.Id);
+                        RefreshMaterials(sender, e);
+                    }
+                }
+            }
+            catch (BusinessLogicException ex)
+            {
+                Utils.ShowErrorMessage(ex);
             }
         }
     }

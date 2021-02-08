@@ -3,6 +3,7 @@ using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Ports;
+using com.Github.Haseoo.BMMS.Business.Validators;
 using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories;
@@ -57,7 +58,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             try
             {
                 transaction = SessionManager.Instance.GetSession().BeginTransaction();
-                Material material = GetMaterial(id);
+                var material = GetMaterial(id);
                 _repositoryContext.MaterialRepository.Remove(material);
                 transaction.Commit();
             }

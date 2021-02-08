@@ -56,6 +56,7 @@
             this.menu = new System.Windows.Forms.MenuStrip();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -376,7 +377,8 @@
             // 
             this.addToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quitToolStripMenuItem});
+            this.quitToolStripMenuItem,
+            this.refreshToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.addToolStripMenuItem.Text = "File";
@@ -390,6 +392,14 @@
             this.quitToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.OnQuit);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.OnRefresh);
             // 
             // addToolStripMenuItem1
             // 
@@ -442,15 +452,17 @@
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
             this.editToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.E)));
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(201, 26);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.editToolStripMenuItem1.Text = "Edit ";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.OnEditToolTip);
             // 
             // rToolStripMenuItem
             // 
             this.rToolStripMenuItem.Name = "rToolStripMenuItem";
             this.rToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.rToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.rToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.rToolStripMenuItem.Text = "Remove";
+            this.rToolStripMenuItem.Click += new System.EventHandler(this.OnEntryRemove);
             // 
             // helpToolStripMenuItem
             // 
@@ -533,5 +545,6 @@
         private BrightIdeasSoftware.ObjectListView MaterialList;
         private BrightIdeasSoftware.OLVColumn MaterialName;
         private BrightIdeasSoftware.OLVColumn Specification;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }
