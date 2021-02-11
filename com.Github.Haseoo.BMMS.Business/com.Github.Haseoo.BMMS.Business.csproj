@@ -81,7 +81,10 @@
     <Compile Include="DTOs\OperationDTOs\MaterialOperationDto.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Adapters\CompanyService.cs" />
     <Compile Include="Services\Adapters\MaterialService.cs" />
+    <Compile Include="Services\Adapters\TransactionalService.cs" />
+    <Compile Include="Services\Ports\ICompanyService.cs" />
     <Compile Include="Services\Ports\IMaterialService.cs" />
     <Compile Include="Services\ServiceContext.cs" />
     <Compile Include="Validators\CompanyContactDataValidator.cs" />

@@ -3,7 +3,6 @@ using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Ports;
-using com.Github.Haseoo.BMMS.Business.Validators;
 using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories;
@@ -14,7 +13,7 @@ using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
-    public class MaterialService : IMaterialService
+    public class MaterialService : TransactionalService<MaterialOperationDto, MaterialDto>, IMaterialService
     {
         public MaterialService(RepositoryContext repositoryContext,
             IMapper mapper)
@@ -26,56 +25,10 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
         private readonly RepositoryContext _repositoryContext;
         private readonly IMapper _mapper;
 
-        public MaterialDto Add(MaterialOperationDto operation)
-        {
-            ITransaction transaction = null;
-            try
-            {
-                transaction = SessionManager.Instance.GetSession().BeginTransaction();
-                var material = new Material
-                {
-                    Name = operation.Name,
-                    Specification = operation.Specification
-                };
-                material = _repositoryContext.MaterialRepository.Add(material);
-                transaction.Commit();
-                return _mapper.Map<Material, MaterialDto>(material);
-            }
-            catch
-            {
-                if (transaction != null)
-                {
-                    transaction.Rollback();
-                    transaction.Dispose();
-                }
-                throw;
-            }
-        }
-
-        public void Delete(Guid id)
-        {
-            ITransaction transaction = null;
-            try
-            {
-                transaction = SessionManager.Instance.GetSession().BeginTransaction();
-                var material = GetMaterial(id);
-                _repositoryContext.MaterialRepository.Remove(material);
-                transaction.Commit();
-            }
-            catch
-            {
-                if (transaction != null)
-                {
-                    transaction.Rollback();
-                    transaction.Dispose();
-                }
-                throw;
-            }
-        }
 
         public MaterialDto GetById(Guid id)
         {
-            Material material = GetMaterial(id);
+            var material = GetMaterial(id);
             return _mapper.Map<Material, MaterialDto>(material);
         }
 
@@ -86,7 +39,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 
         public MaterialDto Update(Guid id, MaterialOperationDto operation)
         {
-            Material material = GetMaterial(id);
+            var material = GetMaterial(id);
             material.Name = operation.Name;
             material.Specification = operation.Specification;
             material = _repositoryContext.MaterialRepository.Update(material);
@@ -103,7 +56,22 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 
         private Material GetMaterial(Guid id)
         {
-            return _repositoryContext.MaterialRepository.GetById(id) ?? throw new NotFoundException("Material");
+            return _repositoryContext.MaterialRepository.GetById(id) ?? throw new NotFoundException("material");
+        }
+
+        protected override MaterialDto DoAdd(MaterialOperationDto operation)
+        {
+            var material = new Material
+            {
+                Name = operation.Name,
+                Specification = operation.Specification
+            };
+            return _mapper.Map<Material, MaterialDto>(_repositoryContext.MaterialRepository.Add(material));
+        }
+
+        protected override void DoDelete(Guid id)
+        {
+            _repositoryContext.MaterialRepository.Remove(GetMaterial(id));
         }
     }
 }
