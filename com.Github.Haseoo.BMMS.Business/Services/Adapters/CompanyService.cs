@@ -3,17 +3,15 @@ using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Ports;
-using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories;
-using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
-    public class CompanyService : ICompanyService
+    public class CompanyService : TransactionalService<CompanyOperationDto, CompanyDto>, ICompanyService
     {
         public CompanyService(RepositoryContext repositoryContext,
             IMapper mapper)
@@ -25,55 +23,24 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
         private readonly RepositoryContext _repositoryContext;
         private readonly IMapper _mapper;
 
-        public CompanyDto Add(CompanyOperationDto operation)
+        protected override CompanyDto DoAdd(CompanyOperationDto operation)
         {
-            ITransaction transaction = null;
-            try
+            var contactDataEntities = GetContactData(operation.ContactData);
+            var company = new Company()
             {
-                transaction = SessionManager.Instance.GetSession().BeginTransaction();
-                var contactDataEntities = GetContactData(operation.ContactData);
-                var company = new Company()
-                {
-                    Name = operation.Name,
-                    Address = operation.Address,
-                    City = operation.City,
-                    ContactData = contactDataEntities,
-                    Voivodeship = operation.Voivodeship
-                };
-                company = _repositoryContext.CompanyRepository.Add(company);
-                transaction.Commit();
-                return _mapper.Map<Company, CompanyDto>(company);
-            }
-            catch
-            {
-                if (transaction != null)
-                {
-                    transaction.Rollback();
-                    transaction.Dispose();
-                }
-                throw;
-            }
+                Name = operation.Name,
+                Address = operation.Address,
+                City = operation.City,
+                ContactData = contactDataEntities,
+                Voivodeship = operation.Voivodeship
+            };
+            return _mapper.Map<Company, CompanyDto>(_repositoryContext.CompanyRepository.Add(company));
         }
 
-        public void Delete(Guid id)
+        protected override void DoDelete(Guid id)
         {
-            ITransaction transaction = null;
-            try
-            {
-                transaction = SessionManager.Instance.GetSession().BeginTransaction();
-                var material = GetCompany(id);
-                _repositoryContext.MaterialRepository.Remove(material);
-                transaction.Commit();
-            }
-            catch
-            {
-                if (transaction != null)
-                {
-                    transaction.Rollback();
-                    transaction.Dispose();
-                }
-                throw;
-            }
+            var material = GetCompany(id);
+            _repositoryContext.MaterialRepository.Remove(material);
         }
 
         public CompanyDto GetById(Guid id)
