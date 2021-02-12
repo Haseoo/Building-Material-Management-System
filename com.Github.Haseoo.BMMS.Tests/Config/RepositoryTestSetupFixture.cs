@@ -1,4 +1,5 @@
-﻿using NHibernate;
+﻿using com.Github.Haseoo.BMMS.Data;
+using NHibernate;
 
 namespace com.Github.Haseoo.BMMS.Tests.Config
 {
@@ -11,6 +12,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Config
         {
             InMemorySessionFactoryProvider.Instance.Initialize();
             _session = InMemorySessionFactoryProvider.Instance.OpenSession();
+            SessionManager.Instance.SetSession(_session);
             _transaction = _session.BeginTransaction();
         }
 

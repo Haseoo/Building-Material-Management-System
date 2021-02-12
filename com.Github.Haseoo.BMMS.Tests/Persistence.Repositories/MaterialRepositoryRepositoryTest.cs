@@ -15,7 +15,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         public override void Setup()
         {
             base.Setup();
-            _sut = new MaterialRepository(_session);
+            _sut = new MaterialRepository();
         }
 
         [TearDown]

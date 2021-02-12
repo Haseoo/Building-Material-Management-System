@@ -13,6 +13,7 @@ namespace com.Github.Haseoo.BMMS.Data
         {
         }
 
+        private readonly ISessionFactory _sessionFactory = SessionFactoryBuilder.BuildSessionFactory();
         private ISession _session;
         private bool _disposed = false;
 
@@ -20,19 +21,19 @@ namespace com.Github.Haseoo.BMMS.Data
         {
             if (_session == null)
             {
-                _session = SessionFactoryBuilder.BuildSessionFactory().OpenSession();
+                _session = _sessionFactory.OpenSession();
             }
             return _session;
         }
 
-        public void AquireNewSession()
+        public void AcquireNewSession()
         {
             if (_session == null)
             {
                 GetSession();
             } else {
                 _session.Close();
-                _session = SessionFactoryBuilder.BuildSessionFactory().OpenSession();
+                _session = _sessionFactory.OpenSession();
             }
         }
 

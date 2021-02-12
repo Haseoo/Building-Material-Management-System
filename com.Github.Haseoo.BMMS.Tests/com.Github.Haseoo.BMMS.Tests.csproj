@@ -83,6 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\SessionManagerExtension.cs" />
     <Compile Include="Config\TestDataGenerator.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Persistence.Repositories\CompanyRepositoryTest.cs" />

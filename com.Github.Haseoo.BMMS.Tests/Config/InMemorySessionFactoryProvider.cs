@@ -14,6 +14,11 @@ namespace com.Github.Haseoo.BMMS.Tests.Config
 
         private ISessionFactory _sessionFactory;
 
+        public ISessionFactory GetSessionFactory()
+        {
+            return _sessionFactory;
+        }
+
         private InMemorySessionFactoryProvider()
         {
         }
