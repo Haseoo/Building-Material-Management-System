@@ -3,20 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using com.Github.Haseoo.BMMS.Business.Services.Ports;
 using com.Github.Haseoo.BMMS.Data;
 using NHibernate;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
-    public abstract class TransactionalService<T, R>
+    public class ServiceTransactionProxy <T, R> : ITransactionalService<T, R>
     {
+
+        private readonly ITransactionalService<T, R> _service;
+
+        public ServiceTransactionProxy(ITransactionalService<T, R> service)
+        {
+            _service = service;
+        }
+
         public R Add(T operation)
         {
             ITransaction transaction = null;
             try
             {
                 transaction = SessionManager.Instance.GetSession().BeginTransaction();
-                var returnValue = DoAdd(operation);
+                var returnValue = _service.Add(operation);
                 transaction.Commit();
                 return returnValue;
             }
@@ -37,7 +46,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             try
             {
                 transaction = SessionManager.Instance.GetSession().BeginTransaction();
-                DoDelete(id);
+                _service.Delete(id);
                 transaction.Commit();
             }
             catch
@@ -50,9 +59,5 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
                 throw;
             }
         }
-
-        protected abstract R DoAdd(T operation);
-
-        protected abstract void DoDelete(Guid id);
     }
 }

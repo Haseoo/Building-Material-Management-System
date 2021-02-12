@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
-    public class MaterialService : TransactionalService<MaterialOperationDto, MaterialDto>, IMaterialService
+    public class MaterialService : ITransactionalService<MaterialOperationDto, MaterialDto>, IMaterialService
     {
         public MaterialService(RepositoryContext repositoryContext,
             IMapper mapper)
@@ -59,7 +59,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             return _repositoryContext.MaterialRepository.GetById(id) ?? throw new NotFoundException("material");
         }
 
-        protected override MaterialDto DoAdd(MaterialOperationDto operation)
+        public MaterialDto Add(MaterialOperationDto operation)
         {
             var material = new Material
             {
@@ -69,7 +69,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             return _mapper.Map<Material, MaterialDto>(_repositoryContext.MaterialRepository.Add(material));
         }
 
-        protected override void DoDelete(Guid id)
+        public void Delete(Guid id)
         {
             _repositoryContext.MaterialRepository.Remove(GetMaterial(id));
         }

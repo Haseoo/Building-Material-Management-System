@@ -8,6 +8,7 @@ using FluentValidation.Results;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
@@ -70,7 +71,8 @@ namespace com.Github.Haseoo.BMMS.WinForms
                     {
                         return;
                     }
-                    _serviceContext.MaterialService.Add(operation);
+                    new ServiceTransactionProxy<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
+                        .Add(operation);
                 }
                 Close();
             }

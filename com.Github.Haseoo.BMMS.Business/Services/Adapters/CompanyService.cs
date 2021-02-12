@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
-    public class CompanyService : TransactionalService<CompanyOperationDto, CompanyDto>, ICompanyService
+    public class CompanyService : ITransactionalService<CompanyOperationDto, CompanyDto>, ICompanyService
     {
         public CompanyService(RepositoryContext repositoryContext,
             IMapper mapper)
@@ -23,7 +23,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
         private readonly RepositoryContext _repositoryContext;
         private readonly IMapper _mapper;
 
-        protected override CompanyDto DoAdd(CompanyOperationDto operation)
+        public CompanyDto Add(CompanyOperationDto operation)
         {
             var contactDataEntities = GetContactData(operation.ContactData);
             var company = new Company()
@@ -37,7 +37,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             return _mapper.Map<Company, CompanyDto>(_repositoryContext.CompanyRepository.Add(company));
         }
 
-        protected override void DoDelete(Guid id)
+        public void Delete(Guid id)
         {
             var material = GetCompany(id);
             _repositoryContext.MaterialRepository.Remove(material);

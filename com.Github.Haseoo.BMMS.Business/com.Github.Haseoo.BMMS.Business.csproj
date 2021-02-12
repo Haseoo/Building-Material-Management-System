@@ -86,6 +86,7 @@
     <Compile Include="Services\Adapters\TransactionalService.cs" />
     <Compile Include="Services\Ports\ICompanyService.cs" />
     <Compile Include="Services\Ports\IMaterialService.cs" />
+    <Compile Include="Services\Ports\ITransactionalService.cs" />
     <Compile Include="Services\ServiceContext.cs" />
     <Compile Include="Validators\CompanyContactDataValidator.cs" />
     <Compile Include="Validators\CompanyEditDtoValidator.cs" />

@@ -6,13 +6,13 @@ using System.Collections.Generic;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Ports
 {
-    public interface IMaterialService
+    public interface IMaterialService : ITransactionalService<MaterialOperationDto, MaterialDto>
     {
         List<MaterialDto> GetList();
         List<MaterialDto> SearchByName(string partialName);
         MaterialDto GetById(Guid id);
-        MaterialDto Add(MaterialOperationDto operation);
+        new MaterialDto Add(MaterialOperationDto operation);
         MaterialDto Update(Guid id, MaterialOperationDto operation);
-        void Delete(Guid id);
+        new void Delete(Guid id);
     }
 }

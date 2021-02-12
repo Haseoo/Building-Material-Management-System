@@ -4,7 +4,9 @@ using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.WinForms.Configuration;
 using System;
 using System.Windows.Forms;
+using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
+using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
@@ -113,7 +115,8 @@ namespace com.Github.Haseoo.BMMS.WinForms
                     var selected = (MaterialDto)MaterialList.SelectedObject;
                     if (selected != null)
                     {
-                        _serviceContext.MaterialService.Delete(selected.Id);
+                        new ServiceTransactionProxy<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
+                            .Delete(selected.Id);
                         RefreshMaterials(sender, e);
                     }
                 }
