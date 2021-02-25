@@ -452,7 +452,7 @@
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
             this.editToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.E)));
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(201, 26);
             this.editToolStripMenuItem1.Text = "Edit ";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.OnEditToolTip);
             // 
@@ -460,7 +460,7 @@
             // 
             this.rToolStripMenuItem.Name = "rToolStripMenuItem";
             this.rToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.rToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.rToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.rToolStripMenuItem.Text = "Remove";
             this.rToolStripMenuItem.Click += new System.EventHandler(this.OnEntryRemove);
             // 

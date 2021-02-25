@@ -18,9 +18,9 @@ namespace com.Github.Haseoo.BMMS.WinForms
         private readonly MaterialDto _material;
         private readonly ValidatorContext _validatorContext;
 
-        public MaterialWindow(Guid? materialId=null)
+        public MaterialWindow(ValidatorContext validatorContext, Guid? materialId=null)
         {
-            _validatorContext = new ValidatorContext();
+            _validatorContext = validatorContext;
             _serviceContext = new ServiceContext( MapperConf.Mapper);
             InitializeComponent();
             if (materialId == null) {

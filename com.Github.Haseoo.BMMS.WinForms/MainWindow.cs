@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
+using com.Github.Haseoo.BMMS.Business.Validators;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
@@ -17,10 +18,12 @@ namespace com.Github.Haseoo.BMMS.WinForms
         {
             InitializeComponent();
             _serviceContext = new ServiceContext(MapperConf.Mapper);
+            _validatorContext = new ValidatorContext();
             RefreshMaterials();
         }
 
         private readonly ServiceContext _serviceContext;
+        private readonly ValidatorContext _validatorContext;
 
         private void OnTabChange(object sender, EventArgs e)
         {
@@ -34,7 +37,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void OnMaterialAdd(object sender, EventArgs e)
         {
-            new MaterialWindow().Show();
+            new MaterialWindow(_validatorContext).Show();
         }
 
         private void OnSearchCompany(object sender, EventArgs e)
@@ -49,7 +52,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void OnAddCompany(object sender, EventArgs e)
         {
-            new CompanyWindow().Show();
+            new CompanyWindow(_serviceContext, _validatorContext).Show();
         }
 
         private void OnAddOffer(object sender, EventArgs e)
@@ -62,7 +65,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
             try
             {
                 var selected = (MaterialDto)MaterialList.SelectedObject;
-                new MaterialWindow(selected.Id).Show();
+                new MaterialWindow(_validatorContext, selected.Id).Show();
             }
             catch (BusinessLogicException exception)
             {

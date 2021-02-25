@@ -260,6 +260,7 @@
             this.ContactDataAddBtn.TabIndex = 0;
             this.ContactDataAddBtn.Text = "Add";
             this.ContactDataAddBtn.UseVisualStyleBackColor = true;
+            this.ContactDataAddBtn.Click += new System.EventHandler(this.OnContactDataAddBtnClick);
             // 
             // ContactDataEditBtn
             // 
@@ -270,6 +271,7 @@
             this.ContactDataEditBtn.TabIndex = 1;
             this.ContactDataEditBtn.Text = "Edit";
             this.ContactDataEditBtn.UseVisualStyleBackColor = true;
+            this.ContactDataEditBtn.Click += new System.EventHandler(this.OnContactDataEditBtnClick);
             // 
             // button1
             // 
@@ -279,6 +281,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Remove";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.OnRemoveContactData);
             // 
             // ContactDataList
             // 
