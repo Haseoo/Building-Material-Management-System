@@ -41,6 +41,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.CancelBtn = new System.Windows.Forms.Button();
+            this.ShowOffersBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -184,30 +185,44 @@
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Controls.Add(this.SaveBtn);
             this.flowLayoutPanel1.Controls.Add(this.CancelBtn);
+            this.flowLayoutPanel1.Controls.Add(this.ShowOffersBtn);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(582, 413);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(449, 413);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(189, 36);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(322, 36);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(111, 3);
+            this.SaveBtn.Location = new System.Drawing.Point(244, 3);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(75, 30);
             this.SaveBtn.TabIndex = 0;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.OnSaveBtnClick);
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(3, 3);
+            this.CancelBtn.Location = new System.Drawing.Point(136, 3);
             this.CancelBtn.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(75, 30);
             this.CancelBtn.TabIndex = 1;
             this.CancelBtn.Text = "Cancel";
             this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.OnCancelBtnClick);
+            // 
+            // ShowOffersBtn
+            // 
+            this.ShowOffersBtn.Location = new System.Drawing.Point(3, 3);
+            this.ShowOffersBtn.Margin = new System.Windows.Forms.Padding(3, 3, 30, 3);
+            this.ShowOffersBtn.Name = "ShowOffersBtn";
+            this.ShowOffersBtn.Size = new System.Drawing.Size(100, 30);
+            this.ShowOffersBtn.TabIndex = 2;
+            this.ShowOffersBtn.Text = "Show Offers";
+            this.ShowOffersBtn.UseVisualStyleBackColor = true;
+            this.ShowOffersBtn.Click += new System.EventHandler(this.OnShowOffers);
             // 
             // groupBox1
             // 
@@ -299,6 +314,7 @@
             this.PhoneNumber,
             this.EmailAddress});
             this.ContactDataList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ContactDataList.FullRowSelect = true;
             this.ContactDataList.HideSelection = false;
             this.ContactDataList.Location = new System.Drawing.Point(3, 3);
             this.ContactDataList.Name = "ContactDataList";
@@ -380,5 +396,6 @@
         private BrightIdeasSoftware.OLVColumn NameAndSurname;
         private BrightIdeasSoftware.OLVColumn PhoneNumber;
         private BrightIdeasSoftware.OLVColumn EmailAddress;
+        private System.Windows.Forms.Button ShowOffersBtn;
     }
 }

@@ -161,6 +161,7 @@
             this.CompanyCity,
             this.CompanyVoivodeship});
             this.CompanyList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.CompanyList.FullRowSelect = true;
             this.CompanyList.HideSelection = false;
             this.CompanyList.Location = new System.Drawing.Point(0, 50);
             this.CompanyList.Margin = new System.Windows.Forms.Padding(0);
@@ -171,6 +172,7 @@
             this.CompanyList.TabIndex = 3;
             this.CompanyList.UseCompatibleStateImageBehavior = false;
             this.CompanyList.View = System.Windows.Forms.View.Details;
+            this.CompanyList.ItemActivate += new System.EventHandler(this.OnCompanyActivated);
             // 
             // CompanyName
             // 
@@ -224,6 +226,7 @@
             this.CompanySearchBtn.TabIndex = 0;
             this.CompanySearchBtn.Text = "Search";
             this.CompanySearchBtn.UseVisualStyleBackColor = true;
+            this.CompanySearchBtn.Click += new System.EventHandler(this.OnCompanySearchOrRefresh);
             // 
             // CompanyRefreshBtn
             // 
@@ -234,6 +237,7 @@
             this.CompanyRefreshBtn.TabIndex = 1;
             this.CompanyRefreshBtn.Text = "Refresh";
             this.CompanyRefreshBtn.UseVisualStyleBackColor = true;
+            this.CompanyRefreshBtn.Click += new System.EventHandler(this.OnCompanySearchOrRefresh);
             // 
             // CompanySearchField
             // 
@@ -338,7 +342,6 @@
             this.MaterialSearchBtn.TabIndex = 0;
             this.MaterialSearchBtn.Text = "Search";
             this.MaterialSearchBtn.UseVisualStyleBackColor = true;
-            this.MaterialSearchBtn.Click += new System.EventHandler(this.OnMaterialSearchOrRefresh);
             // 
             // MaterialRefreshBtn
             // 
@@ -349,7 +352,6 @@
             this.MaterialRefreshBtn.TabIndex = 1;
             this.MaterialRefreshBtn.Text = "Refresh";
             this.MaterialRefreshBtn.UseVisualStyleBackColor = true;
-            this.MaterialRefreshBtn.Click += new System.EventHandler(this.OnMaterialSearchOrRefresh);
             // 
             // MaterialSearchField
             // 

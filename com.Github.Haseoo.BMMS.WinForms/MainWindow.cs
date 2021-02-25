@@ -20,6 +20,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
             _serviceContext = new ServiceContext(MapperConf.Mapper);
             _validatorContext = new ValidatorContext();
             RefreshMaterials();
+            RefreshCompanies();
         }
 
         private readonly ServiceContext _serviceContext;
@@ -40,14 +41,14 @@ namespace com.Github.Haseoo.BMMS.WinForms
             new MaterialWindow(_validatorContext).Show();
         }
 
-        private void OnSearchCompany(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void RefreshMaterials(object sender = null, EventArgs e = null)
+        private void RefreshMaterials()
         {
             MaterialList.SetObjects(_serviceContext.MaterialService.GetList());
+        }
+
+        private void RefreshCompanies()
+        {
+            CompanyList.SetObjects(_serviceContext.CompanyService.GetList());
         }
 
         private void OnAddCompany(object sender, EventArgs e)
@@ -73,6 +74,19 @@ namespace com.Github.Haseoo.BMMS.WinForms
             }
         }
 
+        private void OnCompanyActivated(object sender, EventArgs e)
+        {
+            try
+            {
+                var selected = (CompanyDto)CompanyList.SelectedObject;
+                new CompanyWindow(_serviceContext, _validatorContext, selected.Id).Show();
+            }
+            catch (BusinessLogicException exception)
+            {
+                Utils.ShowErrorMessage(exception);
+            }
+        }
+
         private void OnMaterialSearchOrRefresh(object sender, EventArgs e)
         {
             string partialName = MaterialSearchField.Text;
@@ -85,11 +99,24 @@ namespace com.Github.Haseoo.BMMS.WinForms
             }
         }
 
+        private void OnCompanySearchOrRefresh(object sender, EventArgs e)
+        {
+            string partialName = CompanySearchField.Text;
+            if (string.IsNullOrWhiteSpace(partialName))
+            {
+                RefreshCompanies();
+            } else
+            {
+                CompanyList.SetObjects(_serviceContext.CompanyService.SearchByName(partialName));
+            }
+        }
+
+
         private void OnEditToolTip(object sender, EventArgs e)
         {
             if (_isCompany)
             {
-
+                OnCompanyActivated(sender, e);
             }
             else
             {
@@ -111,7 +138,13 @@ namespace com.Github.Haseoo.BMMS.WinForms
             {
                 if (_isCompany)
                 {
-
+                    var selected = (CompanyDto)CompanyList.SelectedObject;
+                    if (selected != null)
+                    {
+                        new ServiceTransactionProxy<CompanyOperationDto, CompanyDto>(_serviceContext.CompanyService)
+                            .Delete(selected.Id);
+                        RefreshCompanies();
+                    }
                 }
                 else
                 {
@@ -120,7 +153,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
                     {
                         new ServiceTransactionProxy<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
                             .Delete(selected.Id);
-                        RefreshMaterials(sender, e);
+                        RefreshMaterials();
                     }
                 }
             }

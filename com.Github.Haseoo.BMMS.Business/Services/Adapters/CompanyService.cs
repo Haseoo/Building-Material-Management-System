@@ -3,6 +3,7 @@ using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Ports;
+using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories;
 using System;
@@ -39,8 +40,8 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 
         public void Delete(Guid id)
         {
-            var material = GetCompany(id);
-            _repositoryContext.MaterialRepository.Remove(material);
+            var company = GetCompany(id);
+            _repositoryContext.CompanyRepository.Remove(company);
         }
 
         public CompanyDto GetById(Guid id)
@@ -61,8 +62,13 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             company.Address = operation.Address;
             company.City = operation.City;
             company.Voivodeship = operation.Voivodeship;
-            company.ContactData = GetContactData(operation.ContactData);
-            return _mapper.Map<Company, CompanyDto>(company);
+            company.ContactData.Clear();
+            foreach (var companyContactData in GetContactData(operation.ContactData))
+            {
+                company.ContactData.Add(companyContactData);
+            }
+            return _mapper.Map<Company, CompanyDto>(_repositoryContext
+                .CompanyRepository.Update(company));
         }
 
         public List<CompanyDto> SearchByName(string partialName)

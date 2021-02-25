@@ -33,7 +33,7 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
                 .Not.KeyNullable()
                 .Not.KeyUpdate()
                 .Not.Inverse()
-                .Cascade.All();
+                .Cascade.AllDeleteOrphan();
         }
     }
 }

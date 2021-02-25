@@ -5,13 +5,13 @@ using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Ports
 {
-    public interface ICompanyService
+    public interface ICompanyService : ITransactionalService<CompanyOperationDto, CompanyDto>
     {
         List<CompanyDto> GetList();
         List<CompanyDto> SearchByName(string partialName);
         CompanyDto GetById(Guid id);
-        CompanyDto Add(CompanyOperationDto operation);
+        new CompanyDto Add(CompanyOperationDto operation);
         CompanyDto Update(Guid id, CompanyOperationDto operation);
-        void Delete(Guid id);
+        new void Delete(Guid id);
     }
 }
