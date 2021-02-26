@@ -58,7 +58,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void OnAddOffer(object sender, EventArgs e)
         {
-            new OfferWindow().Show();
+            new OfferWindow(_serviceContext, _validatorContext).Show();
         }
 
         private void OnMaterialActivated(object sender, EventArgs e)

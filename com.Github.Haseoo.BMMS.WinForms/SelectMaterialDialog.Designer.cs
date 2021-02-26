@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.MaterialList = new BrightIdeasSoftware.ObjectListView();
             this.MaterialName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Specification = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.SelectBtn = new System.Windows.Forms.Button();
+            this.CancelBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaterialList)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -57,36 +57,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 348);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(813, 309);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 36);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(84, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Select";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // MaterialList
             // 
             this.MaterialList.AllColumns.Add(this.MaterialName);
@@ -99,6 +69,7 @@
             this.MaterialName,
             this.Specification});
             this.MaterialList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.MaterialList.FullRowSelect = true;
             this.MaterialList.HideSelection = false;
             this.MaterialList.Location = new System.Drawing.Point(3, 3);
             this.MaterialList.Name = "MaterialList";
@@ -122,6 +93,38 @@
             this.Specification.Text = "Specification";
             this.Specification.Width = 194;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.SelectBtn);
+            this.flowLayoutPanel1.Controls.Add(this.CancelBtn);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(813, 309);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 36);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // SelectBtn
+            // 
+            this.SelectBtn.Location = new System.Drawing.Point(84, 3);
+            this.SelectBtn.Name = "SelectBtn";
+            this.SelectBtn.Size = new System.Drawing.Size(75, 30);
+            this.SelectBtn.TabIndex = 0;
+            this.SelectBtn.Text = "Select";
+            this.SelectBtn.UseVisualStyleBackColor = true;
+            this.SelectBtn.Click += new System.EventHandler(this.OnSelectBtnClick);
+            // 
+            // CancelBtn
+            // 
+            this.CancelBtn.Location = new System.Drawing.Point(3, 3);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(75, 30);
+            this.CancelBtn.TabIndex = 1;
+            this.CancelBtn.Text = "Cancel";
+            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.OnCancelBtnClick);
+            // 
             // SelectMaterialDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -132,8 +135,8 @@
             this.Text = "SelectMaterialDialog";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MaterialList)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -142,8 +145,8 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SelectBtn;
+        private System.Windows.Forms.Button CancelBtn;
         private BrightIdeasSoftware.ObjectListView MaterialList;
         private BrightIdeasSoftware.OLVColumn MaterialName;
         private BrightIdeasSoftware.OLVColumn Specification;
