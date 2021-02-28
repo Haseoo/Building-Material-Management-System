@@ -1,4 +1,6 @@
-﻿using com.Github.Haseoo.BMMS.Data.Entities;
+﻿using System;
+using System.Configuration;
+using com.Github.Haseoo.BMMS.Data.Entities;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
@@ -15,7 +17,11 @@ namespace com.Github.Haseoo.BMMS.Data
             return Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2012
                     .ConnectionString(
-                        "Server=localhost;Database=bmmsdb;User Id=dotnet;Password=dotnetsecret;")
+                        String.Format("Server={0};Database={1};User Id={2};Password={3};",
+                        ConfigurationManager.AppSettings.Get("server"),
+                        ConfigurationManager.AppSettings.Get("database"),
+                        ConfigurationManager.AppSettings.Get("user"),
+                        ConfigurationManager.AppSettings.Get("password")))
                     .Dialect<MsSql2012Dialect>()
                     .ShowSql()
                 )
@@ -25,7 +31,7 @@ namespace com.Github.Haseoo.BMMS.Data
                 .BuildSessionFactory();
         }
 
-        private static void BuildSchema(Configuration config, bool create = false, bool update = false)
+        private static void BuildSchema(NHibernate.Cfg.Configuration config, bool create = false, bool update = false)
         {
             if (create)
                 new SchemaExport(config).Create(false, true);
