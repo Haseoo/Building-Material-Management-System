@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Globalization;
 using System.Windows.Forms;
+using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
+using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
 
 namespace com.Github.Haseoo.BMMS.WinForms
@@ -11,6 +12,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
     {
         private readonly ServiceContext _serviceContext;
         private readonly ValidatorContext _validatorContext;
+        private readonly OfferDto _currentOffer;
 
         private Guid _selectedCompanyId;
         private Guid _selectedMaterialId;
@@ -21,6 +23,10 @@ namespace com.Github.Haseoo.BMMS.WinForms
         {
             _serviceContext = serviceContext;
             _validatorContext = validatorContext;
+            if (id != null)
+            {
+                _currentOffer = _serviceContext.OfferService.GetById(id.Value);
+            }
             InitializeComponent();
         }
 
@@ -60,10 +66,30 @@ namespace com.Github.Haseoo.BMMS.WinForms
             var operationDto = OfferOperationDto.Builder()
                 .Comments(Comments.Text)
                 .CompanyId(_selectedCompanyId)
-                .MaterialId(_selectedCompanyId)
+                .MaterialId(_selectedMaterialId)
                 .Unit(Unit.Text)
                 .UnitPrice(unitPrice)
                 .Build();
+            try
+            {
+                if (_currentOffer == null &&
+                    !Utils.ShowInputErrorMessage(_validatorContext.OfferAddDtoValidator.Validate(operationDto)))
+                {
+                    new ServiceTransactionProxy<OfferOperationDto, OfferDto>(_serviceContext.OfferService)
+                        .Add(operationDto);
+                    Close();
+                }
+                else if (_currentOffer != null &&
+                         !Utils.ShowInputErrorMessage(_validatorContext.OfferEditDtoValidator.Validate(operationDto)))
+                {
+                    _serviceContext.OfferService.Update(_currentOffer.Id, operationDto);
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowErrorMessage(ex);
+            }
         }
     }
 }

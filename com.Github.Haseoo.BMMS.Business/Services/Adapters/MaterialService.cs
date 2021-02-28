@@ -10,19 +10,20 @@ using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
-    public class MaterialService : ITransactionalService<MaterialOperationDto, MaterialDto>, IMaterialService
+    public class MaterialService : IMaterialService
     {
-        public MaterialService(RepositoryContext repositoryContext,
+        public MaterialService(IMaterialRepository materialRepository,
             IMapper mapper)
         {
             _mapper = mapper;
-            _repositoryContext = repositoryContext;
+            _materialRepository = materialRepository;
         }
 
-        private readonly RepositoryContext _repositoryContext;
+        private readonly IMaterialRepository _materialRepository;
         private readonly IMapper _mapper;
 
 
@@ -32,9 +33,9 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             return _mapper.Map<Material, MaterialDto>(material);
         }
 
-        public List<MaterialDto> GetList()
+        public IList<MaterialDto> GetList()
         {
-            return _mapper.Map<List<Material>, List<MaterialDto>>(_repositoryContext.MaterialRepository.GetAll().ToList());
+            return _mapper.Map<IList<Material>, IList<MaterialDto>>(_materialRepository.GetAll().ToList());
         }
 
         public MaterialDto Update(Guid id, MaterialOperationDto operation)
@@ -42,13 +43,13 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             var material = GetMaterial(id);
             material.Name = operation.Name;
             material.Specification = operation.Specification;
-            material = _repositoryContext.MaterialRepository.Update(material);
+            material = _materialRepository.Update(material);
             return _mapper.Map<Material, MaterialDto>(material);
         }
 
-        public List<MaterialDto> SearchByName(string partialName)
+        public IList<MaterialDto> SearchByName(string partialName)
         {
-            return _mapper.Map<List<Material>, List<MaterialDto>>(_repositoryContext.MaterialRepository
+            return _mapper.Map<IList<Material>, IList<MaterialDto>>(_materialRepository
                 .GetAll()
                 .Where(material => material.Name.Contains(partialName))
                 .ToList());
@@ -56,7 +57,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 
         private Material GetMaterial(Guid id)
         {
-            return _repositoryContext.MaterialRepository.GetById(id) ?? throw new NotFoundException("material");
+            return _materialRepository.GetById(id) ?? throw new NotFoundException("material");
         }
 
         public MaterialDto Add(MaterialOperationDto operation)
@@ -66,12 +67,12 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
                 Name = operation.Name,
                 Specification = operation.Specification
             };
-            return _mapper.Map<Material, MaterialDto>(_repositoryContext.MaterialRepository.Add(material));
+            return _mapper.Map<Material, MaterialDto>(_materialRepository.Add(material));
         }
 
         public void Delete(Guid id)
         {
-            _repositoryContext.MaterialRepository.Remove(GetMaterial(id));
+            _materialRepository.Remove(GetMaterial(id));
         }
     }
 }

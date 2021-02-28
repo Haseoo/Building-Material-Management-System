@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
@@ -18,7 +19,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
             MaterialList.SetObjects(objectList);
             if (id != null)
             {
-                var selected = objectList.Find(e => e.Id.Equals(id));
+                var selected = objectList.ToList().Find(e => e.Id.Equals(id));
                 if (selected != null)
                 {
                     MaterialList.SelectObject(selected);

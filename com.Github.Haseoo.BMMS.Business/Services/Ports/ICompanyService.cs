@@ -7,11 +7,9 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Ports
 {
     public interface ICompanyService : ITransactionalService<CompanyOperationDto, CompanyDto>
     {
-        List<CompanyDto> GetList();
-        List<CompanyDto> SearchByName(string partialName);
+        IList<CompanyDto> GetList();
+        IList<CompanyDto> SearchByName(string partialName);
         CompanyDto GetById(Guid id);
-        new CompanyDto Add(CompanyOperationDto operation);
         CompanyDto Update(Guid id, CompanyOperationDto operation);
-        new void Delete(Guid id);
     }
 }

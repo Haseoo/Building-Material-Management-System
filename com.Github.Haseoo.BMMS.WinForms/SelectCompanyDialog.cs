@@ -18,7 +18,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
             CompanyList.SetObjects(objectList);
             if (id != null)
             {
-                var objToSelect = objectList.Find(e => e.Id.Equals(id));
+                var objToSelect = objectList.ToList().Find(e => e.Id.Equals(id));
                 if (objToSelect != null)
                 {
                     CompanyList.SelectObject(objToSelect);

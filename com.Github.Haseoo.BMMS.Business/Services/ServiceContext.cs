@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Services.Ports;
-using com.Github.Haseoo.BMMS.Business.Validators;
 using com.Github.Haseoo.BMMS.Data.Repositories;
-using NHibernate;
-using System;
 
 namespace com.Github.Haseoo.BMMS.Business.Services
 {
@@ -12,12 +9,17 @@ namespace com.Github.Haseoo.BMMS.Business.Services
     {
         public IMaterialService MaterialService { get; }
         public ICompanyService CompanyService { get; }
+        public IOfferService OfferService { get; }
 
         public ServiceContext(IMapper mapper)
         {
-            RepositoryContext repositoryContext = new RepositoryContext();
-            MaterialService = new MaterialService(repositoryContext, mapper);
-            CompanyService = new CompanyService(repositoryContext, mapper);
+            var repositoryContext = new RepositoryContext();
+            MaterialService = new MaterialService(repositoryContext.MaterialRepository, mapper);
+            CompanyService = new CompanyService(repositoryContext.CompanyRepository, mapper);
+            OfferService = new OfferService(repositoryContext.OfferRepository,
+                repositoryContext.CompanyRepository,
+                repositoryContext.MaterialRepository,
+                mapper);
         }
     }
 }

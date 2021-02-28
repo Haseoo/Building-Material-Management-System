@@ -9,6 +9,8 @@
             MaterialAddDtoValidator = new MaterialAddDtoValidator();
             CompanyEditDtoValidator = new CompanyEditDtoValidator(CompanyContactDataValidator);
             MaterialEditDtoValidator = new MaterialEditDtoValidator();
+            OfferAddDtoValidator = new OfferAddDtoValidator();
+            OfferEditDtoValidator = new OfferEditDtoValidator();
         }
 
         public CompanyContactDataValidator CompanyContactDataValidator { get; }
@@ -16,5 +18,7 @@
         public MaterialEditDtoValidator MaterialEditDtoValidator { get; }
         public CompanyAddDtoValidator CompanyAddDtoValidator { get; }
         public CompanyEditDtoValidator CompanyEditDtoValidator { get; }
+        public OfferAddDtoValidator OfferAddDtoValidator { get; }
+        public OfferEditDtoValidator OfferEditDtoValidator { get; }
     }
 }

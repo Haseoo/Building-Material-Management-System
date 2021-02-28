@@ -9,19 +9,20 @@ using com.Github.Haseoo.BMMS.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
-    public class CompanyService : ITransactionalService<CompanyOperationDto, CompanyDto>, ICompanyService
+    public class CompanyService : ICompanyService
     {
-        public CompanyService(RepositoryContext repositoryContext,
+        public CompanyService(ICompanyRepository companyRepository,
             IMapper mapper)
         {
             _mapper = mapper;
-            _repositoryContext = repositoryContext;
+            _companyRepository = companyRepository;
         }
 
-        private readonly RepositoryContext _repositoryContext;
+        private readonly ICompanyRepository _companyRepository;
         private readonly IMapper _mapper;
 
         public CompanyDto Add(CompanyOperationDto operation)
@@ -35,13 +36,13 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
                 ContactData = contactDataEntities,
                 Voivodeship = operation.Voivodeship
             };
-            return _mapper.Map<Company, CompanyDto>(_repositoryContext.CompanyRepository.Add(company));
+            return _mapper.Map<Company, CompanyDto>(_companyRepository.Add(company));
         }
 
         public void Delete(Guid id)
         {
             var company = GetCompany(id);
-            _repositoryContext.CompanyRepository.Remove(company);
+            _companyRepository.Remove(company);
         }
 
         public CompanyDto GetById(Guid id)
@@ -50,9 +51,9 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             return _mapper.Map<Company, CompanyDto>(company);
         }
 
-        public List<CompanyDto> GetList()
+        public IList<CompanyDto> GetList()
         {
-            return _mapper.Map<List<Company>, List<CompanyDto>>(_repositoryContext.CompanyRepository.GetAll().ToList());
+            return _mapper.Map<IList<Company>, IList<CompanyDto>>(_companyRepository.GetAll().ToList());
         }
 
         public CompanyDto Update(Guid id, CompanyOperationDto operation)
@@ -67,13 +68,12 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             {
                 company.ContactData.Add(companyContactData);
             }
-            return _mapper.Map<Company, CompanyDto>(_repositoryContext
-                .CompanyRepository.Update(company));
+            return _mapper.Map<Company, CompanyDto>(_companyRepository.Update(company));
         }
 
-        public List<CompanyDto> SearchByName(string partialName)
+        public IList<CompanyDto> SearchByName(string partialName)
         {
-            return _mapper.Map<List<Company>, List<CompanyDto>>(_repositoryContext.CompanyRepository
+            return _mapper.Map<IList<Company>, IList<CompanyDto>>(_companyRepository
                 .GetAll()
                 .Where(material => material.Name.Contains(partialName))
                 .ToList());
@@ -81,7 +81,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 
         private Company GetCompany(Guid id)
         {
-            return _repositoryContext.CompanyRepository.GetById(id) ?? throw new NotFoundException("company");
+            return _companyRepository.GetById(id) ?? throw new NotFoundException("company");
         }
 
         private static List<CompanyContactData> GetContactData(IEnumerable<CompanyContactDataOperationDto> contactData)

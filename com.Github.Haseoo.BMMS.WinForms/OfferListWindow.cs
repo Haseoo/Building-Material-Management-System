@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using com.Github.Haseoo.BMMS.Data;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
@@ -6,6 +7,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
     {
         public OfferListWindow()
         {
+            SessionManager.Instance.AcquireNewSession();
             InitializeComponent();
         }
     }

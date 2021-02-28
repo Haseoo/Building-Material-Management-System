@@ -1,4 +1,5 @@
-﻿using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
+﻿using System;
+using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Validators.ErrorMessages;
 using FluentValidation;
 
@@ -14,10 +15,12 @@ namespace com.Github.Haseoo.BMMS.Business.Validators
                     .GetEmptyValidationErrorMessage(ValidatedEntities.Offer));
             RuleFor(x => x.CompanyId)
                 .NotNull()
+                .NotEqual(Guid.Empty)
                 .WithMessage(ErrorMessageGenerator
                     .GetEmptyValidationErrorMessage(ValidatedEntities.Offer));
             RuleFor(x => x.MaterialId)
                 .NotNull()
+                .NotEqual(Guid.Empty)
                 .WithMessage(ErrorMessageGenerator
                     .GetEmptyValidationErrorMessage(ValidatedEntities.Offer));
             RuleFor(x => x.UnitPrice)
