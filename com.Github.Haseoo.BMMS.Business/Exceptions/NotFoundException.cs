@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Runtime.Serialization;
 
 namespace com.Github.Haseoo.BMMS.Business.Exceptions
 {
@@ -8,6 +9,15 @@ namespace com.Github.Haseoo.BMMS.Business.Exceptions
     {
         public NotFoundException(string name) :  base($"{name} not found")
         {
+        }
+
+        protected NotFoundException(SerializationInfo info, StreamingContext context): base(info, context)
+        {
+        }
+
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
         }
     }
 }

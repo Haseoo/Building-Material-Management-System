@@ -39,7 +39,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
                     OfferList.SetObjects(_serviceContext.OfferService.GetCompanyOffers(_id));
                     break;
                 case Utils.OfferListMode.Material:
-                    OfferList.SetObjects(_serviceContext.OfferService.GetMaterialOffers(_id));;
+                    OfferList.SetObjects(_serviceContext.OfferService.GetMaterialOffers(_id));
                     break;
             }
         }
