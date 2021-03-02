@@ -1,7 +1,5 @@
 ﻿using com.Github.Haseoo.BMMS.Data.Repositories.Adapters;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
-using NHibernate;
-using System;
 
 namespace com.Github.Haseoo.BMMS.Data.Repositories
 {
@@ -20,5 +18,5 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories
         public IMaterialRepository MaterialRepository { get; }
     }
 
-       
+
 }

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Globalization;
-using System.Windows.Forms;
-using com.Github.Haseoo.BMMS.Business.DTOs;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
+using System;
+using System.Globalization;
+using System.Windows.Forms;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
@@ -24,6 +24,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
         {
             _serviceContext = serviceContext;
             _validatorContext = validatorContext;
+            InitializeComponent();
             if (id != null)
             {
                 _currentOffer = _serviceContext.OfferService.GetById(id.Value);
@@ -35,7 +36,6 @@ namespace com.Github.Haseoo.BMMS.WinForms
                 _selectedMaterialId = _currentOffer.Material.Id;
                 MaterialLabel.Text = _currentOffer.Material.Name;
             }
-            InitializeComponent();
         }
 
         private void OnCancelBtnClick(object sender, System.EventArgs e)

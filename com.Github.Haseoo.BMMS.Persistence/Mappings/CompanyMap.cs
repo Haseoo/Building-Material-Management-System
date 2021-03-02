@@ -24,8 +24,8 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
                 .CustomSqlType("text")
                 .Not.Nullable();
             HasMany(x => x.Offers)
-                .Cascade.AllDeleteOrphan()
-                .Fetch.Join()
+                .Cascade.DeleteOrphan()
+                .Fetch.Join().LazyLoad()
                 .Inverse().KeyColumn("COMPANY_ID");
 
             HasMany(x => x.ContactData)

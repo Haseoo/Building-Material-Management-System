@@ -14,8 +14,8 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
                     "SPECIFICATION")
                 .Not.Nullable();
             HasMany(x => x.Offers)
-                .Cascade.AllDeleteOrphan()
-                .Fetch.Join()
+                .Cascade.DeleteOrphan()
+                .Fetch.Join().LazyLoad()
                 .Inverse().KeyColumn("MATERIAL_ID");
         }
     }

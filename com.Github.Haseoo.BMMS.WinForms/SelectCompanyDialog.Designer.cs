@@ -86,6 +86,7 @@
             this.CompanyList.TabIndex = 2;
             this.CompanyList.UseCompatibleStateImageBehavior = false;
             this.CompanyList.View = System.Windows.Forms.View.Details;
+            this.CompanyList.ItemActivate += new System.EventHandler(this.OnSelect);
             // 
             // CompanyName
             // 

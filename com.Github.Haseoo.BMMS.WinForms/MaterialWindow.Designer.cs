@@ -112,6 +112,7 @@
             this.ShowOffers.TabIndex = 2;
             this.ShowOffers.Text = "Show offers";
             this.ShowOffers.UseVisualStyleBackColor = true;
+            this.ShowOffers.Click += new System.EventHandler(this.OnShowOffersClick);
             // 
             // tableLayoutPanel2
             // 

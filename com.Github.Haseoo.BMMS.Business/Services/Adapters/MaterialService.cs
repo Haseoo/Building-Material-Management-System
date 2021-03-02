@@ -3,14 +3,11 @@ using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Ports;
-using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
-using com.Github.Haseoo.BMMS.Data.Repositories;
-using NHibernate;
+using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {

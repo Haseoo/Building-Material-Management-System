@@ -86,14 +86,17 @@
             this.Comments,
             this.LastModification});
             this.OfferList.Cursor = System.Windows.Forms.Cursors.Default;
+            this.OfferList.FullRowSelect = true;
             this.OfferList.HideSelection = false;
-            this.OfferList.Location = new System.Drawing.Point(3, 44);
+            this.OfferList.Location = new System.Drawing.Point(3, 43);
+            this.OfferList.MultiSelect = false;
             this.OfferList.Name = "OfferList";
             this.OfferList.ShowGroups = false;
-            this.OfferList.Size = new System.Drawing.Size(731, 239);
+            this.OfferList.Size = new System.Drawing.Size(731, 240);
             this.OfferList.TabIndex = 0;
             this.OfferList.UseCompatibleStateImageBehavior = false;
             this.OfferList.View = System.Windows.Forms.View.Details;
+            this.OfferList.ItemActivate += new System.EventHandler(this.OnShowOffer);
             // 
             // MaterialName
             // 
@@ -155,6 +158,7 @@
             this.EditBtn.TabIndex = 0;
             this.EditBtn.Text = "Edit";
             this.EditBtn.UseVisualStyleBackColor = true;
+            this.EditBtn.Click += new System.EventHandler(this.OnShowOffer);
             // 
             // RemoveBtn
             // 
@@ -166,6 +170,7 @@
             this.RemoveBtn.TabIndex = 3;
             this.RemoveBtn.Text = "Remove";
             this.RemoveBtn.UseVisualStyleBackColor = true;
+            this.RemoveBtn.Click += new System.EventHandler(this.OnRemoveBtnClick);
             // 
             // ShowMaterialBtn
             // 
@@ -176,6 +181,7 @@
             this.ShowMaterialBtn.TabIndex = 1;
             this.ShowMaterialBtn.Text = "Show material";
             this.ShowMaterialBtn.UseVisualStyleBackColor = true;
+            this.ShowMaterialBtn.Click += new System.EventHandler(this.OnShowMaterialBtnClick);
             // 
             // ShowCompanyBtn
             // 
@@ -186,15 +192,18 @@
             this.ShowCompanyBtn.TabIndex = 2;
             this.ShowCompanyBtn.Text = "Show company";
             this.ShowCompanyBtn.UseVisualStyleBackColor = true;
+            this.ShowCompanyBtn.Click += new System.EventHandler(this.OnCompanyBtnClick);
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.Font = new System.Drawing.Font("Wingdings 3", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.button1.Font = new System.Drawing.Font("Wingdings 3", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(699, 3);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(697, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 35);
+            this.button1.Size = new System.Drawing.Size(40, 40);
             this.button1.TabIndex = 2;
             this.button1.Text = "Q";
             this.button1.UseVisualStyleBackColor = true;

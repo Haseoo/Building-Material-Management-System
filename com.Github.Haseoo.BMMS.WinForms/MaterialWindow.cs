@@ -1,14 +1,10 @@
 ﻿using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
-using com.Github.Haseoo.BMMS.Business.Validators;
-using com.Github.Haseoo.BMMS.Data;
-using com.Github.Haseoo.BMMS.WinForms.Configuration;
-using FluentValidation.Results;
-using System;
-using System.Linq;
-using System.Windows.Forms;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
+using com.Github.Haseoo.BMMS.Business.Validators;
+using System;
+using System.Windows.Forms;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
@@ -18,17 +14,20 @@ namespace com.Github.Haseoo.BMMS.WinForms
         private readonly MaterialDto _material;
         private readonly ValidatorContext _validatorContext;
 
-        public MaterialWindow(ValidatorContext validatorContext, Guid? materialId=null)
+        public MaterialWindow(ServiceContext serviceContext, ValidatorContext validatorContext, Guid? materialId = null)
         {
             _validatorContext = validatorContext;
-            _serviceContext = new ServiceContext( MapperConf.Mapper);
+            _serviceContext = serviceContext;
             InitializeComponent();
-            if (materialId == null) {
+            if (materialId == null)
+            {
                 Text = "Add new material";
                 ShowOffers.Visible = false;
-            } else
+            }
+            else
             {
-                try {
+                try
+                {
                     _material = _serviceContext.MaterialService.GetById(materialId.Value);
                     Text = $"Editing {_material.Name}";
                     NameInput.Text = _material.Name;
@@ -57,7 +56,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
                 .Build();
             try
             {
-                if(_material != null)
+                if (_material != null)
                 {
                     if (Utils.ShowInputErrorMessage(_validatorContext.MaterialEditDtoValidator.Validate(operation)))
                     {
@@ -76,10 +75,15 @@ namespace com.Github.Haseoo.BMMS.WinForms
                 }
                 Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Utils.ShowErrorMessage(ex);
             }
+        }
+
+        private void OnShowOffersClick(object sender, EventArgs e)
+        {
+            new OfferListWindow(_serviceContext, _validatorContext, Utils.OfferListMode.Material, _material.Id).Show();
         }
     }
 }

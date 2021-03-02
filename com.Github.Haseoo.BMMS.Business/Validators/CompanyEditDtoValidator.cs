@@ -1,5 +1,4 @@
 ﻿using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
-using com.Github.Haseoo.BMMS.Business.Validators.ErrorMessages;
 using FluentValidation;
 
 namespace com.Github.Haseoo.BMMS.Business.Validators

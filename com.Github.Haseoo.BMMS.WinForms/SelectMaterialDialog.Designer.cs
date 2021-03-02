@@ -79,6 +79,7 @@
             this.MaterialList.TabIndex = 2;
             this.MaterialList.UseCompatibleStateImageBehavior = false;
             this.MaterialList.View = System.Windows.Forms.View.Details;
+            this.MaterialList.ItemActivate += new System.EventHandler(this.OnSelectBtnClick);
             // 
             // MaterialName
             // 

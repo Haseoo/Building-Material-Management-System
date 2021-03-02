@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using com.Github.Haseoo.BMMS.Business.DTOs;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
@@ -59,7 +58,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
             {
                 return;
             }
-            var selected = (CompanyContactDataOperationDto) ContactDataList.SelectedObject;
+            var selected = (CompanyContactDataOperationDto)ContactDataList.SelectedObject;
             var dialog = new ContactDataDialog(_validatorContext, selected);
             if (dialog.ShowDialog() == DialogResult.OK)
             {
@@ -84,7 +83,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void OnShowOffers(object sender, EventArgs e)
         {
-
+            new OfferListWindow(_serviceContext, _validatorContext, Utils.OfferListMode.Company, _currentCompanyDto.Id).Show();
         }
 
         private void OnCancelBtnClick(object sender, EventArgs e)
@@ -134,7 +133,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
             {
                 foreach (var item in ContactDataList.Objects)
                 {
-                    builder.ContactData((CompanyContactDataOperationDto) item);
+                    builder.ContactData((CompanyContactDataOperationDto)item);
                 }
             }
 
