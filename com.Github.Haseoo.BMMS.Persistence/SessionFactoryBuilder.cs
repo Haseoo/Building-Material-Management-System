@@ -4,7 +4,6 @@ using com.Github.Haseoo.BMMS.Data.Entities;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
-using NHibernate.Cfg;
 using NHibernate.Dialect;
 using NHibernate.Tool.hbm2ddl;
 

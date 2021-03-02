@@ -31,6 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.OfferList = new BrightIdeasSoftware.ObjectListView();
             this.MaterialName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.CompanyName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.UnitPrice = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Unit = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.Comments = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -41,7 +42,6 @@
             this.ShowMaterialBtn = new System.Windows.Forms.Button();
             this.ShowCompanyBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.CompanyName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OfferList)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -100,6 +100,12 @@
             this.MaterialName.AspectName = "MaterialName";
             this.MaterialName.Text = "Material";
             this.MaterialName.Width = 127;
+            // 
+            // CompanyName
+            // 
+            this.CompanyName.AspectName = "CompanyName";
+            this.CompanyName.Text = "Company";
+            this.CompanyName.Width = 137;
             // 
             // UnitPrice
             // 
@@ -192,12 +198,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Q";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // CompanyName
-            // 
-            this.CompanyName.AspectName = "CompanyName";
-            this.CompanyName.Text = "Company";
-            this.CompanyName.Width = 137;
+            this.button1.Click += new System.EventHandler(this.RefreshOffers);
             // 
             // OfferListWindow
             // 

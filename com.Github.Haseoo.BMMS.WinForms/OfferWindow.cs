@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Forms;
 using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
@@ -26,6 +27,13 @@ namespace com.Github.Haseoo.BMMS.WinForms
             if (id != null)
             {
                 _currentOffer = _serviceContext.OfferService.GetById(id.Value);
+                Unit.Text = _currentOffer.Unit;
+                UnitPrice.Text = _currentOffer.UnitPrice.ToString(CultureInfo.CurrentCulture);
+                Comments.Text = _currentOffer.Comments;
+                _selectedCompanyId = _currentOffer.Company.Id;
+                CompanyLabel.Text = _currentOffer.Company.Name;
+                _selectedMaterialId = _currentOffer.Material.Id;
+                MaterialLabel.Text = _currentOffer.Material.Name;
             }
             InitializeComponent();
         }

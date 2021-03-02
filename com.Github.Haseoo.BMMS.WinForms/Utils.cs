@@ -27,5 +27,11 @@ namespace com.Github.Haseoo.BMMS.WinForms
             MessageBox.Show(message, "Input error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return true;
         }
+
+        public enum OfferListMode
+        {
+            Company,
+            Material
+        }
     }
 }
