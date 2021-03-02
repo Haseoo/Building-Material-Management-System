@@ -12,6 +12,12 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'SonarCubeHome'
+    scannerMode: 'MSBuild'
+    projectKey: 'bmms-dot-net'
+    extraProperties: ''
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -35,3 +41,6 @@ steps:
     codeCoverageEnabled: true
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'
