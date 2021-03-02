@@ -30,7 +30,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         public void should_add_company()
         {
             //given
-            var inVal = TestDataGenerator.getCompany();
+            var inVal = TestDataGenerator.GetCompany();
             //when
             _sut.Add(inVal);
             var outVal = _session.Get<Company>(inVal.Id);
@@ -49,9 +49,9 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
             const string newName = "newName";
             const string newAddress = "newAddress";
             const string newCity = "newCity";
-            var inVal = _session.Get<Company>(_session.Save(TestDataGenerator.getCompany()));
+            var inVal = _session.Get<Company>(_session.Save(TestDataGenerator.GetCompany()));
             //when
-            inVal.ContactData.Add(TestDataGenerator.getContactData());
+            inVal.ContactData.Add(TestDataGenerator.GetContactData());
             inVal.City = newCity;
             inVal.Name = newName;
             inVal.Address = newAddress;
@@ -68,7 +68,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         public void should_remove_company()
         {
             //given
-            var inVal = _session.Get<Company>(_session.Save(TestDataGenerator.getCompany()));
+            var inVal = _session.Get<Company>(_session.Save(TestDataGenerator.GetCompany()));
             //when
             _sut.Remove(inVal);
             //then
@@ -79,7 +79,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         public void should_return_company_by_id()
         {
             //given
-            var id = _session.Save(TestDataGenerator.getCompany()).As<Guid>();
+            var id = _session.Save(TestDataGenerator.GetCompany()).As<Guid>();
             //when
             var outVal = _sut.GetById(id);
             //then
@@ -91,8 +91,8 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         public void should_return_list_with_two_elements()
         {
             //given
-            _session.Save(TestDataGenerator.getCompany());
-            _session.Save(TestDataGenerator.getCompany());
+            _session.Save(TestDataGenerator.GetCompany());
+            _session.Save(TestDataGenerator.GetCompany());
             //when & then
             Assert.AreEqual(2, _sut.GetAll().Count());
         }

@@ -26,15 +26,13 @@ namespace com.Github.Haseoo.BMMS.Data
             if (_session == null)
             {
                 GetSession();
-            }
-            else
-            {
+            } else {
                 _session.Close();
                 _session = SessionFactoryBuilder.BuildSessionFactory().OpenSession();
             }
         }
 
-        public void Dispose()
+         public void Dispose()
         {
             Dispose(true);
             GC.SuppressFinalize(this);
@@ -42,7 +40,7 @@ namespace com.Github.Haseoo.BMMS.Data
 
         protected virtual void Dispose(bool disposing)
         {
-            if (_disposed || _session == null) return;
+            if (_disposed  || _session == null) return;
 
             if (disposing)
             {

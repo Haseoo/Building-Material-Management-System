@@ -12,8 +12,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            try
-            {
+            try {
                 Application.Run(new MainWindow());
             }
             catch (FluentConfigurationException e)

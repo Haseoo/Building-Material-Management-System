@@ -12,10 +12,10 @@ namespace com.Github.Haseoo.BMMS.WinForms
             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public static void ShowErrorMessage(Exception exception)
-        {
+         public static void ShowErrorMessage(Exception exception)
+         {
             ShowErrorMessage(exception.Message);
-        }
+         }
 
         public static bool ShowInputErrorMessage(ValidationResult validationResult)
         {

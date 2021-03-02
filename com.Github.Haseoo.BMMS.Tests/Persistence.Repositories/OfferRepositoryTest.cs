@@ -31,8 +31,8 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         {
             //given
             var material = _session.Get<Material>(_session.Save(TestDataGenerator.GetMaterial()));
-            var company = _session.Get<Company>(_session.Save(TestDataGenerator.getCompany()));
-            var inVal = TestDataGenerator.getOffer(company, material);
+            var company = _session.Get<Company>(_session.Save(TestDataGenerator.GetCompany()));
+            var inVal = TestDataGenerator.GetOffer(company, material);
             //when
             _sut.Add(inVal);
             var outVal = _session.Get<Offer>(inVal.Id);
@@ -54,8 +54,8 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
             const decimal newPrice = 12M;
             var newDate = DateTime.Now;
             var material = _session.Get<Material>(_session.Save(TestDataGenerator.GetMaterial()));
-            var company = _session.Get<Company>(_session.Save(TestDataGenerator.getCompany()));
-            var offer = _session.Get<Offer>(_session.Save(TestDataGenerator.getOffer(company, material)));
+            var company = _session.Get<Company>(_session.Save(TestDataGenerator.GetCompany()));
+            var offer = _session.Get<Offer>(_session.Save(TestDataGenerator.GetOffer(company, material)));
             var id = offer.Id;
             //when
             offer.Comments = newComments;
@@ -77,8 +77,8 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         {
             //given
             var material = _session.Get<Material>(_session.Save(TestDataGenerator.GetMaterial()));
-            var company = _session.Get<Company>(_session.Save(TestDataGenerator.getCompany()));
-            var offer = _session.Get<Offer>(_session.Save(TestDataGenerator.getOffer(company, material)));
+            var company = _session.Get<Company>(_session.Save(TestDataGenerator.GetCompany()));
+            var offer = _session.Get<Offer>(_session.Save(TestDataGenerator.GetOffer(company, material)));
             //when
             _sut.Remove(offer);
             //then
@@ -90,9 +90,9 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         {
             //given
             var material = _session.Get<Material>(_session.Save(TestDataGenerator.GetMaterial()));
-            var company = _session.Get<Company>(_session.Save(TestDataGenerator.getCompany()));
-            _session.Save(TestDataGenerator.getOffer(company, material));
-            _session.Save(TestDataGenerator.getOffer(company, material));
+            var company = _session.Get<Company>(_session.Save(TestDataGenerator.GetCompany()));
+            _session.Save(TestDataGenerator.GetOffer(company, material));
+            _session.Save(TestDataGenerator.GetOffer(company, material));
             //when & then
             Assert.AreEqual(2, _sut.GetAll().Count());
         }
@@ -109,8 +109,8 @@ namespace com.Github.Haseoo.BMMS.Tests.Persistence.Repositories
         {
             //given
             var material = _session.Get<Material>(_session.Save(TestDataGenerator.GetMaterial()));
-            var company = _session.Get<Company>(_session.Save(TestDataGenerator.getCompany()));
-            var id = _session.Save(TestDataGenerator.getOffer(company, material)).As<Guid>();
+            var company = _session.Get<Company>(_session.Save(TestDataGenerator.GetCompany()));
+            var id = _session.Save(TestDataGenerator.GetOffer(company, material)).As<Guid>();
             //when
             var outVal = _sut.GetById(id);
             //then

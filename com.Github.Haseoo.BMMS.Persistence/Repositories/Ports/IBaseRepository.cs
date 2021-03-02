@@ -10,10 +10,10 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Ports
 
         T GetById(Guid id);
 
-        T Add(in T entity);
+        T Add(T entity);
 
-        T Update(in T entity);
+        T Update(T entity);
 
-        void Remove(in Entity entity);
+        void Remove(Entity entity);
     }
 }

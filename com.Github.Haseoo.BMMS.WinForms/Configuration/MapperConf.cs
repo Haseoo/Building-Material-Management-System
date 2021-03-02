@@ -8,7 +8,7 @@ namespace com.Github.Haseoo.BMMS.WinForms.Configuration
     {
         public static IMapper Mapper { get; }
 
-        static MapperConf()
+        static MapperConf () 
         {
             Mapper = new MapperConfiguration(c =>
             {

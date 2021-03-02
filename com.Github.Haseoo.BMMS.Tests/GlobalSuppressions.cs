@@ -5,9 +5,9 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:com.Github.Haseoo.BMMS.Tests.Config.TestDataGenerator.getCompany~com.Github.Haseoo.BMMS.Data.Entities.Company")]
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:com.Github.Haseoo.BMMS.Tests.Config.TestDataGenerator.getContactData~com.Github.Haseoo.BMMS.Data.Entities.CompanyContactData")]
-[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:com.Github.Haseoo.BMMS.Tests.Config.TestDataGenerator.getOffer(com.Github.Haseoo.BMMS.Data.Entities.Company,com.Github.Haseoo.BMMS.Data.Entities.Material)~com.Github.Haseoo.BMMS.Data.Entities.Offer")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:com.Github.Haseoo.BMMS.Tests.Config.TestDataGenerator.GetCompany~com.Github.Haseoo.BMMS.Data.Entities.Company")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:com.Github.Haseoo.BMMS.Tests.Config.TestDataGenerator.GetContactData~com.Github.Haseoo.BMMS.Data.Entities.CompanyContactData")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:com.Github.Haseoo.BMMS.Tests.Config.TestDataGenerator.GetOffer(com.Github.Haseoo.BMMS.Data.Entities.Company,com.Github.Haseoo.BMMS.Data.Entities.Material)~com.Github.Haseoo.BMMS.Data.Entities.Offer")]
 [assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:com.Github.Haseoo.BMMS.Tests.Persistence.Repositories.CompanyRepositoryTest.should_add_company")]
 [assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:com.Github.Haseoo.BMMS.Tests.Persistence.Repositories.CompanyRepositoryTest.should_edit_company")]
 [assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:com.Github.Haseoo.BMMS.Tests.Persistence.Repositories.CompanyRepositoryTest.should_remove_company")]

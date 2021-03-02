@@ -1,6 +1,7 @@
 ﻿using com.Github.Haseoo.BMMS.Data.Entities;
 using System;
 using System.Collections.Generic;
+using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 
 namespace com.Github.Haseoo.BMMS.Tests.Config
 {
@@ -15,7 +16,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Config
             };
         }
 
-        public static CompanyContactData getContactData()
+        public static CompanyContactData GetContactData()
         {
             return new CompanyContactData
             {
@@ -26,19 +27,19 @@ namespace com.Github.Haseoo.BMMS.Tests.Config
             };
         }
 
-        public static Company getCompany()
+        public static Company GetCompany()
         {
             return new Company
             {
                 Address = "Test 3/1A",
                 City = "Test",
-                ContactData = new List<CompanyContactData> { getContactData(), getContactData() },
+                ContactData = new List<CompanyContactData> { GetContactData(), GetContactData() },
                 Name = "TestName",
                 Voivodeship = "test"
             };
         }
 
-        public static Offer getOffer(Company company, Material material)
+        public static Offer GetOffer(Company company, Material material)
         {
             return new Offer
             {
@@ -49,6 +50,11 @@ namespace com.Github.Haseoo.BMMS.Tests.Config
                 Unit = "tln",
                 UnitPrice = 21M
             };
+        }
+
+        public static MaterialOperationDto GetMaterialOperationDto()
+        {
+            return MaterialOperationDto.Builder().Name("TestNewName").Specification("TestNewSpec").Build();
         }
     }
 }

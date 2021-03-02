@@ -1,11 +1,11 @@
-﻿using com.Github.Haseoo.BMMS.Data.Entities;
+﻿using System;
+using System.Configuration;
+using com.Github.Haseoo.BMMS.Data.Entities;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Dialect;
 using NHibernate.Tool.hbm2ddl;
-using System;
-using System.Configuration;
 
 namespace com.Github.Haseoo.BMMS.Data
 {

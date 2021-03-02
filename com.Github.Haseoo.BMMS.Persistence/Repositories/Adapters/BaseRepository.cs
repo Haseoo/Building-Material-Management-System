@@ -1,5 +1,6 @@
 ﻿using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
+using NHibernate;
 using NHibernate.Linq;
 using System;
 using System.Linq;
@@ -23,20 +24,20 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
             return SessionManager.Instance.GetSession().Get<T>(id);
         }
 
-        public T Add(in T entity)
+        public T Add(T entity)
         {
             var id = SessionManager.Instance.GetSession().Save(entity);
             return SessionManager.Instance.GetSession().Get<T>(id);
         }
 
-        public T Update(in T entity)
+        public T Update(T entity)
         {
             SessionManager.Instance.GetSession().Update(entity);
             SessionManager.Instance.GetSession().Flush();
             return entity;
         }
 
-        public void Remove(in Entity entity)
+        public void Remove(Entity entity)
         {
             SessionManager.Instance.GetSession().Delete(entity);
         }

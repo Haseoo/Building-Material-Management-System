@@ -1,6 +1,6 @@
-﻿using com.Github.Haseoo.BMMS.Data;
+﻿using System.Reflection;
+using com.Github.Haseoo.BMMS.Data;
 using NHibernate;
-using System.Reflection;
 
 namespace com.Github.Haseoo.BMMS.Tests.Config
 {
