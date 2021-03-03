@@ -30,6 +30,7 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
 
             HasMany(x => x.ContactData)
                 .KeyColumn("COMPANY_ID")
+                .ForeignKeyConstraintName("C_DATA_COMPANY_FK")
                 .Not.KeyNullable()
                 .Not.KeyUpdate()
                 .Not.Inverse()

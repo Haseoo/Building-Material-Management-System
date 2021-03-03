@@ -9,7 +9,7 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
             Table("OFFERS");
             Map(x => x.Unit,
                     "UNIT")
-                .CustomSqlType("text")
+                .CustomSqlType("TEXT")
                 .Not.Nullable();
             Map(x => x.UnitPrice,
                     "UNIT_PRICE")
@@ -18,7 +18,7 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
                 .Not.Nullable();
             Map(x => x.Comments,
                     "COMMENTS")
-                .CustomSqlType("text");
+                .CustomSqlType("TEXT");
             Map(x => x.LastModification,
                 "LAST_MODIFICATION_DATE");
 
