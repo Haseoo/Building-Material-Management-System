@@ -142,6 +142,28 @@ namespace com.Github.Haseoo.BMMS.Tests.Business.Services
                     Times.AtLeastOnce);
         }
 
+        [Test]
+        public void should_return_companies_with_name_that_contains_substring()
+        {
+            //given
+            var mockList = new List<Company>()
+            {
+                TestDataGenerator.GetCompany(),
+                TestDataGenerator.GetCompany(),
+                TestDataGenerator.GetCompany(),
+                TestDataGenerator.GetCompany()
+            };
+            mockList[2].Name = "Test2";
+            mockList[3].Name = "CompletelyDifferentName";
+            _repositoryMock.Setup(e => e.GetAll()).Returns(mockList.AsQueryable);
+            const string subString = "Test";
+            //when
+            var outList = _sut.SearchByName(subString);
+            //then
+            Assert.AreEqual(3, outList.Count);
+            Assert.IsTrue(outList.All(e => e.Name.Contains(subString)));
+        }
+
         private static bool CheckInDto(CompanyOperationDto operationDto, Company entity)
         {
             var cDataDto = operationDto.ContactData[0];
