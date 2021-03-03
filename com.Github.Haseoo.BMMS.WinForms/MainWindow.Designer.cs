@@ -55,8 +55,8 @@
             this.MaterialSearchField = new System.Windows.Forms.TextBox();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -342,6 +342,7 @@
             this.MaterialSearchBtn.TabIndex = 0;
             this.MaterialSearchBtn.Text = "Search";
             this.MaterialSearchBtn.UseVisualStyleBackColor = true;
+            this.MaterialSearchBtn.Click += new System.EventHandler(this.OnMaterialSearchOrRefresh);
             // 
             // MaterialRefreshBtn
             // 
@@ -352,6 +353,7 @@
             this.MaterialRefreshBtn.TabIndex = 1;
             this.MaterialRefreshBtn.Text = "Refresh";
             this.MaterialRefreshBtn.UseVisualStyleBackColor = true;
+            this.MaterialRefreshBtn.Click += new System.EventHandler(this.OnMaterialSearchOrRefresh);
             // 
             // MaterialSearchField
             // 
@@ -385,23 +387,23 @@
             this.addToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.addToolStripMenuItem.Text = "File";
             // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.OnRefresh);
+            // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.Q)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.OnQuit);
-            // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.OnRefresh);
             // 
             // addToolStripMenuItem1
             // 
