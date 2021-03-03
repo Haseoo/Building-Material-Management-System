@@ -55,6 +55,9 @@
       <HintPath>..\packages\FluentNHibernate.Net35.1.5.3.0\lib\net35\FluentNHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.9.3.0\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
       <Private>True</Private>
@@ -103,6 +106,7 @@
     <Compile Include="Business.Services\OfferServiceTest.cs" />
     <Compile Include="Business.Services\CompanyServiceTest.cs" />
     <Compile Include="Business.Services\MaterialServiceTest.cs" />
+    <Compile Include="Business.Services\ValidationTest.cs" />
     <Compile Include="Config\SessionManagerExtension.cs" />
     <Compile Include="Config\TestDataGenerator.cs" />
     <Compile Include="GlobalSuppressions.cs" />
