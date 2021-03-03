@@ -56,5 +56,21 @@ namespace com.Github.Haseoo.BMMS.Tests.Config
         {
             return MaterialOperationDto.Builder().Name("TestNewName").Specification("TestNewSpec").Build();
         }
+
+        public static CompanyOperationDto GetCompanyOperationDto()
+        {
+            return CompanyOperationDto.Builder()
+                .ContactData( CompanyContactDataOperationDto.Builder()
+                    .RepresentativeNameAndSurname("TestNewName")
+                    .EmailAddress("tutut@test.com")
+                    .PhoneNumber("987654321")
+                    .Description("new test desc")
+                    .Build())
+                .Address("new test address")
+                .Voivodeship("new test vo")
+                .Name("new test name")
+                .City("new test city")
+                .Build();
+        }
     }
 }

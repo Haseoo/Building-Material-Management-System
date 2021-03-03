@@ -100,6 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business.Services\CompanyServiceTest.cs" />
     <Compile Include="Business.Services\MaterialServiceTest.cs" />
     <Compile Include="Config\SessionManagerExtension.cs" />
     <Compile Include="Config\TestDataGenerator.cs" />
