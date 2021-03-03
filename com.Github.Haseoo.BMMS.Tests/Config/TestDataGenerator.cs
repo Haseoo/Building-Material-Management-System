@@ -72,5 +72,17 @@ namespace com.Github.Haseoo.BMMS.Tests.Config
                 .City("new test city")
                 .Build();
         }
+
+        public static OfferOperationDto GetOfferOperationDto(Guid companyId = default(Guid),
+            Guid materialId = default(Guid))
+        {
+            return OfferOperationDto.Builder()
+                .UnitPrice(15m)
+                .Unit("new testUnit")
+                .Comments("new comments")
+                .MaterialId(materialId)
+                .CompanyId(companyId)
+                .Build();
+        }
     }
 }
