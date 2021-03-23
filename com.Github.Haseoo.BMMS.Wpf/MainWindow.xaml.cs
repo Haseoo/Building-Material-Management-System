@@ -54,13 +54,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private List<CompanyDto> LoadCompanies()
         {
-            return new List<CompanyDto>()
-            {
-                new CompanyDto(Guid.Empty, "bbbb" ,"xxxx", "yyyyyyy\nxxxx\nyyy", "aaaaaa", new List<CompanyContactDataDto>()),
-                new CompanyDto(Guid.Empty, "bbbb" ,"xxxx", "yyyyyyy", "aaaaaa", new List<CompanyContactDataDto>()),
-                new CompanyDto(Guid.Empty, "bbbb" ,"xxxx", "yyyyyyy", "aaaaaa", new List<CompanyContactDataDto>()),
-                new CompanyDto(Guid.Empty, "bbbb" ,"xxxx", "yyyyyyy", "aaaaaa", new List<CompanyContactDataDto>()),
-            };
+            return new List<CompanyDto>();
         }
 
         private void OnRowDoubleClick(object sender, RoutedEventArgs e)
