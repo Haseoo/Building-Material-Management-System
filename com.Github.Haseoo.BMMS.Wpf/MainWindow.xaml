@@ -1,0 +1,131 @@
+﻿<Window x:Class="com.Github.Haseoo.BMMS.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:com.Github.Haseoo.BMMS.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="800">
+
+    <Window.Resources>
+        <RoutedUICommand x:Key="AddCompany" Text="AddCompany">
+            <RoutedUICommand.InputGestures>
+                <KeyGesture>CTRL+C</KeyGesture>
+            </RoutedUICommand.InputGestures>
+        </RoutedUICommand>
+        <RoutedUICommand x:Key="AddMaterial" Text="AddMaterial">
+            <RoutedUICommand.InputGestures>
+                <KeyGesture>CTRL+M</KeyGesture>
+            </RoutedUICommand.InputGestures>
+        </RoutedUICommand>
+        <RoutedUICommand x:Key="AddOffer" Text="AddOffer">
+            <RoutedUICommand.InputGestures>
+                <KeyGesture>CTRL+O</KeyGesture>
+            </RoutedUICommand.InputGestures>
+        </RoutedUICommand>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource AddCompany}" Executed="OnCompanyAdd"/>
+        <CommandBinding Command="{StaticResource AddMaterial}" Executed="OnMaterialAdd"/>
+        <CommandBinding Command="{StaticResource AddOffer}" Executed="OnOfferAdd"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="C" Modifiers="Alt" Command="{StaticResource AddCompany}"/>
+        <KeyBinding Key="M" Modifiers="Alt" Command="{StaticResource AddMaterial}"/>
+        <KeyBinding Key="O" Modifiers="Alt" Command="{StaticResource AddOffer}"/>
+    </Window.InputBindings>
+
+    <Grid HorizontalAlignment="Stretch"  Margin="0,0,0,0" VerticalAlignment="Stretch">
+        <Menu Height="25" VerticalAlignment="Top" Margin="0,0,-6.4,0" HorizontalAlignment="Stretch">
+            <MenuItem Header="File" Height="25">
+                <MenuItem Header="Refresh" InputGestureText="F5" HorizontalAlignment="Left" Width="155"/>
+                <MenuItem Header="Quit" InputGestureText="Alt+Q" HorizontalAlignment="Left" Width="155"/>
+            </MenuItem>
+            <MenuItem Header="Add" Height="25">
+                <MenuItem Header="Company" InputGestureText="Alt+C" HorizontalAlignment="Left" Width="170" Click="OnCompanyAdd"/>
+                <MenuItem Header="Material" InputGestureText="Alt+M" HorizontalAlignment="Left" Width="170" Click="OnCompanyAdd"/>
+                <MenuItem Header="Offer" InputGestureText="Alt+O" HorizontalAlignment="Left" Width="170" Click="OnOfferAdd"/>
+            </MenuItem>
+            <MenuItem Header="Entry" Height="25">
+                <MenuItem Header="Edit" InputGestureText="Ctrl+C" HorizontalAlignment="Left" Width="155"/>
+                <MenuItem Header="Delete" InputGestureText="Del" HorizontalAlignment="Left" Width="155"/>
+            </MenuItem>
+            <MenuItem Header="Help" Height="25">
+                <MenuItem Header="About" HorizontalAlignment="Left"/>
+            </MenuItem>
+        </Menu>
+        <TabControl HorizontalAlignment="Stretch" Margin="5,25,5,5" VerticalAlignment="Stretch">
+            <TabItem Name="CompaniesTab" Header="Companies">
+                <Grid Background="White">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    <Grid HorizontalAlignment="Stretch" Height="30" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" Content="Search" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center" Height="25"/>
+                        <Button Grid.Column="2" Content="Refresh" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"  Height="25"/>
+                    </Grid>
+                    <DataGrid
+                        Name="Companies"
+                        HorizontalAlignment="Stretch"
+                        Margin="5,35,5,5" VerticalAlignment="Stretch"
+                        AutoGenerateColumns="False"
+                        ScrollViewer.CanContentScroll="True" 
+                        ScrollViewer.VerticalScrollBarVisibility="Auto"
+                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        IsReadOnly="True"
+                        HorizontalGridLinesBrush="#FFDADADA"
+                        VerticalGridLinesBrush="#FFDADADA">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="OnRowDoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>                
+                            <DataGridTextColumn Width="200" Header="Company name" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Width="200" Header="Address" Binding="{Binding Address}"/>
+                            <DataGridTextColumn Width="200" Header="City" Binding="{Binding City}"/>
+                            <DataGridTextColumn Width="200" Header="Voivodeship" Binding="{Binding Voivodeship}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Name="MaterialsTab" Header="Materials">
+                <Grid Background="White">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    <Grid HorizontalAlignment="Stretch" Height="30" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="MaterialName" Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" Content="Search" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center" Height="25" Click="OnMaterialSearchOrRefresh"/>
+                        <Button Grid.Column="2" Content="Refresh" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"  Height="25"/>
+                    </Grid>
+                    <DataGrid
+                        Name="Materials"
+                        HorizontalAlignment="Stretch"
+                        Margin="5,35,5,5" VerticalAlignment="Stretch"
+                        AutoGenerateColumns="False"
+                        ScrollViewer.CanContentScroll="True" 
+                        ScrollViewer.VerticalScrollBarVisibility="Auto"
+                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        IsReadOnly="True"
+                        HorizontalGridLinesBrush="#FFDADADA"
+                        VerticalGridLinesBrush="#FFDADADA">
+                        <DataGrid.Columns>                
+                            <DataGridTextColumn Width="250" Header="Material name" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Width="500" Header="Specification" Binding="{Binding Specification}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+
+</Window>

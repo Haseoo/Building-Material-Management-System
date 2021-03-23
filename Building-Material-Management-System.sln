@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.WinForms", "com.Github.Haseoo.BMMS.WinForms\com.Github.Haseoo.BMMS.WinForms.csproj", "{5F498834-8AD9-4A10-B666-CE2ABFE4CF9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.Github.Haseoo.BMMS.Wpf", "com.Github.Haseoo.BMMS.Wpf\com.Github.Haseoo.BMMS.Wpf.csproj", "{B2121EC1-6AEA-496C-A946-EF5BD2067FAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5F498834-8AD9-4A10-B666-CE2ABFE4CF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F498834-8AD9-4A10-B666-CE2ABFE4CF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F498834-8AD9-4A10-B666-CE2ABFE4CF9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2121EC1-6AEA-496C-A946-EF5BD2067FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2121EC1-6AEA-496C-A946-EF5BD2067FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2121EC1-6AEA-496C-A946-EF5BD2067FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2121EC1-6AEA-496C-A946-EF5BD2067FAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
