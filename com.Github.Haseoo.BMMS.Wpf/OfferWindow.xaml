@@ -24,7 +24,7 @@
             <Button IsDefault="True" Grid.Column="1"  Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75"/>
         </Grid>
         <GroupBox Header="Comments" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" Margin="0,10,-0.4,0.2">
-            <TextBox HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch"/>
+            <TextBox HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" AcceptsReturn="True"/>
 
         </GroupBox>
         <Grid Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

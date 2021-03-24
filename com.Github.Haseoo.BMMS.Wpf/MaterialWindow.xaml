@@ -17,9 +17,9 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button IsCancel="True" Grid.Column="1"  Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75"/>
-            <Button IsDefault="True" Grid.Column="2"  Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75"/>
-            <Button Grid.Column="0"  Content="Show offers" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnShowOffer"/>
+            <Button IsCancel="True" Grid.Column="1"  Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnCancel"/>
+            <Button IsDefault="True" Grid.Column="2"  Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnSave"/>
+            <Button Grid.Column="0" Name="ShowOfferBtn" Content="Show offers" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnShowOffer"/>
         </Grid>
         <Grid Grid.Row="0" Margin="0, 0, 0, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
@@ -32,8 +32,8 @@
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Content="Material name" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <Label Grid.Row="1" Grid.Column="0" Content="Material specification" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox  Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch"/>
+            <TextBox Name="MaterialName"  Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center"/>
+            <TextBox Name="MaterialSpecification" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Stretch"/>
         </Grid>
 
     </Grid>

@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:com.Github.Haseoo.BMMS.Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="800">
+        Title="Building Material Management System" Height="400" Width="800">
 
     <Window.Resources>
         <RoutedUICommand x:Key="AddCompany" Text="AddCompany">
             <RoutedUICommand.InputGestures>
-                <KeyGesture>CTRL+C</KeyGesture>
+                <KeyGesture>CTRL+E</KeyGesture>
             </RoutedUICommand.InputGestures>
         </RoutedUICommand>
         <RoutedUICommand x:Key="AddMaterial" Text="AddMaterial">
@@ -23,32 +23,46 @@
                 <KeyGesture>CTRL+O</KeyGesture>
             </RoutedUICommand.InputGestures>
         </RoutedUICommand>
+        <RoutedUICommand x:Key="Refresh" Text="Refresh">
+            <RoutedUICommand.InputGestures>
+                <KeyGesture>F5</KeyGesture>
+            </RoutedUICommand.InputGestures>
+        </RoutedUICommand>
+        <RoutedUICommand x:Key="Close" Text="Close">
+            <RoutedUICommand.InputGestures>
+                <KeyGesture>ALT+Q</KeyGesture>
+            </RoutedUICommand.InputGestures>
+        </RoutedUICommand>
     </Window.Resources>
     <Window.CommandBindings>
         <CommandBinding Command="{StaticResource AddCompany}" Executed="OnCompanyAdd"/>
         <CommandBinding Command="{StaticResource AddMaterial}" Executed="OnMaterialAdd"/>
         <CommandBinding Command="{StaticResource AddOffer}" Executed="OnOfferAdd"/>
+        <CommandBinding Command="{StaticResource Refresh}" Executed="OnRefresh"/>
+        <CommandBinding Command="{StaticResource Close}" Executed="OnClose"/>
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Key="C" Modifiers="Alt" Command="{StaticResource AddCompany}"/>
         <KeyBinding Key="M" Modifiers="Alt" Command="{StaticResource AddMaterial}"/>
         <KeyBinding Key="O" Modifiers="Alt" Command="{StaticResource AddOffer}"/>
+        <KeyBinding Key="Q" Modifiers="Alt" Command="{StaticResource Close}"/>
+        <KeyBinding Key="F5" Command="{StaticResource Refresh}"/>
     </Window.InputBindings>
 
     <Grid HorizontalAlignment="Stretch"  Margin="0,0,0,0" VerticalAlignment="Stretch">
         <Menu Height="25" VerticalAlignment="Top" Margin="0,0,-6.4,0" HorizontalAlignment="Stretch">
             <MenuItem Header="File" Height="25">
-                <MenuItem Header="Refresh" InputGestureText="F5" HorizontalAlignment="Left" Width="155"/>
-                <MenuItem Header="Quit" InputGestureText="Alt+Q" HorizontalAlignment="Left" Width="155"/>
+                <MenuItem Header="Refresh" InputGestureText="F5" HorizontalAlignment="Left" Width="155" Click="OnRefresh"/>
+                <MenuItem Header="Quit" InputGestureText="Alt+Q" HorizontalAlignment="Left" Width="155" Click="OnClose"/>
             </MenuItem>
             <MenuItem Header="Add" Height="25">
                 <MenuItem Header="Company" InputGestureText="Alt+C" HorizontalAlignment="Left" Width="170" Click="OnCompanyAdd"/>
-                <MenuItem Header="Material" InputGestureText="Alt+M" HorizontalAlignment="Left" Width="170" Click="OnCompanyAdd"/>
+                <MenuItem Header="Material" InputGestureText="Alt+M" HorizontalAlignment="Left" Width="170" Click="OnMaterialAdd"/>
                 <MenuItem Header="Offer" InputGestureText="Alt+O" HorizontalAlignment="Left" Width="170" Click="OnOfferAdd"/>
             </MenuItem>
             <MenuItem Header="Entry" Height="25">
-                <MenuItem Header="Edit" InputGestureText="Ctrl+C" HorizontalAlignment="Left" Width="155"/>
-                <MenuItem Header="Delete" InputGestureText="Del" HorizontalAlignment="Left" Width="155"/>
+                <MenuItem Header="Edit" InputGestureText="Ctrl+E" HorizontalAlignment="Left" Width="155"/>
+                <MenuItem Header="Delete" InputGestureText="Del" HorizontalAlignment="Left" Width="155" Click="OnDelete"/>
             </MenuItem>
             <MenuItem Header="Help" Height="25">
                 <MenuItem Header="About" HorizontalAlignment="Left"/>
@@ -64,9 +78,9 @@
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"/>
-                        <Button Grid.Column="1" Content="Search" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center" Height="25"/>
-                        <Button Grid.Column="2" Content="Refresh" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"  Height="25"/>
+                        <TextBox Name="CompanyInput" Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" Content="Search" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center" Height="25" Click="OnCompanySearchOrRefresh"/>
+                        <Button Grid.Column="2" Content="Refresh" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"  Height="25" Click="OnCompanySearchOrRefresh"/>
                     </Grid>
                     <DataGrid
                         Name="Companies"
@@ -78,7 +92,8 @@
                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
                         IsReadOnly="True"
                         HorizontalGridLinesBrush="#FFDADADA"
-                        VerticalGridLinesBrush="#FFDADADA">
+                        VerticalGridLinesBrush="#FFDADADA"
+                        PreviewKeyDown="OnDataGridRowKeyDown">
                         <DataGrid.Resources>
                             <Style TargetType="DataGridRow">
                                 <EventSetter Event="MouseDoubleClick" Handler="OnRowDoubleClick"/>
@@ -102,9 +117,9 @@
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Name="MaterialName" Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"/>
+                        <TextBox Name="MaterialInput" Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"/>
                         <Button Grid.Column="1" Content="Search" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center" Height="25" Click="OnMaterialSearchOrRefresh"/>
-                        <Button Grid.Column="2" Content="Refresh" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"  Height="25"/>
+                        <Button Grid.Column="2" Content="Refresh" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"  Height="25" Click="OnMaterialSearchOrRefresh"/>
                     </Grid>
                     <DataGrid
                         Name="Materials"
@@ -116,11 +131,17 @@
                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
                         IsReadOnly="True"
                         HorizontalGridLinesBrush="#FFDADADA"
-                        VerticalGridLinesBrush="#FFDADADA">
+                        VerticalGridLinesBrush="#FFDADADA"
+                        PreviewKeyDown="OnDataGridRowKeyDown">
                         <DataGrid.Columns>                
                             <DataGridTextColumn Width="250" Header="Material name" Binding="{Binding Name}"/>
                             <DataGridTextColumn Width="500" Header="Specification" Binding="{Binding Specification}"/>
                         </DataGrid.Columns>
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="OnRowDoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
                     </DataGrid>
                 </Grid>
             </TabItem>

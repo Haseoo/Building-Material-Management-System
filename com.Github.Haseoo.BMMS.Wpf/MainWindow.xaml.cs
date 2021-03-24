@@ -14,8 +14,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using com.Github.Haseoo.BMMS.Business.DTOs;
+using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
+using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
+using com.Github.Haseoo.BMMS.Data;
+using com.Github.Haseoo.BMMS.WinForms;
+using FluentNHibernate.Conventions.Inspections;
 
 namespace com.Github.Haseoo.BMMS.Wpf
 {
@@ -44,7 +49,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void OnMaterialAdd(object sender, RoutedEventArgs e)
         {
-            new MaterialWindow().Show();
+            new MaterialWindow(_serviceContext, _validatorContext).Show();
         }
 
         private void OnOfferAdd(object sender, RoutedEventArgs e)
@@ -52,25 +57,130 @@ namespace com.Github.Haseoo.BMMS.Wpf
             new OfferWindow().Show();
         }
 
-        private void OnMaterialSearchOrRefresh(object sender, RoutedEventArgs e)
+        private void OnMaterialSearchOrRefresh(object sender = null, RoutedEventArgs e = null)
         {
-            
+            var materialName = MaterialInput.Text;
+            try
+            {
+                Materials.ItemsSource = string.IsNullOrEmpty(materialName) ?
+                    _serviceContext.MaterialService.GetList() :
+                    _serviceContext.MaterialService.SearchByName(materialName);
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowErrorMessage(ex);
+            }
         }
 
-        private List<CompanyDto> LoadCompanies()
+        private void OnCompanySearchOrRefresh(object sender = null, RoutedEventArgs e = null)
         {
-            return new List<CompanyDto>();
+            var companyName = CompanyInput.Text;
+            try
+            {
+                Companies.ItemsSource = string.IsNullOrEmpty(companyName) ?
+                    _serviceContext.CompanyService.GetList() :
+                    _serviceContext.CompanyService.SearchByName(companyName);
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowErrorMessage(ex);
+            }
         }
 
         private void OnRowDoubleClick(object sender, RoutedEventArgs e)
         {
+            TabAction((() =>
+            {
+                MessageBox.Show(GetSelectedCompany().Name);
+            }), () =>
+            {
+                MessageBox.Show(GetSelectedMaterial().Name);
+            });
+        }
+
+        private void DeleteCompany()
+        {
+            var selected = GetSelectedCompany();
+            if (selected != null)
+            {
+                new ServiceTransactionProxy<CompanyOperationDto, CompanyDto>(_serviceContext.CompanyService)
+                    .Delete(selected.Id);
+                OnCompanySearchOrRefresh();
+            }
+        }
+
+        private void DeleteMaterial()
+        {
+            var selected = GetSelectedMaterial();
+            if (selected != null)
+            {
+                new ServiceTransactionProxy<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
+                    .Delete(selected.Id);
+                OnMaterialSearchOrRefresh();
+            }
+        }
+
+        private void OnDelete(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                TabAction(DeleteCompany, DeleteMaterial);
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowErrorMessage(ex);
+            }
+        }
+
+        private void Foo(object sender, RoutedEventArgs e)
+        {
+            OnDelete(sender, e);
+        }
+
+        private MaterialDto GetSelectedMaterial()
+        {
+            return Materials.SelectedValue as MaterialDto;
+        }
+
+        private CompanyDto GetSelectedCompany()
+        {
+            return Companies.SelectedValue as CompanyDto;
+        }
+
+        private void OnRefresh(object sender, RoutedEventArgs e)
+        {
+            TabAction((() =>
+            {
+                OnCompanySearchOrRefresh(sender, e);
+            }), () =>
+            {
+                OnMaterialSearchOrRefresh(sender, e);
+            });
+        }
+
+        private void TabAction(Action onCompanySelected, Action onMaterialSelected)
+        {
             if (CompaniesTab.IsSelected)
             {
-                MessageBox.Show(((CompanyDto) Companies.SelectedValue).Name);
+                onCompanySelected.Invoke();
             } else if (MaterialsTab.IsSelected)
             {
-                MessageBox.Show(((MaterialDto) Materials.SelectedValue).Name);
+               onMaterialSelected.Invoke();
             }
+        }
+
+        private void OnDataGridRowKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Delete)
+            {
+                OnDelete(sender, e);
+            }
+        }
+
+        private void OnClose(object sender = null, RoutedEventArgs e = null)
+        {
+            SessionManager.Instance.Dispose();
+            Close();
         }
     }
 }
