@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using com.Github.Haseoo.BMMS.Business.DTOs;
+using com.Github.Haseoo.BMMS.Business.Services;
+using com.Github.Haseoo.BMMS.Business.Validators;
 
 namespace com.Github.Haseoo.BMMS.Wpf
 {
@@ -22,14 +24,17 @@ namespace com.Github.Haseoo.BMMS.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        public IList<MaterialDto> MaterialList { get; set; }
+        private readonly ServiceContext _serviceContext;
+        private readonly ValidatorContext _validatorContext;
 
-        public MainWindow()
+        public MainWindow(ServiceContext serviceContext,
+            ValidatorContext validatorContext)
         {
+            _serviceContext = serviceContext;
+            _validatorContext = validatorContext;
             InitializeComponent();
-            MaterialList = new List<MaterialDto>();
-            Materials.ItemsSource = MaterialList;
-            Companies.ItemsSource = LoadCompanies();
+            Materials.ItemsSource = serviceContext.MaterialService.GetList();
+            Companies.ItemsSource = serviceContext.CompanyService.GetList();
         }
 
         private void OnCompanyAdd(object sender, RoutedEventArgs e)
