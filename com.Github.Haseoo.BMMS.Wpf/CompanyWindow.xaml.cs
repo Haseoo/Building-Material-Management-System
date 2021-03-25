@@ -50,11 +50,13 @@ namespace com.Github.Haseoo.BMMS.Wpf
             else
             {
                 OffersBtn.Visibility = Visibility.Hidden;
+                Title = "New company";
             }
         }
 
         private void DisplayCompanyDto()
         {
+            Title = _currentCompany.Name;
             CompanyName.Text = _currentCompany.Name;
             Address.Text = _currentCompany.Address;
             City.Text = _currentCompany.City;

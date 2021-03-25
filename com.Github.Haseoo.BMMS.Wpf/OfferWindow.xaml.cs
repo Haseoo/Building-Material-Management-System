@@ -42,6 +42,10 @@ namespace com.Github.Haseoo.BMMS.Wpf
             {
                 LoadOffer(id.Value);
             }
+            else
+            {
+                Title = "New offer";
+            }
         }
 
         private void LoadOffer(Guid id)
@@ -54,6 +58,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 Unit.Text = _currentOffer.Unit;
                 UnitPrice.Text = _currentOffer.UnitPrice.ToString(CultureInfo.CurrentCulture);
                 Comments.Text = _currentOffer.Comments;
+                Title = $"Offer of {_currentOffer.MaterialName} material and {_currentOffer.CompanyName} company";
             }
             catch (Exception ex)
             {

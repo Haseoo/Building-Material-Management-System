@@ -38,6 +38,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
             _validatorContext = validatorContext;
             if (_materialId == null)
             {
+                Title = "New material";
                 ShowOfferBtn.Visibility = Visibility.Hidden;
             }
             else
@@ -53,6 +54,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 var material = _serviceContext.MaterialService.GetById(id);
                 MaterialName.Text = material.Name;
                 MaterialSpecification.Text = material.Specification;
+                Title = material.Name;
             }
             catch (Exception ex)
             {

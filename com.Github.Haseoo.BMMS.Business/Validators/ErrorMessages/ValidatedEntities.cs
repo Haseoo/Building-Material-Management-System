@@ -4,16 +4,16 @@ namespace com.Github.Haseoo.BMMS.Business.Validators.ErrorMessages
 {
     public enum ValidatedEntities
     {
-        [Description("Company")]
+        [Description("company")]
         Company,
 
-        [Description("Material")]
+        [Description("material")]
         Material,
 
-        [Description("Company contact")]
+        [Description("company contact: ")]
         CompanyContactData,
 
-        [Description("Offer")]
+        [Description("offer")]
         Offer
     }
 }

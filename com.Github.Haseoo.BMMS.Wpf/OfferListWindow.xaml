@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:com.Github.Haseoo.BMMS.Wpf"
         mc:Ignorable="d"
-        Title="OfferListWindow" Height="450" Width="800">
+        Title="Offer list" Height="450" Width="800">
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
