@@ -172,5 +172,11 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 .Address(Address.Text)
                 .Build();
         }
+
+        private void ShowOffers(object sender, RoutedEventArgs e)
+        {
+            new OfferListWindow(_serviceContext, _validatorContext, Utils.OfferListMode.Company, _currentCompany.Id)
+                .Show();
+        }
     }
 }

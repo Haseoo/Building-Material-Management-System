@@ -63,7 +63,11 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void OnShowOffer(object sender, RoutedEventArgs e)
         {
-            new OfferListWindow().Show();
+            if (_materialId.HasValue)
+            {
+                new OfferListWindow(_serviceContext, _validatorContext, Utils.OfferListMode.Material, _materialId.Value)
+                    .Show();
+            }
         }
 
         private void OnCancel(object sender, RoutedEventArgs e)

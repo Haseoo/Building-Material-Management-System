@@ -22,7 +22,7 @@
             </Grid.ColumnDefinitions>
             <Button IsDefault="True" Content="Save" Grid.Column="2"  Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Click="OnSave"/>
             <Button IsCancel="True" Content="Cancel" Grid.Column="1"  Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Click="OnCancel"/>
-            <Button Name="OffersBtn" Content="Show offers" Grid.Column="0" Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Visibility="Visible"/>
+            <Button Name="OffersBtn" Content="Show offers" Grid.Column="0" Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Visibility="Visible" Click="ShowOffers"/>
         </Grid>
         <GroupBox Grid.Row="1" Header="Contact data" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
             <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">

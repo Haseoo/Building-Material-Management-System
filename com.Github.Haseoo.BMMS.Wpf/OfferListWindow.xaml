@@ -12,7 +12,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
-        <Button HorizontalAlignment="Right" Grid.Row="0" VerticalAlignment="Center" Width="25" Height="25">
+        <Button HorizontalAlignment="Right" Grid.Row="0" VerticalAlignment="Center" Width="25" Height="25" Click="OnRefresh">
             <StackPanel>
                 <Image Source="Pictures/refresh.png" Width="20" Height="20" />
             </StackPanel>
@@ -24,15 +24,15 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Show company" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100"/>
-            <Button Grid.Column="1" Content="Show material"  Margin="0, 0, 5, 0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100"/>
-            <Button Grid.Column="2" Content="Remove" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75"/>
-            <Button Grid.Column="3" Content="Edit" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75"/>
+            <Button Grid.Column="0" Content="Show company" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowCompany"/>
+            <Button Grid.Column="1" Content="Show material"  Margin="0, 0, 5, 0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowMaterials"/>
+            <Button Grid.Column="2" Content="Remove" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnRemove"/>
+            <Button Grid.Column="3" Content="Edit" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnEdit"/>
 
         </Grid>
         <DataGrid
             Grid.Row="1"
-            Name="Materials"
+            Name="Offers"
             HorizontalAlignment="Stretch"
             Margin="5,3,4.6,4.6" VerticalAlignment="Stretch"
             AutoGenerateColumns="False"
@@ -41,7 +41,13 @@
             ScrollViewer.HorizontalScrollBarVisibility="Auto"
             IsReadOnly="True"
             HorizontalGridLinesBrush="#FFDADADA"
-            VerticalGridLinesBrush="#FFDADADA">
+            VerticalGridLinesBrush="#FFDADADA"
+            PreviewKeyDown="OnOfferListKeyDown">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="OnEdit"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Width="150" Header="Material" Binding="{Binding MaterialName}"/>
                 <DataGridTextColumn Width="150" Header="Company" Binding="{Binding CompanyName}"/>

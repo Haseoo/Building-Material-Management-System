@@ -52,7 +52,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 SetSelectedMaterial(_currentOffer.Material);
                 SetSelectedCompany(_currentOffer.Company);
                 Unit.Text = _currentOffer.Unit;
-                UnitPrice.Text = _currentOffer.UnitPrice.ToString(CultureInfo.InvariantCulture);
+                UnitPrice.Text = _currentOffer.UnitPrice.ToString(CultureInfo.CurrentCulture);
                 Comments.Text = _currentOffer.Comments;
             }
             catch (Exception ex)
@@ -101,7 +101,6 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void OnSave(object sender, RoutedEventArgs e)
         {
-            var u = UnitPrice.Text;
             if (!decimal.TryParse(UnitPrice.Text, out var unitPrice))
             {
                 unitPrice = -1m;
