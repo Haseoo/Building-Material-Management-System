@@ -33,6 +33,11 @@
                 <KeyGesture>ALT+Q</KeyGesture>
             </RoutedUICommand.InputGestures>
         </RoutedUICommand>
+        <RoutedUICommand x:Key="EntryEdit" Text="EntryEdit">
+            <RoutedUICommand.InputGestures>
+                <KeyGesture>ALT+E</KeyGesture>
+            </RoutedUICommand.InputGestures>
+        </RoutedUICommand>
     </Window.Resources>
     <Window.CommandBindings>
         <CommandBinding Command="{StaticResource AddCompany}" Executed="OnCompanyAdd"/>
@@ -40,12 +45,14 @@
         <CommandBinding Command="{StaticResource AddOffer}" Executed="OnOfferAdd"/>
         <CommandBinding Command="{StaticResource Refresh}" Executed="OnRefresh"/>
         <CommandBinding Command="{StaticResource Close}" Executed="OnClose"/>
+        <CommandBinding Command="{StaticResource EntryEdit}" Executed="OnEntryEdit"/>
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Key="C" Modifiers="Alt" Command="{StaticResource AddCompany}"/>
         <KeyBinding Key="M" Modifiers="Alt" Command="{StaticResource AddMaterial}"/>
         <KeyBinding Key="O" Modifiers="Alt" Command="{StaticResource AddOffer}"/>
         <KeyBinding Key="Q" Modifiers="Alt" Command="{StaticResource Close}"/>
+        <KeyBinding Key="E" Modifiers="Alt" Command="{StaticResource EntryEdit}"/>
         <KeyBinding Key="F5" Command="{StaticResource Refresh}"/>
     </Window.InputBindings>
 
@@ -61,7 +68,7 @@
                 <MenuItem Header="Offer" InputGestureText="Alt+O" HorizontalAlignment="Left" Width="170" Click="OnOfferAdd"/>
             </MenuItem>
             <MenuItem Header="Entry" Height="25">
-                <MenuItem Header="Edit" InputGestureText="Ctrl+E" HorizontalAlignment="Left" Width="155"/>
+                <MenuItem Header="Edit" InputGestureText="Ctrl+E" HorizontalAlignment="Left" Width="155" Click="OnEntryEdit"/>
                 <MenuItem Header="Delete" InputGestureText="Del" HorizontalAlignment="Left" Width="155" Click="OnDelete"/>
             </MenuItem>
             <MenuItem Header="Help" Height="25">
@@ -78,7 +85,7 @@
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Name="CompanyInput" Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"/>
+                        <TextBox Name="CompanyInput" Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center" KeyDown="OnSearchEnter"/>
                         <Button Grid.Column="1" Content="Search" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center" Height="25" Click="OnCompanySearchOrRefresh"/>
                         <Button Grid.Column="2" Content="Refresh" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"  Height="25" Click="OnCompanySearchOrRefresh"/>
                     </Grid>
@@ -93,10 +100,10 @@
                         IsReadOnly="True"
                         HorizontalGridLinesBrush="#FFDADADA"
                         VerticalGridLinesBrush="#FFDADADA"
-                        PreviewKeyDown="OnDataGridRowKeyDown">
+                        PreviewKeyDown="OnDataGridRowKeyDown" SelectionMode="Single">
                         <DataGrid.Resources>
                             <Style TargetType="DataGridRow">
-                                <EventSetter Event="MouseDoubleClick" Handler="OnRowDoubleClick"/>
+                                <EventSetter Event="MouseDoubleClick" Handler="OnEntryEdit"/>
                             </Style>
                         </DataGrid.Resources>
                         <DataGrid.Columns>                
@@ -117,7 +124,7 @@
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox Name="MaterialInput" Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"/>
+                        <TextBox Name="MaterialInput" Grid.Column="0" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center" KeyDown="OnSearchEnter"/>
                         <Button Grid.Column="1" Content="Search" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center" Height="25" Click="OnMaterialSearchOrRefresh"/>
                         <Button Grid.Column="2" Content="Refresh" HorizontalAlignment="Stretch" Margin="5,0,5,0" VerticalAlignment="Center"  Height="25" Click="OnMaterialSearchOrRefresh"/>
                     </Grid>
@@ -132,14 +139,14 @@
                         IsReadOnly="True"
                         HorizontalGridLinesBrush="#FFDADADA"
                         VerticalGridLinesBrush="#FFDADADA"
-                        PreviewKeyDown="OnDataGridRowKeyDown">
+                        PreviewKeyDown="OnDataGridRowKeyDown" SelectionMode="Single">
                         <DataGrid.Columns>                
                             <DataGridTextColumn Width="250" Header="Material name" Binding="{Binding Name}"/>
                             <DataGridTextColumn Width="500" Header="Specification" Binding="{Binding Specification}"/>
                         </DataGrid.Columns>
                         <DataGrid.Resources>
                             <Style TargetType="DataGridRow">
-                                <EventSetter Event="MouseDoubleClick" Handler="OnRowDoubleClick"/>
+                                <EventSetter Event="MouseDoubleClick" Handler="OnEntryEdit"/>
                             </Style>
                         </DataGrid.Resources>
                     </DataGrid>

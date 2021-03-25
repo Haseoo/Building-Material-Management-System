@@ -44,7 +44,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void OnCompanyAdd(object sender, RoutedEventArgs e)
         {
-            new CompanyWindow().Show();
+            new CompanyWindow(_serviceContext, _validatorContext).Show();
         }
 
         private void OnMaterialAdd(object sender, RoutedEventArgs e)
@@ -87,14 +87,22 @@ namespace com.Github.Haseoo.BMMS.Wpf
             }
         }
 
-        private void OnRowDoubleClick(object sender, RoutedEventArgs e)
+        private void OnEntryEdit(object sender, RoutedEventArgs e)
         {
             TabAction((() =>
             {
-                MessageBox.Show(GetSelectedCompany().Name);
+                var selected = GetSelectedCompany();
+                if (selected != null)
+                {
+                    new CompanyWindow(_serviceContext, _validatorContext, selected.Id).Show();
+                }
             }), () =>
             {
-                MessageBox.Show(GetSelectedMaterial().Name);
+                var selected = GetSelectedMaterial();
+                if (selected != null)
+                {
+                    new MaterialWindow(_serviceContext, _validatorContext, selected.Id).Show();
+                }
             });
         }
 
@@ -130,11 +138,6 @@ namespace com.Github.Haseoo.BMMS.Wpf
             {
                 Utils.ShowErrorMessage(ex);
             }
-        }
-
-        private void Foo(object sender, RoutedEventArgs e)
-        {
-            OnDelete(sender, e);
         }
 
         private MaterialDto GetSelectedMaterial()
@@ -181,6 +184,15 @@ namespace com.Github.Haseoo.BMMS.Wpf
         {
             SessionManager.Instance.Dispose();
             Close();
+        }
+
+        private void OnSearchEnter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                TabAction(() => OnCompanySearchOrRefresh(sender, e),
+                    () => OnMaterialSearchOrRefresh(sender, e));
+            }
         }
     }
 }

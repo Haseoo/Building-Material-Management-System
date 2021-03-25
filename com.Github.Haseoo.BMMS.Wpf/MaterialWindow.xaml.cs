@@ -41,6 +41,25 @@ namespace com.Github.Haseoo.BMMS.Wpf
             {
                 ShowOfferBtn.Visibility = Visibility.Hidden;
             }
+            else
+            {
+                LoadMaterial(_materialId.Value);
+            }
+        }
+
+        private void LoadMaterial(Guid id)
+        {
+            try
+            {
+                var material = _serviceContext.MaterialService.GetById(id);
+                MaterialName.Text = material.Name;
+                MaterialSpecification.Text = material.Specification;
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowErrorMessage(ex);
+                Close();
+            }
         }
 
         private void OnShowOffer(object sender, RoutedEventArgs e)
