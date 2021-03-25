@@ -22,6 +22,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
                 transaction = SessionManager.Instance.GetSession().BeginTransaction();
                 var returnValue = _service.Add(operation);
                 transaction.Commit();
+                transaction.Dispose();
                 return returnValue;
             }
             catch
@@ -43,6 +44,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
                 transaction = SessionManager.Instance.GetSession().BeginTransaction();
                 _service.Delete(id);
                 transaction.Commit();
+                transaction.Dispose();
             }
             catch
             {
