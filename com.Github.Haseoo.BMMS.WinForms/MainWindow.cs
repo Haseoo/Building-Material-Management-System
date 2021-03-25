@@ -1,20 +1,20 @@
 ﻿using com.Github.Haseoo.BMMS.Business.DTOs;
+using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
+using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services;
-using com.Github.Haseoo.BMMS.Data;
+using com.Github.Haseoo.BMMS.Business.Services.Adapters;
+using com.Github.Haseoo.BMMS.Business.Validators;
 using com.Github.Haseoo.BMMS.WinForms.Configuration;
 using System;
 using System.Windows.Forms;
-using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
-using com.Github.Haseoo.BMMS.Business.Exceptions;
-using com.Github.Haseoo.BMMS.Business.Services.Adapters;
-using com.Github.Haseoo.BMMS.Business.Validators;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
     public partial class MainWindow : Form
     {
         private bool _isCompany = true;
-        public MainWindow( )
+
+        public MainWindow()
         {
             InitializeComponent();
             _serviceContext = new ServiceContext(MapperConf.Mapper);
@@ -93,7 +93,8 @@ namespace com.Github.Haseoo.BMMS.WinForms
             if (string.IsNullOrWhiteSpace(partialName))
             {
                 RefreshMaterials();
-            } else
+            }
+            else
             {
                 MaterialList.SetObjects(_serviceContext.MaterialService.SearchByName(partialName));
             }
@@ -105,12 +106,12 @@ namespace com.Github.Haseoo.BMMS.WinForms
             if (string.IsNullOrWhiteSpace(partialName))
             {
                 RefreshCompanies();
-            } else
+            }
+            else
             {
                 CompanyList.SetObjects(_serviceContext.CompanyService.SearchByName(partialName));
             }
         }
-
 
         private void OnEditToolTip(object sender, EventArgs e)
         {

@@ -7,38 +7,37 @@
         mc:Ignorable="d"
         Title="CompanyWindow" Height="450" Width="800">
 
-
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="120"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="120" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Stretch" Width="260" Margin="0,0.2,-0.4,0.4">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <Button IsDefault="True" Content="Save" Grid.Column="2"  Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Click="OnSave"/>
-            <Button IsCancel="True" Content="Cancel" Grid.Column="1"  Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Click="OnCancel"/>
-            <Button Name="OffersBtn" Content="Show offers" Grid.Column="0" Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Visibility="Visible" Click="ShowOffers"/>
+            <Button IsDefault="True" Content="Save" Grid.Column="2"  Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Click="OnSave" />
+            <Button IsCancel="True" Content="Cancel" Grid.Column="1"  Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Click="OnCancel" />
+            <Button Name="OffersBtn" Content="Show offers" Grid.Column="0" Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Visibility="Visible" Click="ShowOffers" />
         </Grid>
         <GroupBox Grid.Row="1" Header="Contact data" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
             <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="40" />
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="300">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Content="Add" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="OnContactDataAdd"/>
-                    <Button Grid.Column="1" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="OnEntryEdit"/>
-                    <Button Grid.Column="2" Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="OnEntryDelete"/>
+                    <Button Grid.Column="0" Content="Add" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="OnContactDataAdd" />
+                    <Button Grid.Column="1" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="OnEntryEdit" />
+                    <Button Grid.Column="2" Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="OnEntryDelete" />
                 </Grid>
                 <DataGrid
                     Grid.Row="0"
@@ -46,7 +45,7 @@
                     HorizontalAlignment="Stretch"
                     Margin="5" VerticalAlignment="Stretch"
                     AutoGenerateColumns="False"
-                    ScrollViewer.CanContentScroll="True" 
+                    ScrollViewer.CanContentScroll="True"
                     ScrollViewer.VerticalScrollBarVisibility="Auto"
                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
                     IsReadOnly="True"
@@ -55,39 +54,38 @@
                     PreviewKeyDown="OnDataGridKeyPreviewKeyDown" SelectionMode="Single">
                     <DataGrid.Resources>
                         <Style TargetType="DataGridRow">
-                            <EventSetter Event="MouseDoubleClick" Handler="OnEntryEdit"/>
+                            <EventSetter Event="MouseDoubleClick" Handler="OnEntryEdit" />
                         </Style>
                     </DataGrid.Resources>
-                    <DataGrid.Columns>                
-                        <DataGridTextColumn Width="200" Header="Description" Binding="{Binding Description}"/>
-                        <DataGridTextColumn Width="200" Header="Name and surname" Binding="{Binding RepresentativeNameAndSurname}"/>
-                        <DataGridTextColumn Width="200" Header="Phone number" Binding="{Binding PhoneNumber}"/>
-                        <DataGridTextColumn Width="200" Header="Email address" Binding="{Binding EmailAddress}"/>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="200" Header="Description" Binding="{Binding Description}" />
+                        <DataGridTextColumn Width="200" Header="Name and surname" Binding="{Binding RepresentativeNameAndSurname}" />
+                        <DataGridTextColumn Width="200" Header="Phone number" Binding="{Binding PhoneNumber}" />
+                        <DataGridTextColumn Width="200" Header="Email address" Binding="{Binding EmailAddress}" />
                     </DataGrid.Columns>
                 </DataGrid>
-
             </Grid>
         </GroupBox>
 
         <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Content="Company name" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Label Grid.Row="1" Grid.Column="0" Content="Address" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Label Grid.Row="2" Grid.Column="0" Content="City" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Label Grid.Row="3" Grid.Column="0" Content="Voivodeship" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox Name="CompanyName" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" Margin="0, 0, 0, 0" VerticalAlignment="Center"/>
-            <TextBox Name="Address" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" Margin="0, 0, 0, 0" VerticalAlignment="Center"/>
-            <TextBox Name="City" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" Margin="0, 0, 0, 0" VerticalAlignment="Center"/>
-            <TextBox Name="Voivodeship" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" Margin="0, 0, 0, 0" VerticalAlignment="Center"/>
+            <Label Grid.Row="0" Grid.Column="0" Content="Company name" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Label Grid.Row="1" Grid.Column="0" Content="Address" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Label Grid.Row="2" Grid.Column="0" Content="City" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Label Grid.Row="3" Grid.Column="0" Content="Voivodeship" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBox Name="CompanyName" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" Margin="0, 0, 0, 0" VerticalAlignment="Center" />
+            <TextBox Name="Address" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" Margin="0, 0, 0, 0" VerticalAlignment="Center" />
+            <TextBox Name="City" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" Margin="0, 0, 0, 0" VerticalAlignment="Center" />
+            <TextBox Name="Voivodeship" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" Margin="0, 0, 0, 0" VerticalAlignment="Center" />
         </Grid>
     </Grid>
 </Window>

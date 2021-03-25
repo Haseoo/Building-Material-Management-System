@@ -1,12 +1,12 @@
-﻿using System;
-using System.Windows.Forms;
-using com.Github.Haseoo.BMMS.Business.DTOs;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
 using com.Github.Haseoo.BMMS.Data;
+using System;
+using System.Windows.Forms;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
@@ -31,13 +31,14 @@ namespace com.Github.Haseoo.BMMS.WinForms
             RefreshOffers();
         }
 
-        private void RefreshOffers(object sender=null, System.EventArgs e=null)
+        private void RefreshOffers(object sender = null, System.EventArgs e = null)
         {
             switch (_mode)
             {
                 case Utils.OfferListMode.Company:
                     OfferList.SetObjects(_serviceContext.OfferService.GetCompanyOffers(_id));
                     break;
+
                 case Utils.OfferListMode.Material:
                     OfferList.SetObjects(_serviceContext.OfferService.GetMaterialOffers(_id));
                     break;
@@ -97,7 +98,6 @@ namespace com.Github.Haseoo.BMMS.WinForms
                     Console.WriteLine(exception);
                 }
             }
-
         }
 
         private void OnCompanyBtnClick(object sender, EventArgs e)

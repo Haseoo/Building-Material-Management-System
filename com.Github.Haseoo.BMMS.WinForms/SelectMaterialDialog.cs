@@ -1,14 +1,15 @@
-﻿using System;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs;
+using com.Github.Haseoo.BMMS.Business.Services;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using com.Github.Haseoo.BMMS.Business.DTOs;
-using com.Github.Haseoo.BMMS.Business.Services;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
     public partial class SelectMaterialDialog : Form
     {
         public MaterialDto SelectedMaterial { get; private set; }
+
         public SelectMaterialDialog(ServiceContext serviceContext,
             Guid? id)
         {
@@ -29,7 +30,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void OnSelectBtnClick(object sender, System.EventArgs e)
         {
-            var selected = (MaterialDto) MaterialList.SelectedObject;
+            var selected = (MaterialDto)MaterialList.SelectedObject;
             if (selected == null)
             {
                 DialogResult = DialogResult.None;

@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-using AutoMapper;
+﻿using AutoMapper;
 using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Business.Validators;
 using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using FluentNHibernate.Cfg;
+using System;
+using System.Windows;
 
 namespace com.Github.Haseoo.BMMS.Wpf
 {
@@ -28,7 +23,6 @@ namespace com.Github.Haseoo.BMMS.Wpf
             {
                 serviceContext = new ServiceContext(GetMapper());
                 SessionManager.Instance.AcquireNewSession();
-                
             }
             catch (FluentConfigurationException e)
             {
@@ -39,8 +33,6 @@ namespace com.Github.Haseoo.BMMS.Wpf
             var application = new App();
             application.InitializeComponent();
             application.Run(new MainWindow(serviceContext, validatorContext));
-
-            
         }
 
         private static IMapper GetMapper()

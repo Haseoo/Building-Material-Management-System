@@ -1,13 +1,15 @@
-﻿using System;
-using System.Windows.Forms;
-using com.Github.Haseoo.BMMS.Business.DTOs;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
+using System;
 using System.Linq;
+using System.Windows.Forms;
+
 namespace com.Github.Haseoo.BMMS.WinForms
 {
     public partial class SelectCompanyDialog : Form
     {
         public CompanyDto SelectedCompany { get; private set; }
+
         public SelectCompanyDialog(ServiceContext serviceContext,
             Guid? id = null)
         {
@@ -28,7 +30,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
 
         private void OnSelect(object sender, System.EventArgs e)
         {
-            var selected = (CompanyDto) CompanyList.SelectedObject;
+            var selected = (CompanyDto)CompanyList.SelectedObject;
             if (selected == null)
             {
                 DialogResult = DialogResult.None;

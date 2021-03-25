@@ -1,18 +1,16 @@
-﻿
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 
 namespace com.Github.Haseoo.BMMS.Business.Exceptions
 {
     [Serializable]
-    public class BusinessLogicException: Exception
+    public class BusinessLogicException : Exception
     {
-
-        public BusinessLogicException(string message) :  base(message)
+        public BusinessLogicException(string message) : base(message)
         {
         }
 
-        protected BusinessLogicException(SerializationInfo info, StreamingContext context): base(info, context)
+        protected BusinessLogicException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
 

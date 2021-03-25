@@ -1,18 +1,18 @@
-﻿
-using FluentNHibernate.Cfg;
+﻿using FluentNHibernate.Cfg;
 using System;
 using System.Windows.Forms;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
-    static class Program
+    internal static class Program
     {
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            try {
+            try
+            {
                 Application.Run(new MainWindow());
             }
             catch (FluentConfigurationException e)

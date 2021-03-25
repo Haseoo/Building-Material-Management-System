@@ -1,6 +1,5 @@
 ﻿using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
-using NHibernate;
 using NHibernate.Linq;
 using System;
 using System.Linq;
@@ -9,7 +8,6 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories.Adapters
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : Entity
     {
-
         protected BaseRepository()
         {
         }

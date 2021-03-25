@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using com.Github.Haseoo.BMMS.Business.DTOs;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
@@ -11,6 +8,9 @@ using com.Github.Haseoo.BMMS.Tests.Config;
 using com.Github.Haseoo.BMMS.WinForms.Configuration;
 using Moq;
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Tests.Business.Services
 {
@@ -23,7 +23,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Business.Services
         [SetUp]
         public void Setup()
         {
-            _repositoryMock =  new Mock<ICompanyRepository>();
+            _repositoryMock = new Mock<ICompanyRepository>();
             _sut = new CompanyService(_repositoryMock.Object, MapperConf.Mapper);
         }
 
@@ -50,7 +50,6 @@ namespace com.Github.Haseoo.BMMS.Tests.Business.Services
                 .Returns(null as Company);
             //when & then
             Assert.Throws<NotFoundException>(() => _sut.GetById(Guid.Empty));
-
         }
 
         [Test]
@@ -176,7 +175,6 @@ namespace com.Github.Haseoo.BMMS.Tests.Business.Services
                    cDataDto.EmailAddress.Equals(cDataEntity.EmailAddress) &&
                    cDataDto.PhoneNumber.Equals(cDataEntity.PhoneNumber) &&
                    cDataEntity.Description.Equals(cDataDto.Description);
-
         }
 
         private static bool CheckOutDto(CompanyDto dto, Company entity)

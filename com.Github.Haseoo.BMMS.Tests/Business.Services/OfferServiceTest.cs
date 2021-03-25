@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using com.Github.Haseoo.BMMS.Business.DTOs;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
@@ -11,6 +8,9 @@ using com.Github.Haseoo.BMMS.Tests.Config;
 using com.Github.Haseoo.BMMS.WinForms.Configuration;
 using Moq;
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Tests.Business.Services
 {
@@ -25,9 +25,9 @@ namespace com.Github.Haseoo.BMMS.Tests.Business.Services
         [SetUp]
         public void Setup()
         {
-            _companyRepositoryMock =  new Mock<ICompanyRepository>();
-            _materialRepositoryMock =  new Mock<IMaterialRepository>();
-            _offerRepositoryMock =  new Mock<IOfferRepository>();
+            _companyRepositoryMock = new Mock<ICompanyRepository>();
+            _materialRepositoryMock = new Mock<IMaterialRepository>();
+            _offerRepositoryMock = new Mock<IOfferRepository>();
             _sut = new OfferService(_offerRepositoryMock.Object,
                 _companyRepositoryMock.Object,
                 _materialRepositoryMock.Object,
@@ -57,7 +57,6 @@ namespace com.Github.Haseoo.BMMS.Tests.Business.Services
                 .Returns(null as Offer);
             //when & then
             Assert.Throws<NotFoundException>(() => _sut.GetById(Guid.Empty));
-
         }
 
         [Test]
@@ -239,7 +238,6 @@ namespace com.Github.Haseoo.BMMS.Tests.Business.Services
         {
             PrepareAddOrUpdateEntities(out id, out companyEntity, out materialEntity, out existingEntity);
             inDto = TestDataGenerator.GetOfferOperationDto(companyEntity.Id, materialEntity.Id);
-            
         }
 
         private static bool CheckInDto(OfferOperationDto operationDto, Offer entity)
@@ -247,7 +245,6 @@ namespace com.Github.Haseoo.BMMS.Tests.Business.Services
             return operationDto.Comments.Equals(entity.Comments) &&
                    operationDto.Unit.Equals(entity.Unit) &&
                    operationDto.UnitPrice.Equals(entity.UnitPrice);
-
         }
 
         private static bool CheckOutDto(OfferDto dto, Offer entity)

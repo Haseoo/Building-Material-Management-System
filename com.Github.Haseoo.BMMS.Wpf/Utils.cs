@@ -9,15 +9,16 @@ namespace com.Github.Haseoo.BMMS.Wpf
     public static class Utils
     {
         public static readonly Regex NumberRegex = new Regex("[^0-9.,]+");
+
         public static void ShowErrorMessage(string message)
         {
             MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-         public static void ShowErrorMessage(Exception exception)
-         {
+        public static void ShowErrorMessage(Exception exception)
+        {
             ShowErrorMessage(exception.Message);
-         }
+        }
 
         public static bool ShowInputErrorMessage(ValidationResult validationResult)
         {

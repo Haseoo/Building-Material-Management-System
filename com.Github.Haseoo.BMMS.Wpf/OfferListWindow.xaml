@@ -8,9 +8,9 @@
         Title="Offer list" Height="450" Width="800">
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="35" />
         </Grid.RowDefinitions>
         <Button HorizontalAlignment="Right" Grid.Row="0" VerticalAlignment="Center" Width="25" Height="25" Click="OnRefresh">
             <StackPanel>
@@ -19,16 +19,15 @@
         </Button>
         <Grid HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Width="450">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Show company" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowCompany"/>
-            <Button Grid.Column="1" Content="Show material"  Margin="0, 0, 5, 0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowMaterials"/>
-            <Button Grid.Column="2" Content="Remove" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnRemove"/>
-            <Button Grid.Column="3" Content="Edit" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnEdit"/>
-
+            <Button Grid.Column="0" Content="Show company" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowCompany" />
+            <Button Grid.Column="1" Content="Show material"  Margin="0, 0, 5, 0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowMaterials" />
+            <Button Grid.Column="2" Content="Remove" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnRemove" />
+            <Button Grid.Column="3" Content="Edit" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnEdit" />
         </Grid>
         <DataGrid
             Grid.Row="1"
@@ -36,7 +35,7 @@
             HorizontalAlignment="Stretch"
             Margin="5,3,4.6,4.6" VerticalAlignment="Stretch"
             AutoGenerateColumns="False"
-            ScrollViewer.CanContentScroll="True" 
+            ScrollViewer.CanContentScroll="True"
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"
             IsReadOnly="True"
@@ -45,18 +44,17 @@
             PreviewKeyDown="OnOfferListKeyDown">
             <DataGrid.Resources>
                 <Style TargetType="DataGridRow">
-                    <EventSetter Event="MouseDoubleClick" Handler="OnEdit"/>
+                    <EventSetter Event="MouseDoubleClick" Handler="OnEdit" />
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Width="150" Header="Material" Binding="{Binding MaterialName}"/>
-                <DataGridTextColumn Width="150" Header="Company" Binding="{Binding CompanyName}"/>
-                <DataGridTextColumn Width="100" Header="Price Per Unit" Binding="{Binding UnitPrice}"/>
-                <DataGridTextColumn Width="100" Header="Unit" Binding="{Binding Unit}"/>
-                <DataGridTextColumn Width="150" Header="Comments" Binding="{Binding Comments}"/>
-                <DataGridTextColumn Width="100" Header="Last modified" Binding="{Binding LastModification}"/>
+                <DataGridTextColumn Width="150" Header="Material" Binding="{Binding MaterialName}" />
+                <DataGridTextColumn Width="150" Header="Company" Binding="{Binding CompanyName}" />
+                <DataGridTextColumn Width="100" Header="Price Per Unit" Binding="{Binding UnitPrice}" />
+                <DataGridTextColumn Width="100" Header="Unit" Binding="{Binding Unit}" />
+                <DataGridTextColumn Width="150" Header="Comments" Binding="{Binding Comments}" />
+                <DataGridTextColumn Width="100" Header="Last modified" Binding="{Binding LastModification}" />
             </DataGrid.Columns>
         </DataGrid>
-
     </Grid>
 </Window>

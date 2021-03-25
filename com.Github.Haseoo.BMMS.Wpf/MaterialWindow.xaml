@@ -8,33 +8,32 @@
         Title="MaterialWindow" Height="300" Width="450">
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Center" Width="270">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button IsCancel="True" Grid.Column="1"  Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnCancel"/>
-            <Button IsDefault="True" Grid.Column="2"  Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnSave"/>
-            <Button Grid.Column="0" Name="ShowOfferBtn" Content="Show offers" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnShowOffer"/>
+            <Button IsCancel="True" Grid.Column="1"  Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnCancel" />
+            <Button IsDefault="True" Grid.Column="2"  Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnSave" />
+            <Button Grid.Column="0" Name="ShowOfferBtn" Content="Show offers" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnShowOffer" />
         </Grid>
         <Grid Grid.Row="0" Margin="0, 0, 0, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="130"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Content="Material name" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Label Grid.Row="1" Grid.Column="0" Content="Material specification" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <TextBox Name="MaterialName"  Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center"/>
-            <TextBox Name="MaterialSpecification" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Stretch"/>
+            <Label Grid.Row="0" Grid.Column="0" Content="Material name" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Label Grid.Row="1" Grid.Column="0" Content="Material specification" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <TextBox Name="MaterialName"  Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center" />
+            <TextBox Name="MaterialSpecification" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Stretch" />
         </Grid>
-
     </Grid>
 </Window>

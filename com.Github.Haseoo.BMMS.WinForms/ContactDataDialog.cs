@@ -1,6 +1,6 @@
-﻿using System.Windows.Forms;
-using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Validators;
+using System.Windows.Forms;
 
 namespace com.Github.Haseoo.BMMS.WinForms
 {
@@ -28,7 +28,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
         private void OnSave(object sender, System.EventArgs e)
         {
             var formResult = GetFormData();
-            if (Utils.ShowInputErrorMessage( _validatorContext.CompanyContactDataValidator.Validate(formResult)))
+            if (Utils.ShowInputErrorMessage(_validatorContext.CompanyContactDataValidator.Validate(formResult)))
             {
                 DialogResult = DialogResult.None;
             }

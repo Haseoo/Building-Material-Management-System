@@ -1,25 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using com.Github.Haseoo.BMMS.Business.DTOs;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
 using com.Github.Haseoo.BMMS.Data;
-using FluentNHibernate.Conventions.Inspections;
+using System;
+using System.Windows;
+using System.Windows.Input;
 
 namespace com.Github.Haseoo.BMMS.Wpf
 {
@@ -165,9 +152,10 @@ namespace com.Github.Haseoo.BMMS.Wpf
             if (CompaniesTab.IsSelected)
             {
                 onCompanySelected.Invoke();
-            } else if (MaterialsTab.IsSelected)
+            }
+            else if (MaterialsTab.IsSelected)
             {
-               onMaterialSelected.Invoke();
+                onMaterialSelected.Invoke();
             }
         }
 

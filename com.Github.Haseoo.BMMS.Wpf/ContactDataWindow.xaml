@@ -8,37 +8,36 @@
         Title="Contact data" Height="210" Width="400">
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="35" />
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Stretch" Width="200">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <Button IsCancel="True" Content="Cancel" Grid.Column="0" HorizontalAlignment="Right" Margin="5, 0" VerticalAlignment="Center" Height="25" Width="75" Click="OnCancel"/>
-            <Button IsDefault="True" Content="Save" Grid.Column="1"  HorizontalAlignment="Right" Margin="5, 0" VerticalAlignment="Center" Height="25" Width="75" Click="OnSave"/>
+            <Button IsCancel="True" Content="Cancel" Grid.Column="0" HorizontalAlignment="Right" Margin="5, 0" VerticalAlignment="Center" Height="25" Width="75" Click="OnCancel" />
+            <Button IsDefault="True" Content="Save" Grid.Column="1"  HorizontalAlignment="Right" Margin="5, 0" VerticalAlignment="Center" Height="25" Width="75" Click="OnSave" />
         </Grid>
-        <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+        <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label Content="Description" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <Label Content="Name and surname" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <Label Content="E-mail address" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <Label Content="Phone number" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
-            <TextBox Name="Description" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center"/>
-            <TextBox Name="NameAndSurname" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center"/>
-            <TextBox Name="EmailAddress" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center"/>
-            <TextBox Name="PhoneNumber" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center"/>
+            <Label Content="Description" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center" />
+            <Label Content="Name and surname" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center" />
+            <Label Content="E-mail address" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center" />
+            <Label Content="Phone number" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center" />
+            <TextBox Name="Description" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center" />
+            <TextBox Name="NameAndSurname" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center" />
+            <TextBox Name="EmailAddress" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center" />
+            <TextBox Name="PhoneNumber" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center" />
         </Grid>
-
     </Grid>
 </Window>

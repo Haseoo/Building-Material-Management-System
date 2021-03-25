@@ -1,7 +1,7 @@
-﻿using com.Github.Haseoo.BMMS.Data.Entities;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
+using com.Github.Haseoo.BMMS.Data.Entities;
 using System;
 using System.Collections.Generic;
-using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 
 namespace com.Github.Haseoo.BMMS.Tests.Config
 {
@@ -60,7 +60,7 @@ namespace com.Github.Haseoo.BMMS.Tests.Config
         public static CompanyOperationDto GetCompanyOperationDto()
         {
             return CompanyOperationDto.Builder()
-                .ContactData( CompanyContactDataOperationDto.Builder()
+                .ContactData(CompanyContactDataOperationDto.Builder()
                     .RepresentativeNameAndSurname("TestNewName")
                     .EmailAddress("tutut@test.com")
                     .PhoneNumber("987654321")

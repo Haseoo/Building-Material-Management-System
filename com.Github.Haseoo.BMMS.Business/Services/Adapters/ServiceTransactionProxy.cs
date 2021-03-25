@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using com.Github.Haseoo.BMMS.Business.Services.Ports;
+﻿using com.Github.Haseoo.BMMS.Business.Services.Ports;
 using com.Github.Haseoo.BMMS.Data;
 using NHibernate;
+using System;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
-    public class ServiceTransactionProxy <T, R> : ITransactionalService<T, R>
+    public class ServiceTransactionProxy<T, R> : ITransactionalService<T, R>
     {
-
         private readonly ITransactionalService<T, R> _service;
 
         public ServiceTransactionProxy(ITransactionalService<T, R> service)

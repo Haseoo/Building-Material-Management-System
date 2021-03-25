@@ -8,58 +8,54 @@
         Title="OfferWindow" Height="450" Width="600">
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="35" />
         </Grid.RowDefinitions>
-
 
         <Grid HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Center" Width="200" Margin="0,4.8,-0.4,5.4">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button IsCancel="True" Grid.Column="0"  Content="Cancel" HorizontalAlignment="Right" Width="75" Margin="0,0,0,-0.2" Click="OnCancel"/>
-            <Button IsDefault="True" Grid.Column="1"  Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnSave"/>
+            <Button IsCancel="True" Grid.Column="0"  Content="Cancel" HorizontalAlignment="Right" Width="75" Margin="0,0,0,-0.2" Click="OnCancel" />
+            <Button IsDefault="True" Grid.Column="1"  Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnSave" />
         </Grid>
         <GroupBox Header="Comments" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" Margin="0,10,-0.4,0.2">
-            <TextBox Name="Comments" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" AcceptsReturn="True"/>
-
+            <TextBox Name="Comments" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" AcceptsReturn="True" />
         </GroupBox>
         <Grid Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="75"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0"  Content="Material" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Label Grid.Row="1" Grid.Column="0"  Content="Company" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Label Name="MaterialLabel"  Grid.Row="0" Grid.Column="1"  Content="Not selected" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Label Name="CompanyLabel" Grid.Row="1" Grid.Column="1"  Content="Not selected" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Button Grid.Row="0" Grid.Column="2"  Content="Select" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="75" Click="OnMaterialSelect"/>
-            <Button Grid.Row="1" Grid.Column="2"  Content="Select" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="75" Click="OnCompanySelect"/>
-
+            <Label Grid.Row="0" Grid.Column="0"  Content="Material" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Label Grid.Row="1" Grid.Column="0"  Content="Company" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Label Name="MaterialLabel"  Grid.Row="0" Grid.Column="1"  Content="Not selected" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Label Name="CompanyLabel" Grid.Row="1" Grid.Column="1"  Content="Not selected" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Button Grid.Row="0" Grid.Column="2"  Content="Select" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="75" Click="OnMaterialSelect" />
+            <Button Grid.Row="1" Grid.Column="2"  Content="Select" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="75" Click="OnCompanySelect" />
         </Grid>
 
         <Grid Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="75"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0"  Content="Unit" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <Label Grid.Row="1" Grid.Column="0"  Content="Unit price" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox Name="Unit" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center"/>
-            <TextBox Name="UnitPrice" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center" PreviewTextInput="PriceCheck"/>
+            <Label Grid.Row="0" Grid.Column="0"  Content="Unit" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Label Grid.Row="1" Grid.Column="0"  Content="Unit price" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBox Name="Unit" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center" />
+            <TextBox Name="UnitPrice" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Center" PreviewTextInput="PriceCheck" />
         </Grid>
-
     </Grid>
 </Window>

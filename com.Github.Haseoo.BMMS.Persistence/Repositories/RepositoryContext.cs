@@ -1,13 +1,10 @@
 ﻿using com.Github.Haseoo.BMMS.Data.Repositories.Adapters;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
-using NHibernate;
-using System;
 
 namespace com.Github.Haseoo.BMMS.Data.Repositories
 {
     public class RepositoryContext
     {
-
         public RepositoryContext()
         {
             CompanyRepository = new CompanyRepository();
@@ -19,6 +16,4 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories
         public IOfferRepository OfferRepository { get; }
         public IMaterialRepository MaterialRepository { get; }
     }
-
-       
 }

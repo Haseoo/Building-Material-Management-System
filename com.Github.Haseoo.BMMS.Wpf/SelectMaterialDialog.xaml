@@ -8,37 +8,37 @@
         Title="Select material" Height="400" Width="790.285">
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="35" />
         </Grid.RowDefinitions>
         <DataGrid
             Name="Materials"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             AutoGenerateColumns="False"
-            ScrollViewer.CanContentScroll="True" 
+            ScrollViewer.CanContentScroll="True"
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"
             IsReadOnly="True"
             HorizontalGridLinesBrush="#FFDADADA"
             VerticalGridLinesBrush="#FFDADADA">
-            <DataGrid.Columns>                
-                <DataGridTextColumn Width="250" Header="Material name" Binding="{Binding Name}"/>
-                <DataGridTextColumn Width="500" Header="Specification" Binding="{Binding Specification}"/>
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="250" Header="Material name" Binding="{Binding Name}" />
+                <DataGridTextColumn Width="500" Header="Specification" Binding="{Binding Specification}" />
             </DataGrid.Columns>
             <DataGrid.Resources>
                 <Style TargetType="DataGridRow">
-                    <EventSetter Event="MouseDoubleClick" Handler="OnMaterialSelect"/>
+                    <EventSetter Event="MouseDoubleClick" Handler="OnMaterialSelect" />
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
         <Grid HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Stretch" Width="200">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <Button IsCancel="True" Content="Cancel" Grid.Column="0" HorizontalAlignment="Right" Margin="5, 0" VerticalAlignment="Center" Height="25" Width="75" Click="OnCancel"/>
-            <Button IsDefault="True" Content="Select" Grid.Column="1"  HorizontalAlignment="Right" Margin="5, 0" VerticalAlignment="Center" Height="25" Width="75" Click="OnMaterialSelect"/>
+            <Button IsCancel="True" Content="Cancel" Grid.Column="0" HorizontalAlignment="Right" Margin="5, 0" VerticalAlignment="Center" Height="25" Width="75" Click="OnCancel" />
+            <Button IsDefault="True" Content="Select" Grid.Column="1"  HorizontalAlignment="Right" Margin="5, 0" VerticalAlignment="Center" Height="25" Width="75" Click="OnMaterialSelect" />
         </Grid>
     </Grid>
 </Window>
