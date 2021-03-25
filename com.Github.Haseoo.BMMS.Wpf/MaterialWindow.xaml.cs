@@ -16,7 +16,6 @@ using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
-using com.Github.Haseoo.BMMS.WinForms;
 
 namespace com.Github.Haseoo.BMMS.Wpf
 {

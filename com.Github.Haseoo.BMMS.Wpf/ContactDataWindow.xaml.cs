@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Validators;
-using com.Github.Haseoo.BMMS.WinForms;
 
 namespace com.Github.Haseoo.BMMS.Wpf
 {

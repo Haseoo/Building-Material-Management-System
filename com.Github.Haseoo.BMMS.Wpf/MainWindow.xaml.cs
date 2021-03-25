@@ -19,7 +19,6 @@ using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
 using com.Github.Haseoo.BMMS.Data;
-using com.Github.Haseoo.BMMS.WinForms;
 using FluentNHibernate.Conventions.Inspections;
 
 namespace com.Github.Haseoo.BMMS.Wpf
@@ -54,7 +53,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void OnOfferAdd(object sender, RoutedEventArgs e)
         {
-            new OfferWindow().Show();
+            new OfferWindow(_serviceContext, _validatorContext).Show();
         }
 
         private void OnMaterialSearchOrRefresh(object sender = null, RoutedEventArgs e = null)

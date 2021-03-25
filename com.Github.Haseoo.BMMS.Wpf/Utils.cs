@@ -1,14 +1,14 @@
-﻿using FluentValidation.Results;
-using System;
+﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls;
 using ValidationResult = FluentValidation.Results.ValidationResult;
 
-namespace com.Github.Haseoo.BMMS.WinForms
+namespace com.Github.Haseoo.BMMS.Wpf
 {
     public static class Utils
     {
+        public static readonly Regex NumberRegex = new Regex("[^0-9.,]+");
         public static void ShowErrorMessage(string message)
         {
             MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
