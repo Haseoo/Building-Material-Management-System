@@ -27,12 +27,12 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             }
             catch
             {
-                if (transaction != null)
-                {
-                    transaction.Rollback();
-                    transaction.Dispose();
-                }
+                transaction?.Rollback();
                 throw;
+            }
+            finally
+            {
+                transaction?.Dispose();
             }
         }
 
@@ -48,12 +48,12 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             }
             catch
             {
-                if (transaction != null)
-                {
-                    transaction.Rollback();
-                    transaction.Dispose();
-                }
+                transaction?.Rollback();
                 throw;
+            }
+            finally
+            {
+                transaction?.Dispose();
             }
         }
     }
