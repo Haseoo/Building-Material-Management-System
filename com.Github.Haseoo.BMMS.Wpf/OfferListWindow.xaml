@@ -17,17 +17,19 @@
                 <Image Source="Pictures/refresh.png" Width="20" Height="20" />
             </StackPanel>
         </Button>
-        <Grid HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Width="450">
+        <Grid HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Width="550">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Show company" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowCompany" />
-            <Button Grid.Column="1" Content="Show material"  Margin="0, 0, 5, 0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowMaterials" />
-            <Button Grid.Column="2" Content="Remove" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnRemove" />
-            <Button Grid.Column="3" Content="Edit" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnEdit" />
+            <Button Grid.Column="0"  Content="Add to order" HorizontalAlignment="Right" Height="25" Width="80" />
+            <Button Grid.Column="1" Content="Show company" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowCompany" />
+            <Button Grid.Column="2" Content="Show material"  HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowMaterials" />
+            <Button Grid.Column="3" Content="Remove" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnRemove" />
+            <Button Grid.Column="4" Content="Edit" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnEdit" />
         </Grid>
         <DataGrid
             Grid.Row="1"

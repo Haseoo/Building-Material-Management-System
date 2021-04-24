@@ -36,6 +36,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
             else
             {
                 Title = "New offer";
+                AddToOrderBtn.Visibility = Visibility.Hidden;
             }
         }
 

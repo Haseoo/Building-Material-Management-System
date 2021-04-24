@@ -14,13 +14,15 @@
             <RowDefinition Height="35" />
         </Grid.RowDefinitions>
 
-        <Grid HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Center" Width="200" Margin="0,4.8,-0.4,5.4">
+        <Grid HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Center" Width="260" Margin="0,4.8,-0.4,5.4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button IsCancel="True" Grid.Column="0"  Content="Cancel" HorizontalAlignment="Right" Width="75" Margin="0,0,0,-0.2" Click="OnCancel" />
-            <Button IsDefault="True" Grid.Column="1"  Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnSave" />
+            <Button IsCancel="True" Grid.Column="1"  Content="Cancel" HorizontalAlignment="Right" Width="75" Margin="0,0,0,-0.2" Click="OnCancel" />
+            <Button IsDefault="True" Grid.Column="2"  Content="Save" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnSave" />
+            <Button Name="AddToOrderBtn" Grid.Column="0"  Content="Add to order" HorizontalAlignment="Right" Width="80" />
         </Grid>
         <GroupBox Header="Comments" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Stretch" Margin="0,10,-0.4,0.2">
             <TextBox Name="Comments" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Stretch" AcceptsReturn="True" />

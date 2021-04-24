@@ -73,22 +73,36 @@ namespace com.Github.Haseoo.BMMS.Wpf
             }
         }
 
+        private void OnOrderListSearchOrRefresh(object sender = null, RoutedEventArgs e = null)
+        {
+            var orderListInput = OrderListsInput.Text;
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowErrorMessage(ex);
+            }
+        }
+
         private void OnEntryEdit(object sender, RoutedEventArgs e)
         {
-            TabAction((() =>
+            TabAction(() =>
             {
                 var selected = GetSelectedCompany();
                 if (selected != null)
                 {
                     new CompanyWindow(_serviceContext, _validatorContext, selected.Id).Show();
                 }
-            }), () =>
+            }, () =>
             {
                 var selected = GetSelectedMaterial();
                 if (selected != null)
                 {
                     new MaterialWindow(_serviceContext, _validatorContext, selected.Id).Show();
                 }
+            }, () =>
+            {
             });
         }
 
@@ -114,11 +128,15 @@ namespace com.Github.Haseoo.BMMS.Wpf
             }
         }
 
+        private void DeleteOrderList()
+        {
+        }
+
         private void OnDelete(object sender, RoutedEventArgs e)
         {
             try
             {
-                TabAction(DeleteCompany, DeleteMaterial);
+                TabAction(DeleteCompany, DeleteMaterial, DeleteOrderList);
             }
             catch (Exception ex)
             {
@@ -138,16 +156,19 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void OnRefresh(object sender, RoutedEventArgs e)
         {
-            TabAction((() =>
+            TabAction(() =>
             {
                 OnCompanySearchOrRefresh(sender, e);
-            }), () =>
+            }, () =>
             {
                 OnMaterialSearchOrRefresh(sender, e);
+            }, () =>
+            {
+                OnCompanySearchOrRefresh(sender, e);
             });
         }
 
-        private void TabAction(Action onCompanySelected, Action onMaterialSelected)
+        private void TabAction(Action onCompanySelected, Action onMaterialSelected, Action onOrderListSelected)
         {
             if (CompaniesTab.IsSelected)
             {
@@ -156,6 +177,10 @@ namespace com.Github.Haseoo.BMMS.Wpf
             else if (MaterialsTab.IsSelected)
             {
                 onMaterialSelected.Invoke();
+            }
+            else if (OrderListsTab.IsSelected)
+            {
+                onOrderListSelected.Invoke();
             }
         }
 
@@ -178,8 +203,19 @@ namespace com.Github.Haseoo.BMMS.Wpf
             if (e.Key == Key.Enter)
             {
                 TabAction(() => OnCompanySearchOrRefresh(sender, e),
-                    () => OnMaterialSearchOrRefresh(sender, e));
+                    () => OnMaterialSearchOrRefresh(sender, e),
+                    () => OnOrderListSearchOrRefresh(sender, e));
             }
+        }
+
+        private void OnAddOrderList(object sender, RoutedEventArgs e)
+        {
+            /*var dialog = new TextInputDialog("Enter the name of the new order list:", "New order list");
+            if (dialog.ShowDialog() ?? false)
+            {
+                Console.WriteLine(dialog.GetUserInput());
+            }*/
+            new AddElementToOrderListDialog().Show();
         }
     }
 }
