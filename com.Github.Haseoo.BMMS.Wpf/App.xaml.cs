@@ -19,15 +19,22 @@ namespace com.Github.Haseoo.BMMS.Wpf
         public static void Main()
         {
             ServiceContext serviceContext;
+            var connectingWindow = new ConnectingToDatabaseWindow();
             try
             {
+                connectingWindow.Show();
                 serviceContext = new ServiceContext(GetMapper());
                 SessionManager.Instance.AcquireNewSession();
             }
             catch (FluentConfigurationException e)
             {
-                MessageBox.Show(e.GetBaseException().Message, "Database connection error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(e.GetBaseException().Message, "Database connection error", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
                 return;
+            }
+            finally
+            {
+                connectingWindow.Close();
             }
             var validatorContext = new ValidatorContext();
             var application = new App();

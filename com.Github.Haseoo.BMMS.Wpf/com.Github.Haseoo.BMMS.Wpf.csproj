@@ -72,6 +72,9 @@
     <Compile Include="AddElementToOrderListDialog.xaml.cs">
       <DependentUpon>AddElementToOrderListDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConnectingToDatabaseWindow.xaml.cs">
+      <DependentUpon>ConnectingToDatabaseWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OrderListWindow.xaml.cs">
       <DependentUpon>OrderListWindow.xaml</DependentUpon>
     </Compile>
@@ -94,6 +97,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="CompanyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConnectingToDatabaseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
