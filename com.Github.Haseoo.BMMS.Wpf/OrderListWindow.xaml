@@ -6,6 +6,89 @@
         xmlns:local="clr-namespace:com.Github.Haseoo.BMMS.Wpf"
         mc:Ignorable="d"
         Title="OrderListWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="2" VerticalAlignment="Center">
+            <WrapPanel>
+                <Label FontSize="16pt">Total price: </Label>
+                <Label Name="TotalValue" FontSize="16pt" FontWeight="Bold"></Label>
+            </WrapPanel>
+        </Grid>
+        <Grid HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Stretch" Width="260" Margin="0,0.2,-0.4,0.4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button IsDefault="True" Content="Save" Grid.Column="2"  Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Click="OnSave" />
+            <Button IsCancel="True" Content="Cancel" Grid.Column="1"  Margin="5, 0" VerticalAlignment="Center" Width="75" Height="25" Click="OnCancel" />
+        </Grid>
+        <GroupBox Grid.Row="1" Header="Offers on list" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
+            <Grid VerticalAlignment="Stretch"  HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="300">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="Show offer" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="OnShowEntry" />
+                    <Button Grid.Column="1" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="OnEntryEdit" />
+                    <Button Grid.Column="2" Content="Delete" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="75" Click="OnEntryDelete" />
+                </Grid>
+                <DataGrid
+                    Grid.Row="0"
+                    Name="ContactData"
+                    HorizontalAlignment="Stretch"
+                    Margin="5" VerticalAlignment="Stretch"
+                    AutoGenerateColumns="False"
+                    ScrollViewer.CanContentScroll="True"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    IsReadOnly="True"
+                    HorizontalGridLinesBrush="#FFDADADA"
+                    VerticalGridLinesBrush="#FFDADADA"
+                    PreviewKeyDown="OnDataGridKeyPreviewKeyDown" SelectionMode="Single">
+                    <DataGrid.Resources>
+                        <Style TargetType="DataGridRow">
+                            <EventSetter Event="MouseDoubleClick" Handler="OnEntryEdit" />
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="200" Header="Material" Binding="{Binding Offer.Material.Name}" />
+                        <DataGridTextColumn Width="200" Header="Company" Binding="{Binding Offer.Company.Name}" />
+                        <DataGridTextColumn Width="200" Header="Unit" Binding="{Binding Offer.Unit}" />
+                        <DataGridTextColumn Width="80" Header="Unit price" Binding="{Binding Offer.UnitPrice}" />
+                        <DataGridTextColumn Width="80" Header="Quantity" Binding="{Binding Quantity}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+
+        <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button HorizontalAlignment="Right" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="25" Height="25" Click="OnRefresh">
+                <StackPanel>
+                    <Image Source="Pictures/refresh.png" Width="20" Height="20" />
+                </StackPanel>
+            </Button>
+            <Label Grid.Row="1" Grid.Column="0" Content="List name" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBox Name="ListName" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Height="20" Margin="0, 0, 0, 0" VerticalAlignment="Center" />
+        </Grid>
     </Grid>
 </Window>

@@ -43,6 +43,11 @@ namespace com.Github.Haseoo.BMMS.Wpf
             new OfferWindow(_serviceContext, _validatorContext).Show();
         }
 
+        private void OnPdfSave(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void OnMaterialSearchOrRefresh(object sender = null, RoutedEventArgs e = null)
         {
             var materialName = MaterialInput.Text;

@@ -33,6 +33,11 @@
                 <KeyGesture>F5</KeyGesture>
             </RoutedUICommand.InputGestures>
         </RoutedUICommand>
+        <RoutedUICommand x:Key="SaveOrderToPdf" Text="SaveOrderToPdf">
+            <RoutedUICommand.InputGestures>
+                <KeyGesture>CTRL+S</KeyGesture>
+            </RoutedUICommand.InputGestures>
+        </RoutedUICommand>
         <RoutedUICommand x:Key="Close" Text="Close">
             <RoutedUICommand.InputGestures>
                 <KeyGesture>ALT+Q</KeyGesture>
@@ -50,6 +55,7 @@
         <CommandBinding Command="{StaticResource AddOffer}" Executed="OnOfferAdd" />
         <CommandBinding Command="{StaticResource AddOrderList}" Executed="OnAddOrderList" />
         <CommandBinding Command="{StaticResource Refresh}" Executed="OnRefresh" />
+        <CommandBinding Command="{StaticResource SaveOrderToPdf}" Executed="OnPdfSave" />
         <CommandBinding Command="{StaticResource Close}" Executed="OnClose" />
         <CommandBinding Command="{StaticResource EntryEdit}" Executed="OnEntryEdit" />
     </Window.CommandBindings>
@@ -61,13 +67,15 @@
         <KeyBinding Key="Q" Modifiers="Alt" Command="{StaticResource Close}" />
         <KeyBinding Key="E" Modifiers="Alt" Command="{StaticResource EntryEdit}" />
         <KeyBinding Key="F5" Command="{StaticResource Refresh}" />
+        <KeyBinding Key="S" Modifiers="Control" Command="{StaticResource SaveOrderToPdf}" />
     </Window.InputBindings>
 
     <Grid HorizontalAlignment="Stretch"  Margin="0,0,0,0" VerticalAlignment="Stretch">
         <Menu Height="25" VerticalAlignment="Top" Margin="0,0,-6.4,0" HorizontalAlignment="Stretch">
             <MenuItem Header="File" Height="25">
-                <MenuItem Header="Refresh" InputGestureText="F5" HorizontalAlignment="Left" Width="155" Click="OnRefresh" />
-                <MenuItem Header="Quit" InputGestureText="Alt+Q" HorizontalAlignment="Left" Width="155" Click="OnClose" />
+                <MenuItem Header="Refresh" InputGestureText="F5" HorizontalAlignment="Left" Width="270" Click="OnRefresh" />
+                <MenuItem Header="Save selected order to PDF" InputGestureText="CTRL+S" HorizontalAlignment="Left" Width="270" Click="OnRefresh" />
+                <MenuItem Header="Quit" InputGestureText="Alt+Q" HorizontalAlignment="Left" Width="270" Click="OnClose" />
             </MenuItem>
             <MenuItem Header="Add" Height="25">
                 <MenuItem Header="Company" InputGestureText="Alt+C" HorizontalAlignment="Left" Width="170" Click="OnCompanyAdd" />
