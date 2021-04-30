@@ -71,7 +71,11 @@
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Material.cs" />
     <Compile Include="Entities\Offer.cs" />
+    <Compile Include="Entities\OrderList.cs" />
+    <Compile Include="Entities\OrderPosition.cs" />
     <Compile Include="Mappings\CompanyContactDataMap.cs" />
+    <Compile Include="Mappings\OrderPositionMap.cs" />
+    <Compile Include="Mappings\OrderListMap.cs" />
     <Compile Include="Mappings\CompanyMap.cs" />
     <Compile Include="Mappings\EntityMap.cs" />
     <Compile Include="Mappings\MaterialMap.cs" />
@@ -81,10 +85,12 @@
     <Compile Include="Repositories\Adapters\CompanyRepository.cs" />
     <Compile Include="Repositories\Adapters\MaterialRepository.cs" />
     <Compile Include="Repositories\Adapters\OfferRepository.cs" />
+    <Compile Include="Repositories\Adapters\OrderListRepository.cs" />
     <Compile Include="Repositories\Ports\IBaseRepository.cs" />
     <Compile Include="Repositories\Ports\ICompanyRepository.cs" />
     <Compile Include="Repositories\Ports\IMaterialRepository.cs" />
     <Compile Include="Repositories\Ports\IOfferRepository.cs" />
+    <Compile Include="Repositories\Ports\IOrderListRepository.cs" />
     <Compile Include="Repositories\RepositoryContext.cs" />
     <Compile Include="SessionFactoryBuilder.cs" />
     <Compile Include="SessionManager.cs" />

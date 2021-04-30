@@ -15,5 +15,6 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories
         public ICompanyRepository CompanyRepository { get; }
         public IOfferRepository OfferRepository { get; }
         public IMaterialRepository MaterialRepository { get; }
+        public IOrderListRepository OrderListRepository { get; }
     }
 }
