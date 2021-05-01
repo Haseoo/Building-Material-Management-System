@@ -133,8 +133,7 @@
     <Compile Include="Services\ServiceContext.cs" />
     <Compile Include="Validators\CompanyContactDataValidator.cs" />
     <Compile Include="Validators\OrderListEditDtoValidator.cs" />
-    <Compile Include="Validators\CompanyEditDtoValidator.cs" />
-    <Compile Include="Validators\CompanyAddDtoValidator.cs" />
+    <Compile Include="Validators\CompanyOperationDtoValidator.cs" />
     <Compile Include="Validators\ErrorMessages\ErrorMessageGenerator.cs" />
     <Compile Include="Validators\ErrorMessages\ValidatedEntities.cs" />
     <Compile Include="Validators\MaterialEditDtoValidator.cs" />

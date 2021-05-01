@@ -20,21 +20,12 @@ namespace com.Github.Haseoo.BMMS.Tests.Business.Services
         }
 
         [Test]
-        public void should_pass_company_data_operation_dto_edit()
-        {
-            //given
-            var inDto = TestDataGenerator.GetCompanyOperationDto();
-            //when & then
-            Assert.IsTrue(_sut.CompanyEditDtoValidator.Validate(inDto).IsValid);
-        }
-
-        [Test]
         public void should_pass_company_data_operation_dto_add()
         {
             //given
             var inDto = TestDataGenerator.GetCompanyOperationDto();
             //when & then
-            Assert.IsTrue(_sut.CompanyAddDtoValidator.Validate(inDto).IsValid);
+            Assert.IsTrue(_sut.CompanyOperationDtoValidator.Validate(inDto).IsValid);
         }
 
         [Test]

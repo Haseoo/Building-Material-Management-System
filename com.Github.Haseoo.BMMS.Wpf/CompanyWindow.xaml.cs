@@ -123,13 +123,13 @@ namespace com.Github.Haseoo.BMMS.Wpf
         {
             var operation = GetFormData();
             if (_currentCompany == null &&
-                Utils.ShowInputErrorMessage(_validatorContext.CompanyAddDtoValidator
+                Utils.ShowInputErrorMessage(_validatorContext.CompanyOperationDtoValidator
                     .Validate(operation)))
             {
                 return;
             }
             if (_currentCompany != null &&
-                Utils.ShowInputErrorMessage(_validatorContext.CompanyEditDtoValidator
+                Utils.ShowInputErrorMessage(_validatorContext.CompanyOperationDtoValidator
                     .Validate(operation)))
             {
                 return;

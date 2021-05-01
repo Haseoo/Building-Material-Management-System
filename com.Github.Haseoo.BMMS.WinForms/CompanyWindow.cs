@@ -94,13 +94,13 @@ namespace com.Github.Haseoo.BMMS.WinForms
         {
             var operation = GetFormData();
             if (_currentCompanyDto == null &&
-                Utils.ShowInputErrorMessage(_validatorContext.CompanyAddDtoValidator
+                Utils.ShowInputErrorMessage(_validatorContext.CompanyOperationDtoValidator
                     .Validate(operation)))
             {
                 return;
             }
             if (_currentCompanyDto != null &&
-                Utils.ShowInputErrorMessage(_validatorContext.CompanyEditDtoValidator
+                Utils.ShowInputErrorMessage(_validatorContext.CompanyOperationDtoValidator
                     .Validate(operation)))
             {
                 return;

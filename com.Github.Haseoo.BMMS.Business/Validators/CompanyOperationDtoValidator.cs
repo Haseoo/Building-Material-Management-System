@@ -4,9 +4,9 @@ using FluentValidation;
 
 namespace com.Github.Haseoo.BMMS.Business.Validators
 {
-    public class CompanyEditDtoValidator : AbstractValidator<CompanyOperationDto>
+    public class CompanyOperationDtoValidator : AbstractValidator<CompanyOperationDto>
     {
-        public CompanyEditDtoValidator(CompanyContactDataValidator companyContactDataValidator)
+        public CompanyOperationDtoValidator(CompanyContactDataValidator companyContactDataValidator)
         {
             RuleFor(x => x.Address)
                 .NotEmpty()
