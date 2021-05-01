@@ -11,5 +11,15 @@ namespace com.Github.Haseoo.BMMS.Wpf
         {
             InitializeComponent();
         }
+
+        private void OnSave(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OnCancel(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
