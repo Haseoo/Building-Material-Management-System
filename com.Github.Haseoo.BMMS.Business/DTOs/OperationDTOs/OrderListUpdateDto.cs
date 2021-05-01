@@ -11,20 +11,25 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs
         public string Name { get; private set; }
         public IList<OrderListPositionOperationDto> OrderPositions { get; private set; }
 
-        public class Builder : IDtoBuilder<OrderListUpdateDto>
+        public static DtoBuilder Builder()
+        {
+            return new DtoBuilder();
+        }
+
+        public class DtoBuilder : IDtoBuilder<OrderListUpdateDto>
         {
             private string _name;
 
             private readonly IList<OrderListPositionOperationDto> _orderPositions =
                 new List<OrderListPositionOperationDto>();
 
-            public Builder Name(string name)
+            public DtoBuilder Name(string name)
             {
                 _name = name;
                 return this;
             }
 
-            public Builder OrderPosition(OrderListPositionOperationDto orderPosition)
+            public DtoBuilder OrderPosition(OrderListPositionOperationDto orderPosition)
             {
                 _orderPositions.Add(orderPosition);
                 return this;

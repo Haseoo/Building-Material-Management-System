@@ -1,10 +1,10 @@
-﻿using System;
+﻿using com.Github.Haseoo.BMMS.Business.DTOs;
+using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
+using com.Github.Haseoo.BMMS.Business.Validators;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
-using com.Github.Haseoo.BMMS.Business.DTOs;
-using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
-using com.Github.Haseoo.BMMS.Business.Validators;
 
 namespace com.Github.Haseoo.BMMS.Wpf
 {
@@ -24,7 +24,21 @@ namespace com.Github.Haseoo.BMMS.Wpf
             OrderListSelector.ItemsSource = orderLists;
             _offerId = offerId;
             _validatorContext = validatorContext;
-            
+            Title = "Add to order list";
+        }
+
+        public AddElementToOrderListDialog(OrderListShortDto orderList,
+            OrderPositionDto orderPosition,
+            ValidatorContext validatorContext)
+        {
+            _offerId = orderPosition.Offer.Id;
+            _validatorContext = validatorContext;
+            InitializeComponent();
+            OrderListSelector.ItemsSource = new List<OrderListShortDto>() { orderList };
+            OrderListSelector.SelectedItem = orderList;
+            OrderListSelector.IsEnabled = false;
+            Quantity.Text = orderPosition.Quantity.ToString();
+            Title = "Edit order position";
         }
 
         private void OnQuantityChanged(object sender, TextCompositionEventArgs e)
@@ -52,7 +66,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void OnOk(object sender, RoutedEventArgs e)
         {
-            if(Utils.ShowInputErrorMessage(_validatorContext
+            if (Utils.ShowInputErrorMessage(_validatorContext
                 .OrderListPositionAddDtoValidator
                 .Validate(GetUserInput())))
             {

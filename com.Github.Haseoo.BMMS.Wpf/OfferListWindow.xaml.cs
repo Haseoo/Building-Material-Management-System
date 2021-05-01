@@ -3,6 +3,7 @@ using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
+using com.Github.Haseoo.BMMS.Data;
 using System;
 using System.Windows;
 using System.Windows.Input;
@@ -117,23 +118,27 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void OnAddToOfferList(object sender, RoutedEventArgs e)
         {
+            if (GetSelectedOffer() == null)
+            {
+                return;
+            }
             var dialog = new AddElementToOrderListDialog(_serviceContext.OrderListService.GetList(),
                 GetSelectedOffer()?.Id ?? Guid.Empty,
                 _validatorContext);
-            var dialogResult = dialog.ShowDialog();
-            if ( dialogResult.HasValue && dialogResult.Value)
+            if (!(dialog.ShowDialog() ?? false))
             {
-                var dialogValue = dialog.GetUserInput();
-                try
-                {
-                    _serviceContext.OrderListService.AddPositionToList(dialogValue);
-                }
-                catch (Exception ex)
-                {
-                    Utils.ShowErrorMessage(ex);
-                }
+                return;
             }
-
+            var dialogValue = dialog.GetUserInput();
+            try
+            {
+                _serviceContext.OrderListService.AddPositionToList(dialogValue);
+                SessionManager.Instance.AcquireNewSession();
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowErrorMessage(ex);
+            }
         }
     }
 }

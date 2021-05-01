@@ -3,6 +3,7 @@ using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
+using com.Github.Haseoo.BMMS.Data;
 using System;
 using System.Globalization;
 using System.Windows;
@@ -134,6 +135,27 @@ namespace com.Github.Haseoo.BMMS.Wpf
         private void OnCancel(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void OnAddToOffer(object sender, RoutedEventArgs e)
+        {
+            var dialog = new AddElementToOrderListDialog(_serviceContext.OrderListService.GetList(),
+                _currentOffer.Id,
+                _validatorContext);
+            if (!(dialog.ShowDialog() ?? false))
+            {
+                return;
+            }
+            var dialogValue = dialog.GetUserInput();
+            try
+            {
+                _serviceContext.OrderListService.AddPositionToList(dialogValue);
+                SessionManager.Instance.AcquireNewSession();
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowErrorMessage(ex);
+            }
         }
     }
 }

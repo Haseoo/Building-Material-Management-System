@@ -72,7 +72,6 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void OnPdfSave(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void OnMaterialSearchOrRefresh(object sender = null, RoutedEventArgs e = null)
@@ -136,12 +135,12 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 {
                     new MaterialWindow(_serviceContext, _validatorContext, selected.Id).Show();
                 }
-            }, () => 
+            }, () =>
             {
                 var selected = GetSelectedOrderList();
                 if (selected != null)
                 {
-                    new OrderListWindow(_serviceContext.OrderListService, _validatorContext, selected.Id).Show();
+                    new OrderListWindow(_serviceContext, _validatorContext, selected.Id).Show();
                 }
             });
         }

@@ -7,19 +7,14 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
         public OrderPositionMap()
         {
             Table("ORDER_POSITIONS");
+            Id(x => x.Id).GeneratedBy.Assigned();
             Map(x => x.Quantity,
                     "QUANTITY")
-                .Not.Nullable();
-
-            References(x => x.OrderList)
-                .Column("ORDER_LIST_ID")
-                .ForeignKey("POSITION_ORDER_FK")
                 .Not.Nullable();
 
             References(x => x.Offer)
                 .Column("OFFER_ID")
                 .ForeignKey("POSITION_OFFER_FK")
-                .Cascade.All()
                 .Not.Nullable();
 
             CheckConstraint("QUANTITY > 0");

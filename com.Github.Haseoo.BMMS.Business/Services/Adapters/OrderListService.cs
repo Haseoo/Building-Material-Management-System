@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using com.Github.Haseoo.BMMS.Business.DTOs;
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Ports;
-using com.Github.Haseoo.BMMS.Data;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
-using NHibernate.Util;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
@@ -51,16 +47,16 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             {
                 orderPosition.Quantity += operation.Quantity;
             }
-            else 
+            else
             {
                 orderPosition = new OrderPosition()
                 {
                     Offer = offer,
-                    OrderList = orderList,
                     Quantity = operation.Quantity
                 };
                 orderList.OrderPositions.Add(orderPosition);
             }
+
             _orderListRepository.Update(orderList);
         }
 
@@ -111,7 +107,6 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
             return operations.Select(e => new OrderPosition()
             {
                 Offer = GetOffer(e.OfferId),
-                OrderList = GetOrderList(e.OrderListId),
                 Quantity = e.Quantity
             }).ToList();
         }

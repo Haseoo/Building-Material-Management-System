@@ -20,5 +20,12 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
                 orderPosition.Quantity,
                 OfferDto.From(orderPosition.Offer));
         }
+
+        public static OrderPositionDto WithNewQuantity(OrderPositionDto dto, int qty)
+        {
+            return new OrderPositionDto(dto.Id,
+                qty,
+                dto.Offer);
+        }
     }
 }

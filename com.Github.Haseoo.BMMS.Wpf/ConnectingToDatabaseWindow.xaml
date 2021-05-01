@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         Title="Connecting to database"
         SizeToContent="WidthAndHeight"
-        ResizeMode="NoResize"
-        >
+        ResizeMode="NoResize">
     <Grid Margin="15">
         <Label HorizontalAlignment="Center" VerticalAlignment="Center">Connecting to the database, please wait...</Label>
     </Grid>

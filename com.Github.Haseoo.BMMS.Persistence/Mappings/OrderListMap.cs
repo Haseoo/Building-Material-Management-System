@@ -13,9 +13,10 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
                     "NAME")
                 .CustomSqlType("text")
                 .Not.Nullable();
+
             HasMany(x => x.OrderPositions)
-                .KeyColumn("ORDER_LIST_ID")
-                .ForeignKeyConstraintName("ORDER_LIST_POSITION_FK")
+                .KeyColumn("LIST_ID")
+                .ForeignKeyConstraintName("ORDER_LIST_FK")
                 .Not.KeyNullable()
                 .Not.KeyUpdate()
                 .Not.Inverse()
