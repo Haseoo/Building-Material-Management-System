@@ -25,7 +25,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0"  Content="Add to order" HorizontalAlignment="Right" Height="25" Width="80" />
+            <Button Grid.Column="0"  Content="Add to order" HorizontalAlignment="Right" Height="25" Width="80" Click="OnAddToOfferList" />
             <Button Grid.Column="1" Content="Show company" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowCompany" />
             <Button Grid.Column="2" Content="Show material"  HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="100" Click="OnShowMaterials" />
             <Button Grid.Column="3" Content="Remove" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="75" Click="OnRemove" />

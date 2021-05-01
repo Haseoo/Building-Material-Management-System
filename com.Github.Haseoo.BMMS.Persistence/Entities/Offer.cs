@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace com.Github.Haseoo.BMMS.Data.Entities
 {
@@ -10,5 +11,6 @@ namespace com.Github.Haseoo.BMMS.Data.Entities
         public virtual string Unit { get; set; }
         public virtual string Comments { get; set; }
         public virtual DateTime LastModification { get; set; }
+        public virtual IList<OrderPosition> OrderPositions { get; set; }
     }
 }

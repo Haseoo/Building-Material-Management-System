@@ -114,5 +114,26 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 OnRemove(sender, e);
             }
         }
+
+        private void OnAddToOfferList(object sender, RoutedEventArgs e)
+        {
+            var dialog = new AddElementToOrderListDialog(_serviceContext.OrderListService.GetList(),
+                GetSelectedOffer()?.Id ?? Guid.Empty,
+                _validatorContext);
+            var dialogResult = dialog.ShowDialog();
+            if ( dialogResult.HasValue && dialogResult.Value)
+            {
+                var dialogValue = dialog.GetUserInput();
+                try
+                {
+                    _serviceContext.OrderListService.AddPositionToList(dialogValue);
+                }
+                catch (Exception ex)
+                {
+                    Utils.ShowErrorMessage(ex);
+                }
+            }
+
+        }
     }
 }

@@ -46,7 +46,7 @@
                 </Grid>
                 <DataGrid
                     Grid.Row="0"
-                    Name="ContactData"
+                    Name="Positions"
                     HorizontalAlignment="Stretch"
                     Margin="5" VerticalAlignment="Stretch"
                     AutoGenerateColumns="False"

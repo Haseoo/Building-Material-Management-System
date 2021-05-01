@@ -26,6 +26,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
             InitializeComponent();
             Materials.ItemsSource = serviceContext.MaterialService.GetList();
             Companies.ItemsSource = serviceContext.CompanyService.GetList();
+            OrderLists.ItemsSource = serviceContext.OrderListService.GetList();
         }
 
         private void OnCompanyAdd(object sender, RoutedEventArgs e)
@@ -41,6 +42,32 @@ namespace com.Github.Haseoo.BMMS.Wpf
         private void OnOfferAdd(object sender, RoutedEventArgs e)
         {
             new OfferWindow(_serviceContext, _validatorContext).Show();
+        }
+
+        private void OnAddOrderList(object sender, RoutedEventArgs e)
+        {
+            var dialog = new TextInputDialog("Enter list name", "New order list");
+            if (!(dialog.ShowDialog() ?? false))
+            {
+                return;
+            }
+            var name = dialog.GetUserInput();
+            if (string.IsNullOrEmpty(name))
+            {
+                Utils.ShowErrorMessage("List name cannot be empty");
+                return;
+            }
+
+            try
+            {
+                new ServiceTransactionProxy<string, OrderListFullDto>(_serviceContext.OrderListService)
+                    .Add(name);
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowErrorMessage(ex);
+            }
+            OnOrderListSearchOrRefresh(sender, e);
         }
 
         private void OnPdfSave(object sender, RoutedEventArgs e)
@@ -83,6 +110,9 @@ namespace com.Github.Haseoo.BMMS.Wpf
             var orderListInput = OrderListsInput.Text;
             try
             {
+                OrderLists.ItemsSource = string.IsNullOrEmpty(orderListInput) ?
+                    _serviceContext.OrderListService.GetList() :
+                    _serviceContext.OrderListService.SearchByName(orderListInput);
             }
             catch (Exception ex)
             {
@@ -106,8 +136,13 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 {
                     new MaterialWindow(_serviceContext, _validatorContext, selected.Id).Show();
                 }
-            }, () =>
+            }, () => 
             {
+                var selected = GetSelectedOrderList();
+                if (selected != null)
+                {
+                    new OrderListWindow(_serviceContext.OrderListService, _validatorContext, selected.Id).Show();
+                }
             });
         }
 
@@ -135,6 +170,13 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void DeleteOrderList()
         {
+            var selected = GetSelectedOrderList();
+            if (selected != null)
+            {
+                new ServiceTransactionProxy<string, OrderListFullDto>(_serviceContext.OrderListService)
+                    .Delete(selected.Id);
+                OnOrderListSearchOrRefresh();
+            }
         }
 
         private void OnDelete(object sender, RoutedEventArgs e)
@@ -157,6 +199,11 @@ namespace com.Github.Haseoo.BMMS.Wpf
         private CompanyDto GetSelectedCompany()
         {
             return Companies.SelectedValue as CompanyDto;
+        }
+
+        private OrderListShortDto GetSelectedOrderList()
+        {
+            return OrderLists.SelectedValue as OrderListShortDto;
         }
 
         private void OnRefresh(object sender, RoutedEventArgs e)
@@ -211,16 +258,6 @@ namespace com.Github.Haseoo.BMMS.Wpf
                     () => OnMaterialSearchOrRefresh(sender, e),
                     () => OnOrderListSearchOrRefresh(sender, e));
             }
-        }
-
-        private void OnAddOrderList(object sender, RoutedEventArgs e)
-        {
-            /*var dialog = new TextInputDialog("Enter the name of the new order list:", "New order list");
-            if (dialog.ShowDialog() ?? false)
-            {
-                Console.WriteLine(dialog.GetUserInput());
-            }*/
-            new AddElementToOrderListDialog().Show();
         }
     }
 }

@@ -73,9 +73,9 @@
     <Grid HorizontalAlignment="Stretch"  Margin="0,0,0,0" VerticalAlignment="Stretch">
         <Menu Height="25" VerticalAlignment="Top" Margin="0,0,-6.4,0" HorizontalAlignment="Stretch">
             <MenuItem Header="File" Height="25">
-                <MenuItem Header="Refresh" InputGestureText="F5" HorizontalAlignment="Left" Width="270" Click="OnRefresh" />
-                <MenuItem Header="Save selected order to PDF" InputGestureText="CTRL+S" HorizontalAlignment="Left" Width="270" Click="OnRefresh" />
-                <MenuItem Header="Quit" InputGestureText="Alt+Q" HorizontalAlignment="Left" Width="270" Click="OnClose" />
+                <MenuItem Header="Refresh" InputGestureText="F5" HorizontalAlignment="Left" Width="275" Click="OnRefresh" />
+                <MenuItem Header="Save Selected Order To PDF" InputGestureText="CTRL+S" HorizontalAlignment="Left" Width="275" Click="OnRefresh" />
+                <MenuItem Header="Quit" InputGestureText="Alt+Q" HorizontalAlignment="Left" Width="275" Click="OnClose" />
             </MenuItem>
             <MenuItem Header="Add" Height="25">
                 <MenuItem Header="Company" InputGestureText="Alt+C" HorizontalAlignment="Left" Width="170" Click="OnCompanyAdd" />

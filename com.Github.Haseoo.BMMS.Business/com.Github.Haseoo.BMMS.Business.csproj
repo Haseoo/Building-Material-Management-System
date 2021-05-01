@@ -125,7 +125,9 @@
     <Compile Include="Services\Adapters\CompanyService.cs" />
     <Compile Include="Services\Adapters\MaterialService.cs" />
     <Compile Include="Services\Adapters\OfferService.cs" />
+    <Compile Include="Services\Adapters\OrderListService.cs" />
     <Compile Include="Services\Adapters\ServiceTransactionProxy.cs" />
+    <Compile Include="Services\Ports\IOrderListService.cs" />
     <Compile Include="Services\Ports\ICompanyService.cs" />
     <Compile Include="Services\Ports\IMaterialService.cs" />
     <Compile Include="Services\Ports\IOfferService.cs" />

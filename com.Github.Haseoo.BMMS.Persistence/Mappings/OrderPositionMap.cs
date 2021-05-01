@@ -17,8 +17,9 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
                 .Not.Nullable();
 
             References(x => x.Offer)
-                .Column("MATERIAL_ID")
+                .Column("OFFER_ID")
                 .ForeignKey("POSITION_OFFER_FK")
+                .Cascade.All()
                 .Not.Nullable();
 
             CheckConstraint("QUANTITY > 0");

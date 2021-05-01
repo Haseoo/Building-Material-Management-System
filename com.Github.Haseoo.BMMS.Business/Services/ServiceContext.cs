@@ -10,6 +10,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services
         public IMaterialService MaterialService { get; }
         public ICompanyService CompanyService { get; }
         public IOfferService OfferService { get; }
+        public IOrderListService OrderListService { get; }
 
         public ServiceContext(IMapper mapper)
         {
@@ -20,6 +21,9 @@ namespace com.Github.Haseoo.BMMS.Business.Services
                 repositoryContext.CompanyRepository,
                 repositoryContext.MaterialRepository,
                 mapper);
+            OrderListService = new OrderListService(mapper,
+                repositoryContext.OfferRepository,
+                repositoryContext.OrderListRepository);
         }
     }
 }

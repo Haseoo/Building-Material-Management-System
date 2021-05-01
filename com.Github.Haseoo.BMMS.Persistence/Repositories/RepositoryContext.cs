@@ -10,6 +10,7 @@ namespace com.Github.Haseoo.BMMS.Data.Repositories
             CompanyRepository = new CompanyRepository();
             OfferRepository = new OfferRepository();
             MaterialRepository = new MaterialRepository();
+            OrderListRepository = new OrderListRepository();
         }
 
         public ICompanyRepository CompanyRepository { get; }

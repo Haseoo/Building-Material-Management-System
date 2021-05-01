@@ -32,6 +32,14 @@ namespace com.Github.Haseoo.BMMS.Data.Mappings
                 .ForeignKey("OFFER_MATERIAL_FK")
                 .Not.Nullable();
 
+            HasMany(x => x.OrderPositions)
+                .KeyColumn("OFFER_ID")
+                .ForeignKeyConstraintName("POSITION_OFFER_FK")
+                .Not.KeyNullable()
+                .Not.KeyUpdate()
+                .Not.Inverse()
+                .Cascade.AllDeleteOrphan();
+
             CheckConstraint("UNIT_PRICE >= 0");
         }
     }

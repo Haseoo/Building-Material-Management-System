@@ -22,5 +22,10 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
                 orderList.Name,
                 orderList.LastModification);
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
