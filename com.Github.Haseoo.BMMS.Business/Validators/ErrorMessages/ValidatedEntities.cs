@@ -14,6 +14,12 @@ namespace com.Github.Haseoo.BMMS.Business.Validators.ErrorMessages
         CompanyContactData,
 
         [Description("offer")]
-        Offer
+        Offer,
+
+        [Description("order list: ")]
+        OrderList,
+
+        [Description("order position")]
+        OrderPosition
     }
 }

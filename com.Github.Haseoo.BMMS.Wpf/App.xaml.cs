@@ -51,6 +51,12 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 c.CreateMap<CompanyContactData, CompanyContactDataDto>()
                     .ConvertUsing(s => CompanyContactDataDto.From(s));
                 c.CreateMap<Offer, OfferDto>().ConvertUsing(s => OfferDto.From(s));
+                c.CreateMap<OrderList, OrderListFullDto>()
+                    .ConvertUsing(s => OrderListFullDto.From(s));
+                c.CreateMap<OrderList, OrderListShortDto>()
+                    .ConvertUsing(s => OrderListShortDto.From(s));
+                c.CreateMap<OrderPosition, OrderPositionDto>()
+                    .ConvertUsing(s => OrderPositionDto.From(s));
             }).CreateMapper();
         }
     }

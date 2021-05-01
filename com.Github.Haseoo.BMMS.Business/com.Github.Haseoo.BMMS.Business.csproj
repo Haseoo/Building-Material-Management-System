@@ -103,8 +103,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\OfferDto.cs" />
+    <Compile Include="DTOs\OperationDTOs\OrderListPositionOperationDto.cs" />
     <Compile Include="DTOs\OperationDTOs\CompanyOperationDto.cs" />
     <Compile Include="DTOs\OperationDTOs\OfferOperationDto.cs" />
+    <Compile Include="DTOs\OperationDTOs\OrderListUpdateDto.cs" />
+    <Compile Include="DTOs\OrderListFullDto.cs" />
+    <Compile Include="DTOs\OrderListShortDto.cs" />
+    <Compile Include="DTOs\OrderPositionDto.cs" />
     <Compile Include="Exceptions\BusinessLogicException.cs" />
     <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Extensions\ValidatedEntitiesExtension.cs" />
@@ -127,12 +132,15 @@
     <Compile Include="Services\Ports\ITransactionalService.cs" />
     <Compile Include="Services\ServiceContext.cs" />
     <Compile Include="Validators\CompanyContactDataValidator.cs" />
+    <Compile Include="Validators\OrderListEditDtoValidator.cs" />
     <Compile Include="Validators\CompanyEditDtoValidator.cs" />
     <Compile Include="Validators\CompanyAddDtoValidator.cs" />
     <Compile Include="Validators\ErrorMessages\ErrorMessageGenerator.cs" />
     <Compile Include="Validators\ErrorMessages\ValidatedEntities.cs" />
     <Compile Include="Validators\MaterialEditDtoValidator.cs" />
     <Compile Include="Validators\MaterialAddDtoValidator.cs" />
+    <Compile Include="Validators\OrderListPositionEditDtoValidator.cs" />
+    <Compile Include="Validators\OrderListPositionAddDtoValidator.cs" />
     <Compile Include="Validators\OfferEditDtoValidator .cs" />
     <Compile Include="Validators\OfferAddDtoValidator.cs" />
     <Compile Include="Validators\ValidatorContext.cs" />
