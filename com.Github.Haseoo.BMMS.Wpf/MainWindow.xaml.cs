@@ -5,8 +5,10 @@ using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
 using com.Github.Haseoo.BMMS.Data;
 using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
+using Microsoft.Win32;
 
 namespace com.Github.Haseoo.BMMS.Wpf
 {
@@ -72,6 +74,33 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
         private void OnPdfSave(object sender, RoutedEventArgs e)
         {
+            var selected = GetSelectedOrderList();
+            if (selected == null)
+            {
+                Utils.ShowErrorMessage("Order list not selected.");
+                return;
+            }
+
+            var fileDialog = new SaveFileDialog() {Filter = "Portable Document Format | *.pdf"};
+            if (!(fileDialog.ShowDialog() ?? false))
+            {
+                return;
+            }
+
+            try
+            {
+                Console.WriteLine(fileDialog.FileName);
+                _serviceContext.OrderListService.SaveToPdf(selected.Id, fileDialog.FileName);
+                MessageBox.Show(this,
+                    "File successfully saved",
+                    "Save as pdf",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                Utils.ShowErrorMessage(ex);
+            }
         }
 
         private void OnMaterialSearchOrRefresh(object sender = null, RoutedEventArgs e = null)

@@ -2,6 +2,7 @@
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Ports
 {
@@ -16,5 +17,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Ports
         OrderListFullDto Update(Guid id, OrderListUpdateDto operation);
 
         void AddPositionToList(OrderListPositionOperationDto operation);
+
+        void SaveToPdf(Guid listId, string file);
     }
 }
