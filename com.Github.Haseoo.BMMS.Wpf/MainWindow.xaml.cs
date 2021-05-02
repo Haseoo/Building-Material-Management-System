@@ -4,11 +4,10 @@ using com.Github.Haseoo.BMMS.Business.Services;
 using com.Github.Haseoo.BMMS.Business.Services.Adapters;
 using com.Github.Haseoo.BMMS.Business.Validators;
 using com.Github.Haseoo.BMMS.Data;
+using Microsoft.Win32;
 using System;
-using System.IO;
 using System.Windows;
 using System.Windows.Input;
-using Microsoft.Win32;
 
 namespace com.Github.Haseoo.BMMS.Wpf
 {
@@ -81,7 +80,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 return;
             }
 
-            var fileDialog = new SaveFileDialog() {Filter = "Portable Document Format | *.pdf"};
+            var fileDialog = new SaveFileDialog() { Filter = "Portable Document Format | *.pdf" };
             if (!(fileDialog.ShowDialog() ?? false))
             {
                 return;

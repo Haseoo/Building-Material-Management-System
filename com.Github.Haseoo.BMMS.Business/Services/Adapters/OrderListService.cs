@@ -5,16 +5,13 @@ using com.Github.Haseoo.BMMS.Business.Exceptions;
 using com.Github.Haseoo.BMMS.Business.Services.Ports;
 using com.Github.Haseoo.BMMS.Data.Entities;
 using com.Github.Haseoo.BMMS.Data.Repositories.Ports;
+using iText.Kernel.Font;
+using iText.Layout.Element;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
-using iText.Kernel.Font;
-using iText.Layout.Element;
-using iText.Layout.Properties;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using Document = iText.Layout.Document;
 using PageSize = iText.Kernel.Geom.PageSize;
 using Paragraph = iText.Layout.Element.Paragraph;
@@ -136,13 +133,13 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
                         .AddCell(orderOrderPosition.Offer.Company.Name)
                         .AddCell(orderOrderPosition.Offer.Unit)
                         .AddCell(orderOrderPosition.Offer.UnitPrice
-                            .ToString(CultureInfo.CurrentCulture) + 
+                            .ToString(CultureInfo.CurrentCulture) +
                                  NumberFormatInfo.CurrentInfo.CurrencySymbol)
                         .AddCell(orderOrderPosition.Offer.Comments)
                         .AddCell(orderOrderPosition.Quantity.ToString());
                     var subPrice = orderOrderPosition.Quantity * orderOrderPosition.Offer.UnitPrice;
                     totalPrice += subPrice;
-                    table.AddCell(subPrice.ToString(CultureInfo.CurrentCulture) + 
+                    table.AddCell(subPrice.ToString(CultureInfo.CurrentCulture) +
                                   NumberFormatInfo.CurrentInfo.CurrencySymbol);
                 }
                 doc.Add(table);
@@ -152,7 +149,6 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
                     .SetFontSize(16);
                 doc.Add(new Paragraph(totalPriceText));
             }
-
         }
 
         private Offer GetOffer(Guid id)

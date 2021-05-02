@@ -91,7 +91,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 return;
             }
             var dialog = new AddElementToOrderListDialog(_currentList, selected, _validatorContext);
-            if ((!dialog.ShowDialog() ?? false))
+            if (!(dialog.ShowDialog() ?? false))
             {
                 return;
             }

@@ -10,7 +10,7 @@ namespace com.Github.Haseoo.BMMS.Business.DTOs
             DateTime lastModification) : base(id)
         {
             Name = name;
-            LastModification = lastModification.ToString("yyyy MMM dd HH:mm:ss"); ;
+            LastModification = lastModification.ToString("yyyy MMM dd HH:mm:ss");
         }
 
         public string Name { get; }

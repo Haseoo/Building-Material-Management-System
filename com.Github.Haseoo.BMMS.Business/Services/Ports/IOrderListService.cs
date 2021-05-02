@@ -2,7 +2,6 @@
 using com.Github.Haseoo.BMMS.Business.DTOs.OperationDTOs;
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Ports
 {
