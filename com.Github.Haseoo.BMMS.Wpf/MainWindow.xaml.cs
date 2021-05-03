@@ -61,7 +61,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
 
             try
             {
-                new ServiceTransactionProxy<string, OrderListFullDto>(_serviceContext.OrderListService)
+                new TransactionalService<string, OrderListFullDto>(_serviceContext.OrderListService)
                     .Add(name);
             }
             catch (Exception ex)
@@ -178,7 +178,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
             var selected = GetSelectedCompany();
             if (selected != null)
             {
-                new ServiceTransactionProxy<CompanyOperationDto, CompanyDto>(_serviceContext.CompanyService)
+                new TransactionalService<CompanyOperationDto, CompanyDto>(_serviceContext.CompanyService)
                     .Delete(selected.Id);
                 OnCompanySearchOrRefresh();
             }
@@ -189,7 +189,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
             var selected = GetSelectedMaterial();
             if (selected != null)
             {
-                new ServiceTransactionProxy<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
+                new TransactionalService<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
                     .Delete(selected.Id);
                 OnMaterialSearchOrRefresh();
             }
@@ -200,7 +200,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
             var selected = GetSelectedOrderList();
             if (selected != null)
             {
-                new ServiceTransactionProxy<string, OrderListFullDto>(_serviceContext.OrderListService)
+                new TransactionalService<string, OrderListFullDto>(_serviceContext.OrderListService)
                     .Delete(selected.Id);
                 OnOrderListSearchOrRefresh();
             }
