@@ -142,7 +142,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
                     var selected = (CompanyDto)CompanyList.SelectedObject;
                     if (selected != null)
                     {
-                        new ServiceTransactionProxy<CompanyOperationDto, CompanyDto>(_serviceContext.CompanyService)
+                        new TransactionalService<CompanyOperationDto, CompanyDto>(_serviceContext.CompanyService)
                             .Delete(selected.Id);
                         RefreshCompanies();
                     }
@@ -152,7 +152,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
                     var selected = (MaterialDto)MaterialList.SelectedObject;
                     if (selected != null)
                     {
-                        new ServiceTransactionProxy<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
+                        new TransactionalService<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
                             .Delete(selected.Id);
                         RefreshMaterials();
                     }

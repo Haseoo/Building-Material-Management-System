@@ -98,7 +98,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
             if (selected == null) return;
             try
             {
-                new ServiceTransactionProxy<OfferOperationDto, OfferDto>(_serviceContext.OfferService)
+                new TransactionalService<OfferOperationDto, OfferDto>(_serviceContext.OfferService)
                     .Delete(selected.Id);
                 LoadOffers();
             }

@@ -69,7 +69,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
                     {
                         return;
                     }
-                    new ServiceTransactionProxy<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
+                    new TransactionalService<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
                         .Add(operation);
                 }
                 Close();

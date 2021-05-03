@@ -73,7 +73,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
             {
                 try
                 {
-                    new ServiceTransactionProxy<OfferOperationDto, OfferDto>(_serviceContext.OfferService)
+                    new TransactionalService<OfferOperationDto, OfferDto>(_serviceContext.OfferService)
                         .Delete(selected.Id);
                     RefreshOffers();
                 }

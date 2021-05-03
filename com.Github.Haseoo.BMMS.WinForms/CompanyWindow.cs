@@ -109,7 +109,7 @@ namespace com.Github.Haseoo.BMMS.WinForms
             {
                 if (_currentCompanyDto == null)
                 {
-                    new ServiceTransactionProxy<CompanyOperationDto, CompanyDto>(_serviceContext.CompanyService)
+                    new TransactionalService<CompanyOperationDto, CompanyDto>(_serviceContext.CompanyService)
                         .Add(operation);
                 }
                 else

@@ -115,7 +115,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
                 if (_currentOffer == null &&
                     !Utils.ShowInputErrorMessage(_validatorContext.OfferAddDtoValidator.Validate(operationDto)))
                 {
-                    new ServiceTransactionProxy<OfferOperationDto, OfferDto>(_serviceContext.OfferService)
+                    new TransactionalService<OfferOperationDto, OfferDto>(_serviceContext.OfferService)
                         .Add(operationDto);
                     Close();
                 }
