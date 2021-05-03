@@ -120,7 +120,7 @@ namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
                     .AddCell("Company")
                     .AddCell("Unit")
                     .AddCell("Price per unit")
-                    .AddCell("Offer comments.")
+                    .AddCell("Offer comments")
                     .AddCell("Quantity")
                     .AddCell("Price");
                 var totalPrice = 0.0M;

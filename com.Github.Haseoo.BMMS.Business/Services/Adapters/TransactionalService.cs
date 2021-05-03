@@ -5,11 +5,11 @@ using System;
 
 namespace com.Github.Haseoo.BMMS.Business.Services.Adapters
 {
-    public class ServiceTransactionProxy<T, R> : ITransactionalService<T, R>
+    public class TransactionalService<T, R> : ITransactionalService<T, R>
     {
         private readonly ITransactionalService<T, R> _service;
 
-        public ServiceTransactionProxy(ITransactionalService<T, R> service)
+        public TransactionalService(ITransactionalService<T, R> service)
         {
             _service = service;
         }

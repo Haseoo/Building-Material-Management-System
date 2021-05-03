@@ -138,7 +138,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
             {
                 if (_currentCompany == null)
                 {
-                    new ServiceTransactionProxy<CompanyOperationDto, CompanyDto>(_serviceContext.CompanyService)
+                    new TransactionalService<CompanyOperationDto, CompanyDto>(_serviceContext.CompanyService)
                         .Add(operation);
                 }
                 else

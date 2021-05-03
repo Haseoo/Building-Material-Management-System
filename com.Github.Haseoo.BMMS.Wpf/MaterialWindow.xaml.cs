@@ -88,7 +88,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
                     {
                         return;
                     }
-                    new ServiceTransactionProxy<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
+                    new TransactionalService<MaterialOperationDto, MaterialDto>(_serviceContext.MaterialService)
                         .Add(operation);
                 }
                 Close();
