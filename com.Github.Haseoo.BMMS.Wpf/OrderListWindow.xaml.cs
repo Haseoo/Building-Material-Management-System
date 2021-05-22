@@ -107,6 +107,7 @@ namespace com.Github.Haseoo.BMMS.Wpf
         private void OnRefresh(object sender, RoutedEventArgs e)
         {
             DisplayOrderList(_currentList.Id);
+            Positions.Items.Refresh();
         }
 
         private void OnShowOffer(object sender, RoutedEventArgs e)
